@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Surat Keluar (Outbox)</title>
+    <title>Tambah Kwitansi</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -21,10 +21,7 @@
     <!-- Animation Css -->
     <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- JQuery DataTable Css -->
-    <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
-
-    <!-- Sweetalert Css -->
+    <!-- Sweet Alert Css -->
     <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Custom Css -->
@@ -72,7 +69,7 @@
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">SISTEM INFORMASI PERSURATAN</a>
+                <a class="navbar-brand" href="../../index.html">Sistem Informasi Persuratan</a>
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
@@ -282,7 +279,7 @@
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
-                    <div class="email">hello@illiyin.co/</div>
+                    <div class="email">hello@illiyin.co</div>
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -298,82 +295,75 @@
                 </div>
             </div>
             <!-- #User Info -->
-            
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">MAIN NAVIGATION</li>
-                    
+                    <li class="header">Menu Navigation</li>
                         <a href="../../index.html">
                             <i class="material-icons">perm_identity</i>
                             <span>Login</span>
                         </a>
-                    
                     <li>
-                        <a href="pages/dashboard.html">
+                        <a href="../dashboard.html">
                             <i class="material-icons">text_fields</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                    
+
                     <li>
-                        <li class="active">
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">email</i>
-                                <span>Surat Biasa</span>
+                                    <span>Surat Biasa</span>
                             </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                            <a href="../surat-biasa/inbox.html">Surat masuk (Inbox)</a>
+                                    </li>
+                                        
+                                    <li>
+                                        <a href="../surat-biasa/outbox.html">Surat keluar (Outbox)</a>
+                                    </li>   
+                                </ul>
+                    </li>
 
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="pages/surat-biasa/inbox.html">Surat Masuk (Inbox)</a>
-                            </li>
-                            <li>
-                                <li class="active">
-                                    <a href="outbox.html">Surat Keluar (Outbox)</a>
-                                </li>
-                            </li>        
-                        </ul>
+                    <li>
+                        <li class="active">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">widgets</i>
+                            <span>Surat Niaga</span>
+                        </a>
+                            <ul class="ml-menu">
+                                    <li>
+                                        <a href="Invoice.html">Invoice</a>
+                                    </li>
+                                    <li>
+                                        <a href="payroll.html">Payroll</a>
+                                    </li>
+                                    <li>
+                                        <li class="active">
+                                            <a href="receipt.html">Receipt</a>
+                                        </li>
+                                    </li>     
+                            </ul>
                         </li>
                     </li>
 
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
-                            <span>Surat Niaga</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="../suratniaga/invoice.html">Invoice</a>
-                            </li>
-                            <li>
-                                <a href="../suratniaga/payroll.html">Payroll</a>
-                            </li>
-                            <li>
-                                <a href="../suratniaga/receipt.html">Receipt</a>
-                            </li>
-
-                            
-                        </ul>
-                    </li>
-                    
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">view_list</i>
                             <span>Data Master</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../datamaster/klasifikasi-surat.html">Klasifikasi Surat</a>
+                                <a href="../datamaster/klasifikasi-surat.html">Klasifikasi surat</a>
                             </li>
                             <li>
-                                <a href="pages/tables/jquery-datatable.html">Data Proyek</a>
+                                <a href="../datamaster/dataproyek.html">Data proyek</a>
                             </li>
                             <li>
-                                <a href="pages/tables/editable-table.html">Data Kontak</a>
+                                <a href="../datamaster/datakontak.html">Data kontak</a>
                             </li>
-                        </ul>
-                    </li>
-                          
+                </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
@@ -535,135 +525,83 @@
 
     <section class="content">
         <div class="container-fluid">
-            <div class="block-header">
-                <div class="text-center">
-                    <h1>
-                        Surat Keluar (Outbox)
-                    </h1>
-                </div>
-            </div>
-            <!-- Table Surat Keluar -->
-             <div class="row clearfix">
+
+        <!-- Form Tambah Surat -->
+            <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <a href="tambah-outbox.html">
-                                <button type="button" class="btn btn-primary btn-lg"><b>Tambah</b></button>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            <h2>
+                                <strong>Tambah Kwitansi</strong>
+                            </h2>
+                            
                         </div>
-                        <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>No. Surat</th>
-                                            <th>Tanggal</th>
-                                            <th>Penerima</th>
-                                            <th>Perihal</th>
-                                            <th>Pilihan/Aksi</th>
-                                        </tr>
-                                    </thead>
-                                    
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>122/PI/Surat Praktik Industri/VII/2017</td>
-                                            <td>24-07-2017</td>
-                                            <td>Politeknik Negeri Banyuwangi</td>
-                                            <td>Balasan Surat Praktik Industri</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                    <a href="ubah-outbox.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
-                                                    <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div >
-                                                </div>
+                        <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Tanggal Surat</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="date" id="Tanggal" class="form-control" placeholder="Masukkan Tanggal">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                                    <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                        </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Nama</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                                        <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
-                                                        </div>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Keterangan</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Keterangan">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </td>
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Nominal</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nominal">
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>123/KK/Surat Keterangan Kerja</td>
-                                            <td>18-07-2017</td>
-                                            <td>Poliwangi</td>
-                                            <td>Surat Keterangan Kerja</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                        <a href="ubah-outbox.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
-                                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </div>
-
-                                                    <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                        </div>
-
-                                                        <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
-                                                        </div>
-
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                                <div class="text-center">
+                                    <div class="row">
+                                        <a href="receipt.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
+                                        <a href="receipt.html"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
+                                    </div>
+                                </div>
+                            </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Surat Keluar -->
-       
+            <!-- #END# Horizontal Layout -->
+              </div>
+    </section>
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -680,23 +618,8 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
-    <!-- SweetAlert Plugin Js -->
-    <script src="../../plugins/sweetalert/sweetalert.min.js"></script>
-
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
-    <script src="../../js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>

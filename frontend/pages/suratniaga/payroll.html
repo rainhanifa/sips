@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Surat Keluar (Outbox)</title>
+    <title>Payroll</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -317,7 +317,6 @@
                     </li>
                     
                     <li>
-                        <li class="active">
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">email</i>
                                 <span>Surat Biasa</span>
@@ -328,32 +327,32 @@
                                 <a href="pages/surat-biasa/inbox.html">Surat Masuk (Inbox)</a>
                             </li>
                             <li>
-                                <li class="active">
-                                    <a href="outbox.html">Surat Keluar (Outbox)</a>
-                                </li>
+                                <a href="outbox.html">Surat Keluar (Outbox)</a>
                             </li>        
                         </ul>
                         </li>
                     </li>
 
                     <li>
+                        <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
                             <span>Surat Niaga</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../suratniaga/invoice.html">Invoice</a>
+                                <a href="pages/suratniaga/invoice.html">Invoice</a>
                             </li>
                             <li>
-                                <a href="../suratniaga/payroll.html">Payroll</a>
+                                <li class="active">
+                                    <a href="payroll.html">Payroll</a>
+                                </li>
                             </li>
                             <li>
-                                <a href="../suratniaga/receipt.html">Receipt</a>
+                                <a href="receipt.html">Receipt</a>
                             </li>
-
-                            
                         </ul>
+                        </li>
                     </li>
                     
                     <li>
@@ -366,7 +365,7 @@
                                 <a href="../datamaster/klasifikasi-surat.html">Klasifikasi Surat</a>
                             </li>
                             <li>
-                                <a href="pages/tables/jquery-datatable.html">Data Proyek</a>
+                                <a href="../datamaster/.html">Data Proyek</a>
                             </li>
                             <li>
                                 <a href="pages/tables/editable-table.html">Data Kontak</a>
@@ -538,7 +537,7 @@
             <div class="block-header">
                 <div class="text-center">
                     <h1>
-                        Surat Keluar (Outbox)
+                        Payroll (Gaji)
                     </h1>
                 </div>
             </div>
@@ -547,7 +546,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <a href="tambah-outbox.html">
+                            <a href="tambah-payroll.html">
                                 <button type="button" class="btn btn-primary btn-lg"><b>Tambah</b></button>
                             <ul class="header-dropdown m-r--5">
                                 <li class="dropdown">
@@ -567,26 +566,26 @@
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
                                         <tr>
-                                            <th>No</th>
-                                            <th>No. Surat</th>
+                                            <th>No. Payroll</th>
                                             <th>Tanggal</th>
                                             <th>Penerima</th>
-                                            <th>Perihal</th>
+                                            <th>Bulan</th>
+                                            <th>Nominal</th>
                                             <th>Pilihan/Aksi</th>
                                         </tr>
                                     </thead>
                                     
                                     <tbody>
                                         <tr>
-                                            <td>1</td>
-                                            <td>122/PI/Surat Praktik Industri/VII/2017</td>
-                                            <td>24-07-2017</td>
-                                            <td>Politeknik Negeri Banyuwangi</td>
-                                            <td>Balasan Surat Praktik Industri</td>
+                                            <td>734</td>
+                                            <td>1 Juli 2017</td>
+                                            <td>Luqman</td>
+                                            <td>Juni</td>
+                                            <td>2000000</td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
-                                                    <a href="ubah-outbox.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
+                                                    <a href="edit-payroll.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
                                                     <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div >
                                                 </div>
@@ -614,19 +613,96 @@
                                                     </div>
                                                 </div>
                                             </td>
-
                                         </tr>
 
                                         <tr>
-                                            <td>2</td>
-                                            <td>123/KK/Surat Keterangan Kerja</td>
-                                            <td>18-07-2017</td>
-                                            <td>Poliwangi</td>
-                                            <td>Surat Keterangan Kerja</td>
+                                            <td>733</td>
+                                            <td>1 Juli 2017</td>
+                                            <td>Beni</td>
+                                            <td>Juni</td>
+                                            <td>2000000</td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
-                                                        <a href="ubah-outbox.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
+                                                        <a href="edit-payroll.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
+                                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                    </div>
+                                                </div>
+
+                                                    <!-- Modal -->
+                                                <div class="modal fade" id="myModal" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        
+                                                    <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                                                            </div>
+
+                                                            <div class="modal-body">
+                                                                    <h4>Apakah anda ingin menghapus surat ini?</h4>
+                                                            </div>
+
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>732</td>
+                                            <td>1 Juli 2017</td>
+                                            <td>Imaniar</td>
+                                            <td>Juni</td>
+                                            <td>2000000</td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="text-center">
+                                                        <a href="edit-payroll.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
+                                                        <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                    </div>
+                                                </div>
+
+                                                    <!-- Modal -->
+                                                <div class="modal fade" id="myModal" role="dialog">
+                                                    <div class="modal-dialog">
+                                                        
+                                                    <!-- Modal content-->
+                                                    <div class="modal-content">
+                                                        <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                                                        </div>
+
+                                                        <div class="modal-body">
+                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
+                                                        </div>
+
+                                                        <div class="modal-footer">
+                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                        </div>
+                                                    </div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                        </tr>
+
+                                        <tr>
+                                            <td>731</td>
+                                            <td>1 Juli 2017</td>
+                                            <td>Ibnu</td>
+                                            <td>Juni</td>
+                                            <td>2500000</td>
+                                            <td>
+                                                <div class="row">
+                                                    <div class="text-center">
+                                                        <a href="edit-payroll.html"><button type="button" class="btn btn-success btn-xs">Ubah</button></a>
                                                         <button type="button" class="btn btn-danger btn-xs" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div>
                                                 </div>
