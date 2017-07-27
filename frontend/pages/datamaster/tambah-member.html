@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Jquery DataTable | Bootstrap Based Admin Template - Material Design</title>
+    <title>Form Examples | Bootstrap Based Admin Template - Material Design</title>
     <!-- Favicon-->
     <link rel="icon" href="../../favicon.ico" type="image/x-icon">
 
@@ -21,8 +21,8 @@
     <!-- Animation Css -->
     <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- JQuery DataTable Css -->
-    <link href="../../plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+    <!-- Sweet Alert Css -->
+    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
@@ -299,18 +299,19 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
-                    <li>
-                        <a href="../../index.html">
+                    <li class="#">
+                        <a href="index.html">
                             <i class="material-icons">home</i>
-                            <span>Home</span>
+                            <span>HOME</span>
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/typography.html">
+                        <a href="pages/typography.html">
                             <i class="material-icons">text_fields</i>
                             <span>Typography</span>
                         </a>
                     </li>
+                     </li>
                             <li>
                                 <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">widgets </i>
@@ -325,6 +326,7 @@
                                     </li>
                                 </ul>
                             </li>
+
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">swap_calls</i>
@@ -349,19 +351,18 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                            <li>
                                 <a href="../../pages/data-master/klasifikasi-surat.html">Klasifikasi Surat</a>
                             </li>
                             <li>
-                                <a href="../../pages/tables/normal-tables.html">Data Proyek</a>
+                                <a href="../../pages/data-master/normal-tables.html">Data Proyek</a>
                             </li>
                             <li>
-                                <a href="../../pages/tables/editable-table.html">Data Kontak</a>
+                                <a href="../../pages/data-master/editable-table.html">Data Kontak</a>
+                            </li>
+                            <li>
+                                <a href="../../pages/data-master/user.html">User</a>
                             </li>
                             <li class="active">
-                                <a href="../../pages/data-master/User.html">User</a>
-                            </li>
-                            <li>
                                 <a href="../../pages/data-master/member.html">Member</a>
                             </li>
                         </ul>
@@ -527,174 +528,62 @@
     </section>
 
     <section class="content">
-            <!-- Basic Examples -->
+        <div class="container-fluid">
+<!-- Horizontal Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <div class="text-center"><h1>
-                                User
-                            </h1>
-                            </div>
-                            <div class="body">
-                            <div class="button-info">
-                                <a href="tambah-user.html"><button type="button" class="btn btn-primary waves-effect">Tambah</button></a>
-                            </div>
+                            <h2>
+                                <strong>Tambah member</strong>
+                            </h2>
+                            
                         </div>
+
                         <div class="body">
-                            <div class="table-responsive">
-                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                    <thead>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Username</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Role</th>
-                                            <th>Aksi</th>
-                                            
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td>1</td>
-                                            <td>admin</td>
-                                            <td>Administrator</td>
-                                            <td>Super Admin</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                        
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-                                                
-                                                  <!-- Modal content-->
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                      <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                    </div>
-
-                                                    <div class="modal-body">
-                                                      <p>Hapus user ? </p>
-                                                    </div>
-
-                                                    <div class="modal-footer">
-                                                     <button type="button" class="btn btn-default" data-dismiss="modal">Hapus</button></a>
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                    </div>
-                                                  </div>    
-                                                </div>
-                                              </div>
-                                            </td>
-                                        </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>persuratan</td>
-                                            <td>Persuratan</td>
-                                            <td>Persuratan</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog">
-                                            
-                                              <!-- Modal content-->
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                </div>
-
-                                                <div class="modal-body">
-                                                  <p>Hapus klasifikasi ? </p>
-                                                </div>
-
-                                                <div class="modal-footer">
-                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Hapus</button></a>
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                </div>
-                                              </div>    
+                            <form class="form-horizontal">
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">NAma Lengkap</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Lengkap">
                                             </div>
-                                          </div>
-                                             </td>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        </tr>
-                                         <tr>
-                                            <td>3</td>
-                                            <td>ibnu</td>
-                                            <td>Ibnu Shodiqin</td>
-                                            <td>Manager</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                            
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog">
-                                            
-                                              <!-- Modal content-->
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                  <p>Hapus klasifikasi ? </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Hapus</button></a>
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                </div>
-                                              </div>    
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Jabatan</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <div class="form-line">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Jabatan">
                                             </div>
-                                          </div>
-                                             </td>
-                                        </tr>
+                                        </div>
+                                    </div>
+                                </div>
 
-                                        <tr>
-                                            <td>4</td>
-                                            <td>faiz</td>
-                                            <td>Faiz Alqurni</td>
-                                            <td>Manager</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                            
-                                          <!-- Modal -->
-                                          <div class="modal fade" id="myModal" role="dialog">
-                                            <div class="modal-dialog">
-                                            
-                                              <!-- Modal content-->
-                                              <div class="modal-content">
-                                                <div class="modal-header">
-                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                  <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                </div>
-                                                <div class="modal-body">
-                                                  <p>Hapus klasifikasi ? </p>
-                                                </div>
-                                                <div class="modal-footer">
-                                                 <button type="button" class="btn btn-default" data-dismiss="modal">Hapus</button></a>
-                                                  <button type="button" class="btn btn-default" data-dismiss="modal">Batal</button>
-                                                </div>
-                                              </div>    
-                                            </div>
-                                          </div>
-                                             </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
+                               <div class="text-center">
+                                <div class="body">
+                                    <div class="button-info">
+                                    <a href="#"><button type="button" class="btn btn-success waves-effect">Simpan</button></a>
+                                    <a href="member.html"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
+                                    </div>
+                                </div>                                
+                               </div>
+                            </form>
                         </div>
                     </div>
                 </div>
-            </div>            
-        </div>
+            </div>
+            <!-- #END# Horizontal Layout -->
+              </div>
     </section>
-    <!-- #END# Basic Examples -->
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -711,20 +600,8 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
-    <!-- Jquery DataTable Plugin Js -->
-    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
-    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
-    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
-
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
-    <script src="../../js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
