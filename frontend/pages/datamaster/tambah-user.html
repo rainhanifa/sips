@@ -23,6 +23,8 @@
 
     <!-- Sweet Alert Css -->
     <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
@@ -275,7 +277,7 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/ifa.JPEG" width="48" height="48" alt="User" />
+                    <img src="../../images/user1.JPEG" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">ILLIYIN STUDIO</div>
@@ -301,14 +303,14 @@
                     <li class="header">MAIN NAVIGATION</li>
                     <li class="#">
                         <a href="index.html">
-                            <i class="material-icons">home</i>
-                            <span>HOME</span>
+                            <i class="material-icons">perm_identity</i>
+                            <span>Login</span>
                         </a>
                     </li>
                     <li>
                         <a href="pages/typography.html">
                             <i class="material-icons">text_fields</i>
-                            <span>Typography</span>
+                            <span>Dashboard</span>
                         </a>
                     </li>
                      </li>
@@ -359,11 +361,15 @@
                             <li>
                                 <a href="editable-table.html">Data Kontak</a>
                             </li>
-                            <li class="active">
-                                <a href="user.html">User</a>
+                            
+                            <li>
+                                <li class="active">
+                                 <a href="user.html">User</a>
+                                 </li>
                             </li>
                             <li>
                                 <a href="member.html">Member</a>
+
                             </li>
                         </ul>
                     </li>
@@ -581,23 +587,26 @@
                                     </div>
                                 </div>
 
+                                <div class="body">
+                            <form class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Role</label>
+                                        <label for="email_address_2">Roler</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Klasifiksi">
-                                            </div>
+                                                <select  name=”Role”>
+                                                   <option>Super Admin</option>
+                                                   <option>Persuratan</option>
+                                                   <option>Manager</option>
+                                                </select >
                                         </div>
                                     </div>
-                                </div>
 
                                <div class="text-center">
                                 <div class="body">
                                     <div class="button-info">
-                                    <a href="#"><button type="button" class="btn btn-success waves-effect">Simpan</button></a>
+                                    <a href="user.html"><button type="button" class="btn btn-success waves-effect">Simpan</button></a>
                                     <a href="user.html"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
                                     </div>
                                 </div>                                
@@ -625,6 +634,8 @@
 
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
+     <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
