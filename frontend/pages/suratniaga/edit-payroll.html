@@ -24,6 +24,12 @@
     <!-- Sweet Alert Css -->
     <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
+    <!-- Wait Me Css -->
+    <link href="../../plugins/waitme/waitMe.css" rel="stylesheet" />
+
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
@@ -32,9 +38,6 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
-
-    <!-- Bootstrap Material Datetime Picker Css -->
-    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -566,28 +569,16 @@
                                         </div>
                                     </div>
                                 </div>
-                        <!-- Tanggal -->
+                        <!-- Bulan -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Bulan</label>
+                                        <label for="bulan">Bulan</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                                     
-                                           <select>
-                                                <option>Januari 2017</option>
-                                                <option>Februari 2017</option>
-                                                <option>Maret 2017</option>
-                                                <option>April 2017</option>
-                                                <option>Mei 2017</option>
-                                                <option>Juni 2017</option>  
-                                                <option>Juli 2017</option>
-                                                <option>Agustus 2017</option>
-                                                <option>September 2017</option>
-                                                <option>Oktober 2017</option>
-                                                <option>November 2017</option>
-                                                <option>Desember 2017</option>
-                                            </select>
+                                            <div class="form-line">
+                                                <input type="text" class="datepicker form-control" placeholder="Pilih Bulan">
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -634,17 +625,31 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
-    <!-- Select Plugin Js -->
-    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+    <!-- Autosize Plugin Js -->
+    <script src="../../plugins/autosize/autosize.js"></script>
+
+    <!-- Moment Plugin Js -->
+    <script src="../../plugins/momentjs/moment.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/forms/basic-form-elements.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
 
-    <!-- Bootstrap Material Datetime Picker Plugin Js -->
-    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
+    <script type="text/javascript">
+        //Datetimepicker plugin
+        $('.datepicker').bootstrapMaterialDatePicker({
+            format: 'MM/YYYY',
+            clearButton: true,
+            weekStart: 1,
+            time: false
+        });
+    </script>
 </body>
 
 </html>
