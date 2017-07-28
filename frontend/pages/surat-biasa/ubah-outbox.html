@@ -24,6 +24,9 @@
     <!-- Sweet Alert Css -->
     <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
 
+    <!-- Bootstrap Select Css -->
+    <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
@@ -336,13 +339,13 @@
                         </a>
                     <ul class="ml-menu">
                             <li>
-                                <a href="pages/Sniaga/Invoice.html">Invoice</a>
+                                <a href="pages/suratniaga/Invoice.html">Invoice</a>
                             </li>
                             <li>
-                                <a href="pages/Sniaga/payroll.html">Payroll</a>
+                                <a href="pages/suratniaga/payroll.html">Payroll</a>
                             </li>
                             <li>
-                                <a href="pages/Sniaga/receipt.html">Receipt</a>
+                                <a href="pages/suratniaga/receipt.html">Receipt</a>
                             </li>
                            
                     </ul>
@@ -362,6 +365,12 @@
                             </li>
                             <li>
                                 <a href="pages/datamaster/datakontak.html">Data kontak</a>
+                            </li>
+                            <li>
+                                <a href="../datamaster/user.html">User</a>
+                            </li>
+                            <li>
+                                <a href="../datamaster/member.html">Member</a>
                             </li>
                 </ul>
             </div>
@@ -557,16 +566,11 @@
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                                <div class="dropdown">
-                                                    <button class="btn btn-default dropdown-toggle" type="button" data-toggle="dropdown">Kategori
-                                                        <span class="caret"></span></button>
-                                                            <ul class="dropdown-menu">
-                                                                <li class="dropdown-header">Kategori</li>
-                                                                <li><a href="#">PI</a></li>
-                                                                <li><a href="#">KK</a></li>
-                                                                <li><a href="#">SP</a></li>
-                                                            </ul>
-                                                </div>
+                                                <select>
+                                                    <option>PI</option>
+                                                    <option>KK</option>
+                                                    <option>SP</option>
+                                                </select>
                                         </div>
                                     </div>
                                 </div>
