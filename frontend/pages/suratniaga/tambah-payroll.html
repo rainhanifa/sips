@@ -27,6 +27,9 @@
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
@@ -545,6 +548,7 @@
                             </h2>
                             
                         </div>
+                        <!-- Nama Member -->
                         <div class="body">
                             <form class="form-horizontal">
                                 <div class="row clearfix">
@@ -562,10 +566,32 @@
                                         </div>
                                     </div>
                                 </div>
-                        </div>
-
-                               
-
+                        <!-- Tanggal -->
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="email_address_2">Bulan</label>
+                                    </div>
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                                     
+                                           <select>
+                                                <option>Januari 2017</option>
+                                                <option>Februari 2017</option>
+                                                <option>Maret 2017</option>
+                                                <option>April 2017</option>
+                                                <option>Mei 2017</option>
+                                                <option>Juni 2017</option>  
+                                                <option>Juli 2017</option>
+                                                <option>Agustus 2017</option>
+                                                <option>September 2017</option>
+                                                <option>Oktober 2017</option>
+                                                <option>November 2017</option>
+                                                <option>Desember 2017</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                </div>
+                                        <!-- Nominal -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nominal</label>
@@ -573,12 +599,12 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Penerima">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nominal">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                        <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">
                                         <a href="payroll.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
@@ -611,6 +637,9 @@
 
     <!-- Select Plugin Js -->
     <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

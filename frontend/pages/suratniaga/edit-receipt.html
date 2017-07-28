@@ -27,6 +27,9 @@
     <!-- Bootstrap Select Css -->
     <link href="../../plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
 
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
 
@@ -535,17 +538,20 @@
     <section class="content">
         <div class="container-fluid">
 
-        <!-- Form Tambah Surat -->
+        <!-- Form Edit Gaji -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <strong>Edit Kwitansi</strong>
+                                <strong>Edit Data Kwitansi</strong>
                             </h2>
                             
                         </div>
-                        <div class="row clearfix">
+                        <!-- Nama Member -->
+                        <div class="body">
+                            <form class="form-horizontal">
+                                <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal Surat</label>
                                     </div>
@@ -557,7 +563,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                        <!-- Nama Penerima -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama</label>
@@ -565,7 +571,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Penerima">
                                             </div>
                                         </div>
                                     </div>
@@ -583,7 +589,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                        <!-- Nominal -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nominal</label>
@@ -591,12 +597,12 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Penerima">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nominal">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                                        <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">
                                         <a href="receipt.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
@@ -626,6 +632,9 @@
 
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
+
+    <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>

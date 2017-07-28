@@ -32,6 +32,9 @@
 
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+
+    <!-- Bootstrap Material Datetime Picker Css -->
+    <link href="../../plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 </head>
 
 <body class="theme-red">
@@ -541,23 +544,27 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <strong>Tambah Kwitansi</strong>
+                                <strong>Tambah Data Kwitansi</strong>
                             </h2>
                             
                         </div>
-                        <div class="row clearfix">
+                        <!-- Nama Member -->
+                        <div class="body">
+                            <form class="form-horizontal">
+                                <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal Surat</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="date" id="Tanggal" class="form-control" placeholder="Masukkan Tanggal">
+                                                <input type="date" id="Tanggal" class="form-control" >
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
+                        
+                                        <!-- Nama Penerima -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama</label>
@@ -565,12 +572,13 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama">
+                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Penerima">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <!-- Keterangan -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Keterangan</label>
@@ -583,7 +591,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                        <!-- Nominal -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nominal</label>
@@ -596,7 +604,7 @@
                                         </div>
                                     </div>
                                 </div>
-
+                                        <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">
                                         <a href="receipt.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
@@ -632,6 +640,9 @@
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>
+
+   <!-- Bootstrap Material Datetime Picker Plugin Js -->
+    <script src="../../plugins/bootstrap-material-datetimepicker/js/bootstrap-material-datetimepicker.js"></script>
 </body>
 
 </html>
