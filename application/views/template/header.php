@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
 
+
     <title>Sistem informasi Persuratan </title>
 
     <!-- Favicon-->
@@ -29,7 +30,6 @@
     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="<?php echo base_url('assets/')?>plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
 
-
      <!-- Wait Me Css -->
     <link href="<?php echo base_url('assets/')?>plugins/waitme/waitMe.css" rel="stylesheet" />
 
@@ -39,6 +39,7 @@
     <!-- JQuery DataTable Css -->
     <link href="<?php echo base_url('assets/')?>plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
+
      <!-- JQuery DataTable Css -->
     <link href="<?php echo base_url('assets/')?>plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
 
@@ -47,7 +48,6 @@
 
      <!-- Bootstrap Select Css -->
     <link href="<?php echo base_url('assets/')?>plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
-
 
     <!-- Custom Css -->
     <link href="<?php echo base_url('assets/')?>css/style.css" rel="stylesheet">
@@ -77,10 +77,10 @@
     <!-- Overlay For Sidebars -->
 
 
+
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
    
-
     <div class="overlay"></div>
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
@@ -106,6 +106,7 @@
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
 
+
                     <!-- Call Search -->
                     
                     <!-- #END# Call Search -->
@@ -130,7 +131,6 @@
 
                     <img src="<?php echo base_url('assets/')?>images/user1.JPEG" width="48" height="48" alt="User" />
 
-                </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
                     <div class="email">hello@illiyin.co</div>
@@ -162,11 +162,13 @@
                         </a>
                     </li>
                     <li>
+
+                        <a href="../dashboard.html">
+
                             <i class="material-icons">text_fields</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-
 
                     <li class="active">
                             <a href="javascript:void(0);" class="menu-toggle">
@@ -212,27 +214,21 @@
                         <ul class="ml-menu">
                             <li>
 
-                            <li>
-                             
-
                                 <a href="<?php echo base_url('klasifikasi')?>">Klasifikasi Surat</a>
-                            </li>
                             <li>
                                 <a href="<?php echo base_url('proyek')?>">Data proyek</a>
                             </li>
                             <li>
-                                <a href="kontak.html">Data Kontak</a>
+                                <a href="<?php echo base_url('proyek')?>">Data Kontak</a>
                             </li>
                             <li>
-                                <a href="user.html">User</a>
+                                <a href="<?php echo base_url('user')?>">User</a>
+
                             </li>
                             <li>
                                 <a href="<?php echo base_url('member')?>">Member</a>
                             </li>
-
-                        </ul>
                     </li>
-
                 </ul>
             </div>
             <!-- #Menu -->
@@ -254,5 +250,6 @@
         <!-- #END# Right Sidebar -->
     </section>
 
+    </section>
     </section>
 
