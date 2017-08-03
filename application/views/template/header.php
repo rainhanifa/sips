@@ -4,7 +4,9 @@
 <head>
     <meta charset="UTF-8">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Tovia Okta</title>
+
+    <title>Sistem informasi Persuratan </title>
+
     <!-- Favicon-->
     <link rel="icon" href="<?php echo base_url('assets/')?>favicon.ico" type="image/x-icon">
 
@@ -21,14 +23,31 @@
     <!-- Animation Css -->
     <link href="<?php echo base_url('assets/')?>plugins/animate-css/animate.css" rel="stylesheet" />
 
+    <!-- Sweet Alert Css -->
+    <link href="<?php echo base_url('assets/')?>plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+
     <!-- Bootstrap Material Datetime Picker Css -->
     <link href="<?php echo base_url('assets/')?>plugins/bootstrap-material-datetimepicker/css/bootstrap-material-datetimepicker.css" rel="stylesheet" />
+
 
      <!-- Wait Me Css -->
     <link href="<?php echo base_url('assets/')?>plugins/waitme/waitMe.css" rel="stylesheet" />
 
+    <!-- Bootstrap Select Css -->
+    <link href="<?php echo base_url('assets/')?>plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
     <!-- JQuery DataTable Css -->
     <link href="<?php echo base_url('assets/')?>plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+     <!-- JQuery DataTable Css -->
+    <link href="<?php echo base_url('assets/')?>plugins/jquery-datatable/skin/bootstrap/css/dataTables.bootstrap.css" rel="stylesheet">
+
+    <!-- Wait Me Css -->
+    <link href="<?php echo base_url('assets/')?>plugins/waitme/waitMe.css" rel="stylesheet" />
+
+     <!-- Bootstrap Select Css -->
+    <link href="<?php echo base_url('assets/')?>plugins/bootstrap-select/css/bootstrap-select.css" rel="stylesheet" />
+
 
     <!-- Custom Css -->
     <link href="<?php echo base_url('assets/')?>css/style.css" rel="stylesheet">
@@ -57,9 +76,24 @@
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
 
+
     <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
    
+
+    <div class="overlay"></div>
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+    <div class="search-bar">
+        <div class="search-icon">
+            <i class="material-icons">search</i>
+        </div>
+        <input type="text" placeholder="START TYPING...">
+        <div class="close-search">
+            <i class="material-icons">close</i>
+        </div>
+    </div>
+
     <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
@@ -71,6 +105,7 @@
             </div>
             <div class="collapse navbar-collapse" id="navbar-collapse">
                 <ul class="nav navbar-nav navbar-right">
+
                     <!-- Call Search -->
                     
                     <!-- #END# Call Search -->
@@ -82,6 +117,7 @@
                    
                 </ul>
             </div>
+
         </div>
     </nav>
     <!-- #Top Bar -->
@@ -91,11 +127,14 @@
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
+
                     <img src="<?php echo base_url('assets/')?>images/user1.JPEG" width="48" height="48" alt="User" />
+
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
                     <div class="email">hello@illiyin.co</div>
+
                     <div class="btn-group user-helper-dropdown">
                         <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
                         <ul class="dropdown-menu pull-right">
@@ -114,6 +153,7 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
+
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
                         <a href="../../index.html">
@@ -122,57 +162,63 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../../pages/typography.html">
                             <i class="material-icons">text_fields</i>
                             <span>Dashboard</span>
                         </a>
                     </li>
-                            <li>
-                                <a href="javascript:void(0);" class="menu-toggle">
-                                <i class="material-icons">widgets </i>
-                                    <span>Surat Biasa</span>
-                                </a>
-                                <ul class="ml-menu">
-                                     <li>
-                                        <a href="../surat-biasa/inbox.html">Surat Masuk (inbox)</a>
-                                    </li>
-                                    <li>
-                                        <a href="../surat-biasa/outbox.html">Surat Keluar (outbox)</a>
-                                    </li>
-                                </ul>
-                            </li>
-                    <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">swap_calls</i>
-                            <span>Surat Niaga</span>
-                        </a>
-                        <ul class="ml-menu">
-                            <li>
-                                <a href="../suratniaga/invoice.html">Invoice</a>
-                            </li>
-                            <li>
-                                <a href="<?php echo base_url('payroll')?>">Payroll</a>
-                            </li>
-                            <li>
-                                <a href="../suratniaga/receipt.html">Receipt</a>
-                            </li>                            
-                        </ul>
-                    </li>
+
 
                     <li class="active">
+                            <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">email</i>
+                                    <span>Surat Biasa</span>
+                            </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="<?php echo base_url('inbox')?>">Surat Masuk (Inbox)</a>
+                                    </li>
+                                        
+                                    <li class="active">
+                                        <a href="<?php echo base_url('outbox')?>">Surat Keluar (Outbox)</a>
+                                    </li>   
+                                </ul>
+                    </li>
+
+                    <li>
+                    
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">monetization_on</i>
+                            <span>Surat Niaga</span>
+                        </a>
+                            <ul class="ml-menu">
+                                    <li>
+                                        <a href="<?php echo base_url('invoice')?>">Invoice</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('payroll')?>">Payroll</a>
+                                    </li>
+                                    <li>
+                                        <a href="<?php echo base_url('receipt')?>">Receipt</a>
+                                    </li>     
+                            </ul>
+                    </li>
+                    
+
+                    <li>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>Data Master</span>
                         </a>
                         <ul class="ml-menu">
                             <li>
+
                             <li>
                              
 
                                 <a href="<?php echo base_url('klasifikasi')?>">Klasifikasi Surat</a>
                             </li>
                             <li>
-                                <a href="normal-tables.html">Data Proyek</a>
+                                <a href="<?php echo base_url('proyek')?>">Data proyek</a>
                             </li>
                             <li>
                                 <a href="kontak.html">Data Kontak</a>
@@ -183,8 +229,10 @@
                             <li>
                                 <a href="<?php echo base_url('member')?>">Member</a>
                             </li>
+
                         </ul>
                     </li>
+
                 </ul>
             </div>
             <!-- #Menu -->
@@ -200,7 +248,11 @@
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
+
         <!-- Right Sidebar -->
        
         <!-- #END# Right Sidebar -->
     </section>
+
+    </section>
+
