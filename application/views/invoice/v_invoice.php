@@ -67,15 +67,14 @@
                                             <td>301 - Graphic Design</td>
                                             <td>Rp 900000</td>
                                             <td>
-                                            <center>
-                                    <div class="row">
-                                        <a href="<?php echo base_url('invoice')?>/edit">
-                                            <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                        </a>
+                                                <div class="row">
+                                                    <div class="text-center">
+                                                    <a href="<?php echo base_url('invoice')?>/ubah">
+                                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
+                                                    </a>
 
-                                        <a href="<?php echo base_url('invoice')?>">
-                                            <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
-                                        </a>
+                                                        <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                    </div>
                                                 </div>
 
                                                     <!-- Modal -->
@@ -94,17 +93,18 @@
                                                         </div>
 
                                                         <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                            <a href="<?php echo base_url('invoice')?>">
+                                                                <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
+                                                            </a>
+
+                                                            <a href="<?php echo base_url('invoice')?>">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                            </a>
                                                         </div>
                                                     </div>
                                                     </div>
                                                 </div>
                                     </div>
-                                            </center>
-                                            </td>
-                                        </tr>
-
                                         <tr>
                                             <td>2</td>
                                             <td>Ad/05/04/1997</td>
@@ -114,12 +114,11 @@
                                             <td>Rp 2000000</td>
                                             <td>
                                             <center>
-                                    <div class="row">
-                                        <a href="<?php echo base_url('invoice')?>/ubah">
-                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                        </a>
-                                        <a href="<?php echo base_url('invoice')?>">
-                                        <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                <div class="row">
+                                                    <a href="<?php echo base_url('invoice')?>/ubah">
+                                                    <button type="button" class="btn btn-primary waves-effect">Ubah</button>
+                                                    </a>
+                                                    <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
                                                 </div>
 
                                                     <!-- Modal -->
@@ -127,33 +126,36 @@
                                                     <div class="modal-dialog">
                                                         
                                                     <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                        </div>
+                                                        <div class="modal-content">
+                                                            <div class="modal-header">
+                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                                    <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                                                            </div>
 
-                                                        <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus data ini?</h4>
-                                                        </div>
+                                                            <div class="modal-body">
+                                                                    <h4>Apakah anda ingin menghapus data ini?</h4>
+                                                            </div>
 
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                            <div class="modal-footer">
+                                                                <a href="<?php echo base_url('invoice')?>">
+                                                                    <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
+                                                                </a>
+
+                                                                <a href="<?php echo base_url('invoice')?>">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
+                                                                </a>
+                                                            </div>
                                                         </div>
-                                                    </div>
                                                     </div>
                                                 </div>
-                                            </center>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
+                                        </center>
+                                    </td>
+                                </tr>
+                        </table>
                     </div>
                 </div>
             </div>
-            <!-- #END# Basic Examples -->
         </div>
-    </section>
+    </div>
+            <!-- #END# Basic Examples -->
+</section>

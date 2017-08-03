@@ -107,7 +107,7 @@
                                                 <div class="row">
                                                     <div class="text-center">
                                                         <a href="<?php echo base_url('outbox')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                        <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button></a>
+                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div>
                                                 </div>
 

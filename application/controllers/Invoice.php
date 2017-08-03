@@ -32,7 +32,7 @@ class Invoice extends CI_Controller {
 		$this->load->view('template/footer.php');
 	}
 
-	public function edit()
+	public function ubah()
 	{
 		$this->load->view('template/header.php');
 		$this->load->view('invoice/v_ubahinvoice.php');

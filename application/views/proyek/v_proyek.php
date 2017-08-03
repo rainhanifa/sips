@@ -71,11 +71,11 @@
                                                       <div class="modal-content">
                                                         <div class="modal-header">
                                                           <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                          <h4 class="modal-title">Konfirmasi Hapus</h4>
+                                                            <h4 class="modal-title">Konfirmasi Hapus</h4>
                                                         </div>
 
                                                         <div class="modal-body">
-                                                          <p>Apakah anda ingin menghapus data ini ? </p>
+                                                          <h4>Apakah anda ingin menghapus data ini ? </h4>
                                                         </div>
 
                                                         <div class="modal-footer">
@@ -95,31 +95,31 @@
                                                     <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
                                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-                                                
-                                                  <!-- Modal content-->
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                      <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                    </div>
+                                                    <!-- Modal -->
+                                                    <div class="modal fade" id="myModal" role="dialog">
+                                                      <div class="modal-dialog">
+                                                      
+                                                        <!-- Modal content-->
+                                                        <div class="modal-content">
+                                                          <div class="modal-header">
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                            <h4 class="modal-title">Konfirmasi Hapus</h4>
+                                                          </div>
 
-                                                    <div class="modal-body">
-                                                      <p>Apakah anda ingin menghapus data ini ? </p>
-                                                    </div>
+                                                          <div class="modal-body">
+                                                            <h4>Apakah anda ingin menghapus data ini ? </h4>
+                                                          </div>
 
-                                                    <div class="modal-footer">
-                                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-                                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                          <div class="modal-footer">
+                                                           <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
+                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                          </div>
+                                                        </div>    
+                                                      </div>
                                                     </div>
-                                                  </div>    
-                                                </div>
-                                              </div>
                                                  </td>
-
                                             </tr>
+
                                              <tr>
                                                 <td>3</td>
                                                 <td>133</td>
@@ -139,7 +139,7 @@
                                                       <h4 class="modal-title">Konfirmasi Hapus</h4>
                                                     </div>
                                                     <div class="modal-body">
-                                                      <p>Apakah anda ingin menghapus data ini ? </p>
+                                                      <h4>Apakah anda ingin menghapus data ini ? </h4>
                                                     </div>
                                                     <div class="modal-footer">
                                                      <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
