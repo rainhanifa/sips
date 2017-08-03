@@ -160,16 +160,16 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-                                <a href="../datamaster/klasifikasi-surat.html">Klasifikasi surat</a>
+                                <a href="<?php echo base_url('klasifikasi')?>">Klasifikasi surat</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('proyek')?>">Data proyek</a>
                             </li>
                             <li>
-                                <a href="../datamaster/kontak.html">Data kontak</a>
+                                <a href="<?php echo base_url('kontak')?>">Data kontak</a>
                             </li>
                             <li>
-                                <a href="../datamaster/user.html">User</a>
+                                <a href="<?php echo base_url('user')?>">User</a>
                             </li>
                             <li>
                                 <a href="<?php echo base_url('member')?>">Member</a>
