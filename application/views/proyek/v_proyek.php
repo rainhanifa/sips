@@ -1,17 +1,15 @@
     <section class="content">
-      <div class="container-fluid">
-        <div class="block-header">
-            <div class="text-center">
-                <h1>
-                    Data Proyek
-                </h1>
-            </div>
-        </div>
-            
+    <!-- Data Proyek -->
               <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
+                          <div class="text-center">
+                              <h1>
+                                  DATA PROYEK
+                              </h1>
+                          </div>
+            
                             <div class="body">
                                 <div class="button-demo">
                                     <a href="<?php echo base_url('proyek')?>/tambah"><button type="button" class="btn btn-success btn-lg"><b>Tambah</b></button></a>
@@ -157,6 +155,5 @@
                         </div>
                     </div>
                 </div>            
-            </div>
         </section>
     <!-- #END# Basic Examples -->
