@@ -137,6 +137,17 @@
             <div class="menu">
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
+
+            <?php
+                // mengambil controller yang aktif saat ini
+                $active_page    =   $this->router->fetch_class();
+
+                //jika $active_page = 'inbox'
+                    if($active_page == 'inbox')
+                        echo 'class="active"';
+                //atau secara singkat
+                    echo ($active_page == 'inbox') ? 'class="active"' : '';
+            ?>
                     <li>
                         <a href="../../index.html">
                              <i class="material-icons">perm_identity</i>
@@ -151,62 +162,62 @@
                         </a>
                     </li>
 
-                    <li class="active">
+                    <li <?php echo (($active_page == 'inbox')||($active_page == 'outbox')) ? 'class="active"' : ''; ?>>
                             <a href="javascript:void(0);" class="menu-toggle">
                                 <i class="material-icons">email</i>
                                     <span>Surat Biasa</span>
                             </a>
                                 <ul class="ml-menu">
-                                    <li>
+                                    <li <?php echo ($active_page == 'inbox') ? 'class="active"' : '';?>>
                                         <a href="<?php echo base_url('inbox')?>">Surat Masuk (Inbox)</a>
                                     </li>
                                         
-                                    <li class="active">
+                                    <li <?php echo ($active_page == 'outbox') ? 'class="active"' : '';?>>
                                         <a href="<?php echo base_url('outbox')?>">Surat Keluar (Outbox)</a>
                                     </li>   
                                 </ul>
                     </li>
 
-                    <li>
+                    <li <?php echo (($active_page == 'invoice')||($active_page == 'payroll')||($active_page == 'receipt')) ? 'class="active"' : ''; ?>>
                     
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">monetization_on</i>
                             <span>Surat Niaga</span>
                         </a>
                             <ul class="ml-menu">
-                                    <li>
+                                    <li <?php echo ($active_page == 'invoice') ? 'class="active"' : '';?>>
                                         <a href="<?php echo base_url('invoice')?>">Invoice</a>
                                     </li>
-                                    <li>
+                                    <li <?php echo ($active_page == 'payroll') ? 'class="active"' : '';?>>
                                         <a href="<?php echo base_url('payroll')?>">Payroll</a>
                                     </li>
-                                    <li>
+                                    <li <?php echo ($active_page == 'receipt') ? 'class="active"' : '';?>>
                                         <a href="<?php echo base_url('receipt')?>">Receipt</a>
                                     </li>     
                             </ul>
                     </li>
                     
 
-                    <li>
+                    <li <?php echo (($active_page == 'klasifikasi')||($active_page == 'proyek')||($active_page == 'user')||($active_page == 'member')) ? 'class="active"' : ''; ?>>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>Data Master</span>
                         </a>
                         <ul class="ml-menu">
-                            <li>
+                            <li <?php echo ($active_page == 'klasifikasi') ? 'class="active"' : '';?>>
                                 <a href="<?php echo base_url('klasifikasi')?>">Klasifikasi Surat</a>
                             </li>
-                            <li>
+                            <li <?php echo ($active_page == 'proyek') ? 'class="active"' : '';?>>
                                 <a href="<?php echo base_url('proyek')?>">Data proyek</a>
                             </li>
-                            <li>
-                                <a href="<?php echo base_url('proyek')?>">Data Kontak</a>
+                            <li <?php echo ($active_page == 'kontak') ? 'class="active"' : '';?>>
+                                <a href="<?php echo base_url('kontak')?>">Data Kontak</a>
                             </li>
-                            <li>
+                            <li <?php echo ($active_page == 'user') ? 'class="active"' : '';?>>
                                 <a href="<?php echo base_url('user')?>">User</a>
 
                             </li>
-                            <li>
+                            <li <?php echo ($active_page == 'member') ? 'class="active"' : '';?>>
                                 <a href="<?php echo base_url('member')?>">Member</a>
                             </li>
                         </ul>
