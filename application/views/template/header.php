@@ -76,9 +76,6 @@
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
 
-
-
-    <!-- #END# Overlay For Sidebars -->
     <!-- Search Bar -->
    
     <div class="overlay"></div>
@@ -103,22 +100,7 @@
                 <a href="javascript:void(0);" class="bars"></a>
                 <a class="navbar-brand" href="../../index.html">Sistem Informasi Persuratan</a>
             </div>
-            <div class="collapse navbar-collapse" id="navbar-collapse">
-                <ul class="nav navbar-nav navbar-right">
-
-
-                    <!-- Call Search -->
-                    
-                    <!-- #END# Call Search -->
-                    <!-- Notifications -->
-                   
-                    <!-- #END# Notifications -->
-                   
-                    <!-- #END# Tasks -->
-                   
-                </ul>
-            </div>
-
+            <div class="collapse navbar-collapse" id="navbar-collapse"></div>
         </div>
     </nav>
     <!-- #Top Bar -->
@@ -130,6 +112,7 @@
                 <div class="image">
 
                     <img src="<?php echo base_url('assets/')?>images/user1.JPEG" width="48" height="48" alt="User" />
+                </div>
 
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
@@ -153,7 +136,6 @@
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-
                     <li class="header">MAIN NAVIGATION</li>
                     <li>
                         <a href="../../index.html">
@@ -162,7 +144,6 @@
                         </a>
                     </li>
                     <li>
-
                         <a href="../dashboard.html">
 
                             <i class="material-icons">text_fields</i>
@@ -213,8 +194,8 @@
                         </a>
                         <ul class="ml-menu">
                             <li>
-
                                 <a href="<?php echo base_url('klasifikasi')?>">Klasifikasi Surat</a>
+                            </li>
                             <li>
                                 <a href="<?php echo base_url('proyek')?>">Data proyek</a>
                             </li>
@@ -228,6 +209,7 @@
                             <li>
                                 <a href="<?php echo base_url('member')?>">Member</a>
                             </li>
+                        </ul>
                     </li>
                 </ul>
             </div>
@@ -248,8 +230,5 @@
         <!-- Right Sidebar -->
        
         <!-- #END# Right Sidebar -->
-    </section>
-
-    </section>
     </section>
 
