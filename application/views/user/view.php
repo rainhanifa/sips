@@ -28,48 +28,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                    <?php
+                                        $nomor = 1;
+                                        foreach($list as $item){ ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>admin</td>
-                                            <td>Administrator</td>
-                                            <td>Super Admin</td>
+                                            <td><?php echo $nomor ?></td>
+                                            <td><?php echo $item['username'] ?></td>
+                                            <td>Nama</td>
+                                            <td><?php echo $item['role']?></td>
                                             <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('user/ubah')?>"> Ubah </a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>persuratan</td>
-                                            <td>Persuratan</td>
-                                            <td>Persuratan</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                             </td>
-
-                                        </tr>
-                                         <tr>
-                                            <td>3</td>
-                                            <td>ibnu</td>
-                                            <td>Ibnu Shodiqin</td>
-                                            <td>Manager</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                             </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>4</td>
-                                            <td>faiz</td>
-                                            <td>Faiz Alqurni</td>
-                                            <td>Manager</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="ubah-user.html"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                             </td>
-                                        </tr>
+                                    <?php 
+                                            } ?>
                                     </tbody>
                                 </table>
                             </div>

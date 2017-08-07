@@ -7,7 +7,7 @@
                         <div class="header">
                             <div class="text-center">
                                 <h1>
-                                    SURAT KELUAR (Outbox)
+                                    <?php echo $this->router->fetch_class();?>
                                 </h1>
                             </div>
                             <div class="body">
@@ -55,12 +55,16 @@
                                     </tfoot>
 
                                     <tbody>
+                                    <?php
+                                            $nomor = 1;
+                                            foreach ($outbox as $keluar) {
+                                    ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>122/PI/Surat Praktik Industri/VII/2017</td>
-                                            <td>24-07-2017</td>
-                                            <td>Politeknik Negeri Banyuwangi</td>
-                                            <td>Balasan Surat Praktik Industri</td>
+                                            <td><?php echo $nomor?></td>
+                                            <td><?php echo $keluar['no_surat']?></td>
+                                            <td><?php echo $keluar['tanggal']?></td>
+                                            <td><?php echo $keluar['penerima']?></td>
+                                            <td><?php echo $keluar['perihal']?></td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
@@ -68,70 +72,11 @@
                                                         <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div >
                                                 </div>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                    
-                                                    <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                            </div>
-
-                                                            <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
-                                                            </div>
-
-                                                            <div class="modal-footer">
-                                                                <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button></a>
-                                                                <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
                                             </td>
                                         </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>123/KK/Surat Keterangan Kerja</td>
-                                            <td>18-07-2017</td>
-                                            <td>Poliwangi</td>
-                                            <td>Surat Keterangan Kerja</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                        <a href="<?php echo base_url('outbox')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </div>
-
-                                                <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                    
-                                                    <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                            <div class="modal-header">
-                                                                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                            </div>
-
-                                                            <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
-                                                            </div>
-
-                                                            <div class="modal-footer">
-                                                                <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button></a>
-                                                                <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
-                                                            </div>
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php
+                                                $nomor++;
+                                        }?>
                                     </tbody>
                                 </table>
 
@@ -140,5 +85,28 @@
                     </div>
                 </div>
             </div>
-            <!-- #END# Surat Keluar -->
     </section>
+    <!-- #END# Surat Keluar -->
+
+    <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                </div>
+
+                <div class="modal-body">
+                    <h4>Apakah anda ingin menghapus surat ini?</h4>
+                </div>
+
+                <div class="modal-footer">
+                    <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button></a>
+                    <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
+                </div>
+            </div>
+        </div>
+    </div>

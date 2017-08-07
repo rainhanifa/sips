@@ -19,7 +19,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Kode Proyek">
+                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama Member">
                                             </div>
                                         </div>
                                     </div>

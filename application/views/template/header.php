@@ -1,3 +1,8 @@
+
+        <?php
+            // mengambil controller yang aktif saat ini
+            $active_page    =   $this->router->fetch_class();
+        ?>
 <!DOCTYPE html>
 <html>
 
@@ -138,16 +143,6 @@
                 <ul class="list">
                     <li class="header">MAIN NAVIGATION</li>
 
-            <?php
-                // mengambil controller yang aktif saat ini
-                $active_page    =   $this->router->fetch_class();
-
-                //jika $active_page = 'inbox'
-                    if($active_page == 'inbox')
-                        echo 'class="active"';
-                //atau secara singkat
-                    echo ($active_page == 'inbox') ? 'class="active"' : '';
-            ?>
                     <li>
                         <a href="../../index.html">
                              <i class="material-icons">perm_identity</i>

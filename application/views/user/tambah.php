@@ -71,8 +71,8 @@
                                <div class="text-center">
                                 <div class="body">
                                     <div class="button-info">
-                                    <a href="user.html"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
-                                    <a href="user.html"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
+                                    <a href="<?php echo base_url('user')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
+                                    <a href="<?php echo base_url('user')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
                                     </div>
                                 </div>                                
                                </div>
