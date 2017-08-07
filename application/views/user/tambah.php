@@ -12,7 +12,12 @@
                         </div>
 
                         <div class="body">
-                            <form class="form-horizontal">
+                        
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
+                            <form method="post" action="<?php echo base_url("user/tambah")?>" class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Username</label>
@@ -20,7 +25,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Username">
+                                                <input type="text" name="username" id="email_address_2" class="form-control" placeholder="Masukkan Username">
                                             </div>
                                         </div>
                                     </div>
@@ -33,7 +38,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="password"  class="form-control" placeholder="Masukkan Password">
+                                                <input type="password"  name="password"  class="form-control" placeholder="Masukkan Password">
                                             </div>
                                         </div>
                                     </div>
@@ -46,24 +51,23 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Lengkap">
+                                                <input type="text"  name="nama_lengkap" class="form-control" placeholder="Masukkan Nama Lengkap">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
                                 <div class="body">
-                            <form class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Roler</label>
+                                        <label for="email_address_2">Role</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                                <select  name=”Role”>
-                                                   <option>Super Admin</option>
-                                                   <option>Persuratan</option>
-                                                   <option>Manager</option>
+                                                <select name="user_role">
+                                                   <option value="1">Super Admin</option>
+                                                   <option value="2">Persuratan</option>
+                                                   <option value="3">Manager</option>
                                                 </select >
                                         </div>
                                     </div>
@@ -71,8 +75,8 @@
                                <div class="text-center">
                                 <div class="body">
                                     <div class="button-info">
-                                    <a href="<?php echo base_url('user')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
-                                    <a href="<?php echo base_url('user')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
+                                    <input type="submit" class="btn btn-primary waves-effect" value="Simpan" name="submit">
+                                    <a href="user.html"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
                                     </div>
                                 </div>                                
                                </div>

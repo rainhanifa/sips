@@ -15,6 +15,10 @@
                             </div>
                         </div>
                         <div class="body">
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -30,18 +34,19 @@
                                     <tbody>
                                     <?php
                                         $nomor = 1;
-                                        foreach($list as $item){ ?>
+                                        foreach($users as $user){ ?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
-                                            <td><?php echo $item['username'] ?></td>
-                                            <td>Nama</td>
-                                            <td><?php echo $item['role']?></td>
+                                            <td><?php echo $user['username'] ?></td>
+                                            <td><?php echo $user['nama_lengkap'] ?></td>
+                                            <td><?php echo $user['role']?></td>
                                             <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('user/ubah')?>"> Ubah </a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
                                             </td>
                                         </tr>
                                     <?php 
+                                        $nomor++;
                                             } ?>
                                     </tbody>
                                 </table>
