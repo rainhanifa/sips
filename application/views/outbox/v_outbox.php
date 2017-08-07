@@ -10,6 +10,7 @@
                                     <?php echo $this->router->fetch_class();?>
                                 </h1>
                             </div>
+
                             <div class="body">
                                 <div class="button-demo">
                                     <a href="<?php echo base_url('outbox')?>/tambah"><button type="button" class="btn btn-success btn-lg"><b>Tambah</b></button></a>
