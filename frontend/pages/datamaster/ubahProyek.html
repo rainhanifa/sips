@@ -1,12 +1,13 @@
-﻿<!DOCTYPE html>
+<!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
     <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
-    <title>Tambah Kontak</title>
+    <title>Sistem Informasi Persuratan</title>
     <!-- Favicon-->
-    <link rel="icon" href="../../favicon.ico" type="image/x-icon">
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
 
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
@@ -21,8 +22,8 @@
     <!-- Animation Css -->
     <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
 
-    <!-- Sweet Alert Css -->
-    <link href="../../plugins/sweetalert/sweetalert.css" rel="stylesheet" />
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
 
     <!-- Custom Css -->
     <link href="../../css/style.css" rel="stylesheet">
@@ -48,117 +49,139 @@
             <p>Please wait...</p>
         </div>
     </div>
-
     <!-- #END# Page Loader -->
     <!-- Overlay For Sidebars -->
-    <div class="overlay"></div>
-    <!-- #END# Overlay For Sidebars -->
     
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+   
+    <!-- #END# Search Bar -->
     <!-- Top Bar -->
     <nav class="navbar">
         <div class="container-fluid">
             <div class="navbar-header">
                 <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
                 <a href="javascript:void(0);" class="bars"></a>
-                <a class="navbar-brand" href="../../index.html">Sistem Informasi Persuratan Illiyin Studio</a>
+                <a class="navbar-brand" href="../../index.html">Sistem Informasi Persuratan</a>
             </div>
-           
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    
+                    <!-- #END# Call Search -->
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    
+                    <!-- #END# Tasks -->
+                </ul>
+            </div>
         </div>
     </nav>
     <!-- #Top Bar -->
     <section>
-      <!-- Left Sidebar -->
+        <!-- Left Sidebar -->
         <aside id="leftsidebar" class="sidebar">
             <!-- User Info -->
             <div class="user-info">
                 <div class="image">
-                    <img src="../../images/user1.jpeg" width="48" height="48" alt="User" />
+                    <img src="../../images/user1.JPEG" width="48" height="48" alt="User" />
                 </div>
                 <div class="info-container">
                     <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
                     <div class="email">hello@illiyin.co</div>
-                    
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <!-- #User Info -->
             <!-- Menu -->
             <div class="menu">
                 <ul class="list">
-                    <li class="header">Menu Utama</li>
-                        <a href="index.html">
-                            <i class="material-icons">person</i>
-                            <span>Login</span>
-                        </a>
+                    <li class="header">MAIN NAVIGATION</li>
                     <li>
-                        <a href="pages/typography.html">
-                            <i class="material-icons">home</i>
-                            <span>Dashboard</span>
+                        <a href="../../index.html">
+                            <i class="material-icons">perm_identity</i>
+                            <span>Login</span>
                         </a>
                     </li>
                     <li>
-                        <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">mail</i>
-                            <span>Surat Biasa</span>
+                        <a href="../../pages/typography.html">
+                            <i class="material-icons">text_fields</i>
+                            <span>Dashboard</span>
                         </a>
-                     <ul class="ml-menu">
+                    </li>
                             <li>
-                                <a href="../surat-biasa/inbox.html">Surat masuk/Inbox</a>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">email</i>
+                                    <span>Surat Biasa</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="../../surat-biasa/inbox.html">Surat Masuk (inbox)</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../surat-biasa/outbox.html">Surat Keluar (outbox)</a>
+                                    </li>
+                                </ul>
                             </li>
-                            <li>
-                                <a href="../surat-biasa/outbox.html">Surat keluar/ Outbox</a>
-                            </li>
-                    </ul>
-                             </li>
-
                     <li>
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">monetization_on</i>
+                            <i class="material-icons">swap_calls</i>
                             <span>Surat Niaga</span>
                         </a>
-                    <ul class="ml-menu">
+                        <ul class="ml-menu">
                             <li>
-                                <a href="../suratniaga/Invoice.html">Invoice</a>
+                                <a href="../suratniaga/invoice.html">Invoice</a>
                             </li>
                             <li>
                                 <a href="../suratniaga/payroll.html">Payroll</a>
                             </li>
                             <li>
                                 <a href="../suratniaga/receipt.html">Receipt</a>
-                            </li>
-                           
-                    </ul>
-                             </li>
-
-                    
+                            </li>                            
+                        </ul>
+                    </li>
                     <li class="active">
                         <a href="javascript:void(0);" class="menu-toggle">
-                            <i class="material-icons">swap_calls</i>
+                            <i class="material-icons">view_list</i>
                             <span>Data Master</span>
                         </a>
-                         <ul class="ml-menu">
+                        <ul class="ml-menu">
+                            
                             <li>
-                                <a href="../datamaster/Klasifikasi-surat.html">Klasifikasi surat</a>
-                            </li>
-                            <li>
-                                <a href="../datamaster/proyek.html">Data proyek</a>
+                                <a href="klasifikasi-surat.html">Klasifikasi Surat</a>
                             </li>
                             <li class="active">
-                                <a href="../datamaster/kontak.html">Data kontak</a>
-                            </li>
-                             <li>
-                                <a href="../datamaster/user.html">user</a>
+                                <a href="proyek.html">Data Proyek</a>
                             </li>
                             <li>
-                                <a href="../datamaster/member.html">member</a>
+                                <a href="kontak.html">Data Kontak</a>
+                            </li>
+                             <li>
+                                <a href="user.html">User</a>
+                            </li>
+                            <li>
+                                <a href="member.html">Member</a>
                             </li>
                         </ul>
                     </li>
+                </ul>
             </div>
             <!-- #Menu -->
             <!-- Footer -->
             <div class="legal">
                 <div class="copyright">
-                    &copy; 2016 - 2017 <a href="javascript:void(0);">Illiyin Studio</a>.
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">Sistem Informasi Persuratan</a>.
                 </div>
                 <div class="version">
                     <b>Version: </b> 1.0.5
@@ -167,45 +190,33 @@
             <!-- #Footer -->
         </aside>
         <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
         
+        <!-- #END# Right Sidebar -->
     </section>
+
     <section class="content">
-        <div class="container-fluid">
-<!-- Horizontal Layout -->
-            <div class="row clearfix">
+            <!-- Basic Examples -->
+             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <strong>Tambah Kontak</strong>
+                                <strong>Ubah Data Proyek</strong>
                             </h2>
                             
                         </div>
-
+                                        <!-- Nominal -->
                         <div class="body">
                             <form class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Nama</label>
+                                        <label for="email_address_2">Kode Proyek</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control">
-                                            </div>
-                                        </div>
-                                    </div>
-
-                                <div class="body">
-                            <form class="form-horizontal">
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Institusi</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control">
+                                                <input type="text" id="nominal" class="form-control" placeholder="Masukkan Kode Proyek">
                                             </div>
                                         </div>
                                     </div>
@@ -213,47 +224,29 @@
 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">No. Telepon</label>
+                                        <label for="email_address_2">Nama Proyek</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" >
+                                                <input type="text" id="nominal" class="form-control" placeholder="Masukkan Nama Proyek">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                     <label for="password_2">Email</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="password_2" class="form-control" >
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-
-
-                                <center>
+                                        <!-- Tombol Simpan dan Batal -->
+                                <div class="text-center">
                                     <div class="row">
-                                        <a href="kontak.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
-                                        <a href="kontak.html"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button></a>
+                                        <a href="proyek.html"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
+                                        <a href="proyek.html"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
                                     </div>
-                                </center>
-                                
                                 </div>
                             </form>
                         </div>
                     </div>
                 </div>
             </div>
-            <!-- #END# Horizontal Layout -->
-              </div>
-    </section>
+    <!-- #END# Basic Examples -->
 
     <!-- Jquery Core Js -->
     <script src="../../plugins/jquery/jquery.min.js"></script>
@@ -270,8 +263,20 @@
     <!-- Waves Effect Plugin Js -->
     <script src="../../plugins/node-waves/waves.js"></script>
 
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
     <!-- Custom Js -->
     <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/tables/jquery-datatable.js"></script>
 
     <!-- Demo Js -->
     <script src="../../js/demo.js"></script>

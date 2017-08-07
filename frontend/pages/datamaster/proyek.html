@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" name="viewport">
+    <title>Sistem Informasi Persuratan</title>
+    <!-- Favicon-->
+    <link rel="icon" href="favicon.ico" type="image/x-icon">
+
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:400,700&subset=latin,cyrillic-ext" rel="stylesheet" type="text/css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" type="text/css">
+
+    <!-- Bootstrap Core Css -->
+    <link href="../../plugins/bootstrap/css/bootstrap.css" rel="stylesheet">
+
+    <!-- Waves Effect Css -->
+    <link href="../../plugins/node-waves/waves.css" rel="stylesheet" />
+
+    <!-- Animation Css -->
+    <link href="../../plugins/animate-css/animate.css" rel="stylesheet" />
+
+    <!-- Morris Chart Css-->
+    <link href="../../plugins/morrisjs/morris.css" rel="stylesheet" />
+
+    <!-- Custom Css -->
+    <link href="../../css/style.css" rel="stylesheet">
+
+    <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
+    <link href="../../css/themes/all-themes.css" rel="stylesheet" />
+</head>
+
+<body class="theme-red">
+    <!-- Page Loader -->
+    <div class="page-loader-wrapper">
+        <div class="loader">
+            <div class="preloader">
+                <div class="spinner-layer pl-red">
+                    <div class="circle-clipper left">
+                        <div class="circle"></div>
+                    </div>
+                    <div class="circle-clipper right">
+                        <div class="circle"></div>
+                    </div>
+                </div>
+            </div>
+            <p>Please wait...</p>
+        </div>
+    </div>
+    <!-- #END# Page Loader -->
+    <!-- Overlay For Sidebars -->
+    
+    <!-- #END# Overlay For Sidebars -->
+    <!-- Search Bar -->
+   
+    <!-- #END# Search Bar -->
+    <!-- Top Bar -->
+    <nav class="navbar">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <a href="javascript:void(0);" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar-collapse" aria-expanded="false"></a>
+                <a href="javascript:void(0);" class="bars"></a>
+                <a class="navbar-brand" href="../../index.html">Sistem Informasi Persuratan</a>
+            </div>
+            <div class="collapse navbar-collapse" id="navbar-collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <!-- Call Search -->
+                    
+                    <!-- #END# Call Search -->
+                    <!-- #END# Notifications -->
+                    <!-- Tasks -->
+                    
+                    <!-- #END# Tasks -->
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <!-- #Top Bar -->
+    <section>
+        <!-- Left Sidebar -->
+        <aside id="leftsidebar" class="sidebar">
+            <!-- User Info -->
+            <div class="user-info">
+                <div class="image">
+                    <img src="../../images/user1.JPEG" width="48" height="48" alt="User" />
+                </div>
+                <div class="info-container">
+                    <div class="name" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Sistem Informasi Persuratan</div>
+                    <div class="email">hello@illiyin.co</div>
+                    <div class="btn-group user-helper-dropdown">
+                        <i class="material-icons" data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">keyboard_arrow_down</i>
+                        <ul class="dropdown-menu pull-right">
+                            <li><a href="javascript:void(0);"><i class="material-icons">person</i>Profile</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">group</i>Followers</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">shopping_cart</i>Sales</a></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">favorite</i>Likes</a></li>
+                            <li role="seperator" class="divider"></li>
+                            <li><a href="javascript:void(0);"><i class="material-icons">input</i>Sign Out</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            <!-- #User Info -->
+            <!-- Menu -->
+            <div class="menu">
+                <ul class="list">
+                    <li class="header">MAIN NAVIGATION</li>
+                    <li>
+                        <a href="../../index.html">
+                            <i class="material-icons">perm_identity</i>
+                            <span>Login</span>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="../../pages/typography.html">
+                            <i class="material-icons">text_fields</i>
+                            <span>Dashboard</span>
+                        </a>
+                    </li>
+                            <li>
+                                <a href="javascript:void(0);" class="menu-toggle">
+                                <i class="material-icons">email</i>
+                                    <span>Surat Biasa</span>
+                                </a>
+                                <ul class="ml-menu">
+                                    <li>
+                                        <a href="../../surat-biasa/inbox.html">Surat Masuk (inbox)</a>
+                                    </li>
+                                    <li>
+                                        <a href="../../surat-biasa/outbox.html">Surat Keluar (outbox)</a>
+                                    </li>
+                                </ul>
+                            </li>
+                    <li>
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">swap_calls</i>
+                            <span>Surat Niaga</span>
+                        </a>
+                        <ul class="ml-menu">
+                            <li>
+                                <a href="../suratniaga/invoice.html">Invoice</a>
+                            </li>
+                            <li>
+                                <a href="../suratniaga/payroll.html">Payroll</a>
+                            </li>
+                            <li>
+                                <a href="../suratniaga/receipt.html">Receipt</a>
+                            </li>                            
+                        </ul>
+                    </li>
+                    <li class="active">
+                        <a href="javascript:void(0);" class="menu-toggle">
+                            <i class="material-icons">view_list</i>
+                            <span>Data Master</span>
+                        </a>
+                        <ul class="ml-menu">
+                            
+                            <li>
+                                <a href="klasifikasi-surat.html">Klasifikasi Surat</a>
+                            </li>
+                            <li class="active">
+                                <a href="proyek.html">Data Proyek</a>
+                            </li>
+                            <li>
+                                <a href="kontak.html">Data Kontak</a>
+                            </li>
+                             <li>
+                                <a href="user.html">User</a>
+                            </li>
+                            <li>
+                                <a href="member.html">Member</a>
+                            </li>
+                        </ul>
+                    </li>
+                </ul>
+            </div>
+            <!-- #Menu -->
+            <!-- Footer -->
+            <div class="legal">
+                <div class="copyright">
+                    &copy; 2016 - 2017 <a href="javascript:void(0);">Sistem Informasi Persuratan</a>.
+                </div>
+                <div class="version">
+                    <b>Version: </b> 1.0.5
+                </div>
+            </div>
+            <!-- #Footer -->
+        </aside>
+        <!-- #END# Left Sidebar -->
+        <!-- Right Sidebar -->
+        
+        <!-- #END# Right Sidebar -->
+    </section>
+
+    <section class="content">
+            <!-- Basic Examples -->
+            <div class="row clearfix">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+                    <div class="card">
+                        <div class="header">
+                            <div class="text-center"><h1>
+                                Data Proyek
+                            </h1>
+                            </div>
+                            <div class="body">
+                            <div class="button-info">
+                                <a href="tambahProyek.html"><button type="button" class="btn btn-success waves-effect">Tambah</button></a>
+                            </div>
+                        </div>
+                        <div class="body">
+                            <div class="table-responsive">
+                                <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
+                                    <thead>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Kode Proyek</th>
+                                            <th>Nama Proyek</th>
+                                            <th>Aksi</th>
+                                            
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>1</td>
+                                            <td>131</td>
+                                            <td>Sistem Keuangan</td>
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="ubahProyek.html"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                        
+                                              <!-- Modal -->
+                                              <div class="modal fade" id="myModal" role="dialog">
+                                                <div class="modal-dialog">
+                                                
+                                                  <!-- Modal content-->
+                                                  <div class="modal-content">
+                                                    <div class="modal-header">
+                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                      <h4 class="modal-title">Konfirmasi Hapus</h4>
+                                                    </div>
+
+                                                    <div class="modal-body">
+                                                      <p>Apakah anda ingin menghapus data ini ? </p>
+                                                    </div>
+
+                                                    <div class="modal-footer">
+                                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
+                                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                    </div>
+                                                  </div>    
+                                                </div>
+                                              </div>
+                                            </td>
+                                        </tr>
+                                        <tr>
+                                            <td>2</td>
+                                            <td>132</td>
+                                            <td>Persuratan</td>
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="ubah.html"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Konfirmasi Hapus</h4>
+                                                </div>
+
+                                                <div class="modal-body">
+                                                  <p>Apakah anda ingin menghapus data ini ? </p>
+                                                </div>
+
+                                                <div class="modal-footer">
+                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
+                                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                </div>
+                                              </div>    
+                                            </div>
+                                          </div>
+                                             </td>
+
+                                        </tr>
+                                         <tr>
+                                            <td>3</td>
+                                            <td>133</td>
+                                            <td>Game</td>
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="ubah.html"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            
+                                          <!-- Modal -->
+                                          <div class="modal fade" id="myModal" role="dialog">
+                                            <div class="modal-dialog">
+                                            
+                                              <!-- Modal content-->
+                                              <div class="modal-content">
+                                                <div class="modal-header">
+                                                  <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                  <h4 class="modal-title">Konfirmasi Hapus</h4>
+                                                </div>
+                                                <div class="modal-body">
+                                                  <p>Apakah anda ingin menghapus data ini ? </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                 <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
+                                                  <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                                                </div>
+                                              </div>    
+                                            </div>
+                                          </div>
+                                             </td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>            
+        </div>
+    </section>
+    <!-- #END# Basic Examples -->
+
+    <!-- Jquery Core Js -->
+    <script src="../../plugins/jquery/jquery.min.js"></script>
+
+    <!-- Bootstrap Core Js -->
+    <script src="../../plugins/bootstrap/js/bootstrap.js"></script>
+
+    <!-- Select Plugin Js -->
+    <script src="../../plugins/bootstrap-select/js/bootstrap-select.js"></script>
+
+    <!-- Slimscroll Plugin Js -->
+    <script src="../../plugins/jquery-slimscroll/jquery.slimscroll.js"></script>
+
+    <!-- Waves Effect Plugin Js -->
+    <script src="../../plugins/node-waves/waves.js"></script>
+
+    <!-- Jquery DataTable Plugin Js -->
+    <script src="../../plugins/jquery-datatable/jquery.dataTables.js"></script>
+    <script src="../../plugins/jquery-datatable/skin/bootstrap/js/dataTables.bootstrap.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/dataTables.buttons.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.flash.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/jszip.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/pdfmake.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/vfs_fonts.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.html5.min.js"></script>
+    <script src="../../plugins/jquery-datatable/extensions/export/buttons.print.min.js"></script>
+
+    <!-- Custom Js -->
+    <script src="../../js/admin.js"></script>
+    <script src="../../js/pages/tables/jquery-datatable.js"></script>
+
+    <!-- Demo Js -->
+    <script src="../../js/demo.js"></script>
+</body>
+
+</html>
