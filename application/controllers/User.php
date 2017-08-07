@@ -4,12 +4,14 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class User extends CI_Controller{
 	var $table = "users";
 
+
 	public function index()
 	{
 		//query bisa menggunakan 
-		$data['users']	= $this->db->query("SELECT * FROM ".$this->table)->result_array();
+		$data['list']	= $this->db->query("SELECT * FROM users")->result_array();
 		//atau menggunakan builder get
-		$data['users']	= $this->db->get($this->table)->result_array();
+		$data['list']	= $this->db->get("users")->result_array();
+
 
 		$this->load->view('template/header.php');
 		$this->load->view('user/view.php', $data);

@@ -31,124 +31,44 @@
                           </div>
 
                             <div class="body">
-                                <div class="table-responsive">
+                                  <div class="table-responsive">
                                     <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
-                                        <thead>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Kode Proyek</th>
-                                                <th>Nama Proyek</th>
-                                                <th>Pilihan/Aksi</th>    
-                                            </tr>
-                                        </thead>
+                                      <thead>
+                                          <tr>
+                                              <th>No</th>
+                                              <th>Nama Proyek</th>
+                                              <th>Kode Proyek</th>
+                                              <th>Pilihan/Aksi</th>    
+                                          </tr>
+                                      </thead>
 
-                                        <tfoot>
-                                            <tr>
-                                                <th>No</th>
-                                                <th>Kode Proyek</th>
-                                                <th>Nama Proyek</th>
-                                                <th>Pilihan/Aksi</th>
-                                                
-                                            </tr>
-                                        </tfoot>
+                                      <tfoot>
+                                          <tr>
+                                              <th>No</th>
+                                              <th>Nama Proyek</th>
+                                              <th>Kode Proyek</th>
+                                              <th>Pilihan/Aksi</th>
+                                              
+                                          </tr>
+                                      </tfoot>
 
-                                        <tbody>
-                                            <tr>
-                                                <td>1</td>
-                                                <td>131</td>
-                                                <td>Sistem Keuangan</td>
-                                                <td> 
-                                                    <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                            
-                                                  <!-- Modal -->
-                                                  <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                    
-                                                      <!-- Modal content-->
-                                                      <div class="modal-content">
-                                                        <div class="modal-header">
-                                                          <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                        </div>
-
-                                                        <div class="modal-body">
-                                                          <h4>Apakah anda ingin menghapus data ini ? </h4>
-                                                        </div>
-
-                                                        <div class="modal-footer">
-                                                         <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-                                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                                        </div>
-                                                      </div>    
-                                                    </div>
-                                                  </div>
-                                                </td>
-                                            </tr>
-                                            <tr>
-                                                <td>2</td>
-                                                <td>132</td>
-                                                <td>Persuratan</td>
-                                                <td> 
-                                                    <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    
-                                                    <!-- Modal -->
-                                                    <div class="modal fade" id="myModal" role="dialog">
-                                                      <div class="modal-dialog">
-                                                      
-                                                        <!-- Modal content-->
-                                                        <div class="modal-content">
-                                                          <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                            <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                          </div>
-
-                                                          <div class="modal-body">
-                                                            <h4>Apakah anda ingin menghapus data ini ? </h4>
-                                                          </div>
-
-                                                          <div class="modal-footer">
-                                                           <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                                          </div>
-                                                        </div>    
-                                                      </div>
-                                                    </div>
-                                                 </td>
-                                            </tr>
-
-                                             <tr>
-                                                <td>3</td>
-                                                <td>133</td>
-                                                <td>Game</td>
-                                                <td> 
-                                                    <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit">Ubah</a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                
-                                              <!-- Modal -->
-                                              <div class="modal fade" id="myModal" role="dialog">
-                                                <div class="modal-dialog">
-                                                
-                                                  <!-- Modal content-->
-                                                  <div class="modal-content">
-                                                    <div class="modal-header">
-                                                      <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                      <h4 class="modal-title">Konfirmasi Hapus</h4>
-                                                    </div>
-                                                    <div class="modal-body">
-                                                      <h4>Apakah anda ingin menghapus data ini ? </h4>
-                                                    </div>
-                                                    <div class="modal-footer">
-                                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-                                                      <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-                                                    </div>
-                                                  </div>    
-                                                </div>
-                                              </div>
-                                                 </td>
-                                            </tr>
-                                        </tbody>
+                                      <tbody>
+                                    <?php 
+                                        $nomor = 1;
+                                        foreach ($proyek as $daftar) { ?>
+                                        <tr>
+                                            <td><?php echo $nomor?></td>
+                                            <td><?php echo $daftar['name_project']?></td>
+                                            <td><?php echo $daftar['code_project']?></td>
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                            </td>
+                                        </tr>
+                                        <?php
+                                            $nomor++;
+                                        }?>
+                                      </tbody>
                                     </table>
                                 </div>
                             </div>
@@ -157,3 +77,28 @@
                 </div>            
         </section>
     <!-- #END# Basic Examples -->
+
+    <!-- Modal -->
+  <div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+                                                  
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title">
+                  Konfirmasi Hapus
+                </h4>
+        </div>
+
+        <div class="modal-body">
+          <h4>Apakah anda ingin menghapus data ini ? </h4>
+        </div>
+
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
+          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+        </div>
+      </div>    
+    </div>
+  </div>
