@@ -14,6 +14,10 @@
                             </div>
                         </div>
                         <div class="body">
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -26,34 +30,21 @@
                                         </tr>
                                     </thead>
                                     <tbody>
+                                       <?php
+                                        $nomor = 1;
+                                        foreach($class as $klasifikasi){ ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>PI</td>
-                                            <td>Praktik Industri</td>
+                                            <td><?php echo $nomor ?></td>
+                                            <td><?php echo $klasifikasi ["id_class"] ?></td>
+                                            <td><?php echo $klasifikasi ["name_class"] ?></td>
                                             <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('klasifikasi/')?>ubah"> Ubah </a>
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                             </td>
                                         </tr>
-                                        <tr>
-                                            <td>2</td>
-                                            <td>KK</td>
-                                            <td>Keterangan Kerja</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('klasifikasi/')?>ubah"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                             </td>
-
-                                        </tr>
-                                         <tr>
-                                            <td>3</td>
-                                            <td>SP</td>
-                                            <td>Surat Penawaran</td>
-                                            <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('klasifikasi/')?>ubah"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                             </td>
-                                        </tr>
+                                    <?php 
+                                        $nomor++;
+                                            } ?>
                                     </tbody>
                                 </table>
                             </div>
