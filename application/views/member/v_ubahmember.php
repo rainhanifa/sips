@@ -43,7 +43,7 @@
                                 <div class="body">
                                     <div class="button-info">
                                         <a href="<?php echo base_url('member/')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
-                                        <a href="<?php echo base_url('member/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a
+                                        <a href="<?php echo base_url('member/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
                                 </div>    
                                 

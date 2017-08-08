@@ -7,7 +7,7 @@
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <strong>Edit Data Gaji</strong>
+                                <strong>Ubah Payroll</strong>
                             </h2>
                             
                         </div>
@@ -56,10 +56,11 @@
                                     </div>
                                 </div>
                                         <!-- Tombol Simpan dan Batal -->
-                                <div class="text-center">
-                                    <div class="row">
+                               <div class="text-center">
+                                <div class="body">
+                                    <div class="button-info">
                                         <a href="<?php echo base_url('payroll/')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
-                                        <a href="<?php echo base_url('payroll/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a
+                                        <a href="<?php echo base_url('payroll/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
                                 </div>
                             </form>
