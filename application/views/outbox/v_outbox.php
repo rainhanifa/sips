@@ -67,7 +67,7 @@
                                     ?>
                                         <tr>
                                             <td><?php echo $nomor?></td>
-                                            <td><?php echo $keluar['no_letter']?></td>
+                                            <td><?php echo $keluar['no_letter'].$keluar['code_letter']?></td>
                                             <td><?php echo $keluar['date']?></td>
                                             <td><?php echo $keluar['recipient_id']?></td>
                                             <td><?php echo $keluar['subject']?></td>

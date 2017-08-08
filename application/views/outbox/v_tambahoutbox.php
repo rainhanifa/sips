@@ -23,10 +23,17 @@
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">     
-                                           <select name="Klasifikasi">
-                                                <option value="0">PI</option>
-                                                <option value="1">KK</option>
-                                                <option value="2">SP</option>  
+                                           <select name="klasifikasi">
+                                                <?php
+                                                foreach ($class as $key => $value) {
+                                                        
+
+                                                ?>
+                                                <option value="<?php echo $value->id_class?>"><?php echo $value->name_class?></option>
+                                                <?php
+                                            }
+                                                ?>
+
                                             </select>   
                                         </div>
                                     </div>
