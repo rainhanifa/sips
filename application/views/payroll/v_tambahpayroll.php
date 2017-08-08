@@ -1,19 +1,23 @@
  <section class="content">
         <div class="container-fluid">
-
-        <!-- Form Tambah Surat -->
+<!-- Horizontal Layout -->
             <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
                             <h2>
-                                <strong>Tambah Data Gaji</strong>
+                                <strong>Payroll</strong>
                             </h2>
                             
                         </div>
-                        <!-- Nama Member -->
+
                         <div class="body">
-                            <form class="form-horizontal">
+
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
+                            <form class="form-horizontal" action="<?php echo base_url('payroll/tambah')?>" method="POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama Member</label>
@@ -22,9 +26,9 @@
                                         <div class="form-group">
                                                      
                                            <select>
-                                                <option>Akhmad Maulidi</option>
-                                                <option>Beni</option>
-                                                <option>Ibnu</option>  
+                                                <option value="0">Akhmad Maulidi</option>
+                                                <option value="1">Beni</option>
+                                                <option value="2">Ibnu</option>  
                                             </select>
                                         </div>
                                     </div>
@@ -37,7 +41,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
                                             </div>
                                         </div>
                                     </div>
@@ -50,7 +54,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nominal" class="form-control" placeholder="Masukkan Nominal">
+                                                <input type="text" name="amount" class="form-control" placeholder="Masukkan Nominal">
                                             </div>
                                         </div>
                                     </div>
@@ -58,7 +62,7 @@
                                         <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">
-                                        <a href="<?php echo base_url('payroll/')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
+                                        <input type="submit" name="submit" class="btn btn-primary waves-effect" value="Simpan">
                                     <a href="<?php echo base_url('payroll/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
                                 </div>
