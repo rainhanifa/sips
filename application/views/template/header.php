@@ -150,7 +150,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="../dashboard.html">
+                        <a href="<?php echo base_url('dashboard')?>">
 
                             <i class="material-icons">text_fields</i>
                             <span>Dashboard</span>

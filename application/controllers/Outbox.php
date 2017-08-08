@@ -18,13 +18,13 @@ class Outbox extends CI_Controller {
 	public function tambah()
 	{
 		if (isset($_POST['submit'])) {
-			$tanggal  = $this->input->post('date');
-			$penerima = $this->input->post('recipient_id');
-			$perihal  = $this->input->post('subject');
+			$tanggal  	  = date('Y-m-d', strtotime($this->input->post('date')));			
+			$penerima 	  = $this->input->post('recipient_id');
+			$perihal  	  = $this->input->post('subject');
 
-			$surat_keluar = array('date' => $tanggal,
+			$surat_keluar = array('date' 		 => $tanggal,
 								  'recipient_id' => $penerima,
-								  'subject' => $perihal
+								  'subject' 	 => $perihal
 								  );
 		
 		//insert ke database
