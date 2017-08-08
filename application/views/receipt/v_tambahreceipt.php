@@ -13,7 +13,12 @@
                         </div>
                         <!-- Tanggal -->
                         <div class="body">
-                            <form class="form-horizontal">
+                        <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
+
+                            <form method="post" action="<?php echo base_url("receipt/tambah")?>" class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal</label>
@@ -21,7 +26,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
                                             </div>
                                         </div>
                                     </div>
@@ -29,12 +34,12 @@
                                         <!-- Nama Penerima -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Nama</label>
+                                        <label for="email_address_2">Nama penerima</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama Penerima">
+                                                <input type="text" id="nama" name="subject" class="form-control" placeholder="Masukkan Nama Penerima">
                                             </div>
                                         </div>
                                     </div>
@@ -48,7 +53,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama" class="form-control" placeholder="Masukkan Keterangan">
+                                                <input type="text" id="nama" name="file" class="form-control" placeholder="Masukkan Keterangan">
                                             </div>
                                         </div>
                                     </div>
@@ -61,18 +66,19 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nominal" class="form-control" placeholder="Masukkan Nominal">
+                                                <input type="number" id="nominal" name="amount" class="form-control" placeholder="Masukkan Nominal">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                                        <!-- Tombol Simpan dan Batal -->
-                                <div class="text-center">
-                                    <div class="row">
-                                        <a href="<?php echo base_url('receipt')?>/index"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
-                                        <a href="<?php echo base_url('receipt')?>/index"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
+                                        <div class="text-center">
+                                <div class="body">
+                                    <div class="button-info">
+                                    <input type="submit" class="btn btn-primary waves-effect" value="Simpan" name="submit">
+                                    <a href="<?php echo base_url('receipt')?>/index"><button type="button" class="btn btn-danger waves-effect">Batal</button></a> 
                                     </div>
-                                </div>
+                                </div>                                
+                               </div>
                             </form>
                         </div>
                     </div>

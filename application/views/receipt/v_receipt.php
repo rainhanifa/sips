@@ -17,6 +17,10 @@
                             </div>                       
                             </div>
                         <div class="body">
+                         <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                        ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -30,28 +34,35 @@
                                             <th>Pilihan/Aksi</th>
                                         </tr>
                                     </thead>
-                                    
                                     <tbody>
+                                        <?php
+                                        $nomor = 1;
+                                        foreach($list as $receipt){ ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>1831</td>
-                                            <td>21 Juli 2017</td>
-                                            <td>Bahram</td>
-                                            <td>Pelunas Invoice #123</td>
-                                            <td>1500000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                    <a href="<?php echo base_url('receipt')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                    <button type="button" class="btn btn-danger" >Hapus</button>
-                                                    </div >
-                                                </div>
+                                            <td><?php echo $nomor ?></td>
+                                            <td><?php echo $receipt['no_letter'] ?></td>
+                                            <td><?php echo date('l, d-m-Y',strtotime($receipt['date']))?>.</td>
+                                            <td><?php echo $receipt['subject']?></td>
+                                            <td><?php echo $receipt['amount']?></td>
+                                            <td><?php echo $receipt['file']?></td>
 
-                                                    <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        
-                                                    <!-- Modal content-->
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('receipt/ubah')?>"> Ubah </a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
+                                            </td>
+                                        </tr>
+                                    <?php 
+                                        $nomor++;
+                                            } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <!-- Modal content-->
                                                     <div class="modal-content">
                                                         <div class="modal-header">
                                                             <button type="button" class="close" data-dismiss="modal">&times;</button>
@@ -67,68 +78,3 @@
                                                             <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
                                                         </div>
                                                     </div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>1880</td>
-                                            <td>20 Juli 2017</td>
-                                            <td>Eren</td>
-                                            <td>Pelunasan Proyek Game</td>
-                                            <td>700000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                    <a href="<?php echo base_url('receipt')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div >
-                                                </div>
-                                                    
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>3</td>
-                                            <td>1879</td>
-                                            <td>20 Juli 2017</td>
-                                            <td>Satriyo</td>
-                                            <td>DP Aloma Go</td>
-                                            <td>3400000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                    <a href="<?php echo base_url('receipt')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div >
-                                                </div>
-                                                   
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>4</td>
-                                            <td>1878</td>
-                                            <td>20 Juli 2017</td>
-                                            <td>Anton</td>
-                                            <td>Biaya Sertifikat Guru</td>
-                                            <td>2500000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                   <a href="<?php echo base_url('receipt')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div >
-                                                </div>                                                   
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>

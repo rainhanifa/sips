@@ -15,6 +15,10 @@
                         </div>
                         </div>
                         <div class="body">
+                        <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                        ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -27,54 +31,36 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>Nama</th>
-                                            <th>Institusi</th>
-                                            <th>No. Telp</th>
-                                            <th>Email</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
+                                       <?php
+                                        $nomor = 1;
+                                        foreach($list as $contacts){ ?>
                                         <tr>
-                                            <td>1</td>
-                                            <td>Yogikk</td>
-                                            <td>Universitas Malang</td>
-                                            <td>0812341231</td>
-                                            <td>Yogikk@gmail.com</td>
-                                            <td>
-                                            <center>
-                                    <div class="row">
-                                        <a href="<?php echo base_url('kontak')?>/ubah">
-                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                        </a>
-
-                                        <button type="button" class="btn btn-danger waves-effect ">Hapus</button>
-                                                </div>
-                                                   
-                                    </div>
-                                            </center>
+                                            <td><?php echo $nomor ?></td>
+                                            <td><?php echo $contacts['name'] ?></td>
+                                            <td><?php echo $contacts['institution'] ?></td>
+                                            <td><?php echo $contacts['telp']?></td>
+                                            <td><?php echo $contacts['email']?></td>
+                                            <td> 
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('user/ubah')?>"> Ubah </a>
+                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
                                             </td>
                                         </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Adam</td>
-                                            <td>Politeknik Negeri Malang</td>
-                                            <td>081218901</td>
-                                            <td>Adam@gmail.com</td>
-                                            <td>
-                                            <center>
-                                    <div class="row">
-                                        <a href="<?php echo base_url('kontak')?>/ubah">
-                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                        </a>
-                                        <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                </div>
-
-                                                    <!-- Modal -->
+                                    <?php 
+                                        $nomor++;
+                                            } ?>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- #END# Basic Examples -->
+        </div>
+    </section>
+     <!-- Modal -->
                                                 <div class="modal fade" id="myModal" role="dialog">
                                                     <div class="modal-dialog">
                                                         
@@ -96,16 +82,3 @@
                                                     </div>
                                                     </div>
                                                 </div>
-                                            </center>
-                                            </td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <!-- #END# Basic Examples -->
-        </div>
-    </section>
