@@ -37,14 +37,15 @@
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $klasifikasi ["id_class"] ?></td>
                                             <td><?php echo $klasifikasi ["name_class"] ?></td>
-                                            <td> 
+                                           <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('klasifikasi/')?>ubah"> Ubah </a>
                                                 <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                             </td>
                                         </tr>
                                     <?php 
                                         $nomor++;
-                                            } ?>
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>

@@ -1,33 +1,25 @@
-    <section class="content">
-        <div class="container-fluid">
-            <div class="block-header">
-                <div class="text-center">
-                    <h1>
-                        Payroll (Gaji)
-                    </h1>
-                </div>
-            </div>
-            <!-- Table Payroll -->
-             <div class="row clearfix">
+<section class="content">
+            <!-- Basic Examples -->
+            <div class="row clearfix">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
-                            <a href="tambah-payroll.html">
+                            <div class="text-center"><h1>
+                                PAYROLL
+                            </h1>
+                            </div>
+                            <div class="body">
+                            <div class="button-info">
                                 <a href="<?php echo base_url('payroll/')?>tambah"><button type="button" class="btn btn-success waves-effect">Tambah</button>
                                 </a>
-                            <ul class="header-dropdown m-r--5">
-                                <li class="dropdown">
-                                    <a href="javascript:void(0);" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
-                                        <i class="material-icons">more_vert</i>
-                                    </a>
-                                    <ul class="dropdown-menu pull-right">
-                                        <li><a href="javascript:void(0);">Action</a></li>
-                                        <li><a href="javascript:void(0);">Another action</a></li>
-                                        <li><a href="javascript:void(0);">Something else here</a></li>
-                                    </ul>
-                                </li>
-                            </ul>
+                            </div>
                         </div>
+                        <div class="body">
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
+
                         <div class="body">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
@@ -44,68 +36,25 @@
                                     
                                     <tbody>
                                         <tr>
-                                            <td>734</td>
-                                            <td>1 Juli 2017</td>
-                                            <td>Luqman</td>
-                                            <td>Juni</td>
-                                            <td>2000000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                    <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
-                                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div >
-                                                </div>
-                                            </td>
-                                        </tr>
+                                         <?php 
+                                            $nomor=1;
+                                            foreach ($payroll as $daftar) {
+                                            ?>
 
-                                        <tr>
-                                            <td>733</td>
-                                            <td>1 Juli 2017</td>
-                                            <td>Beni</td>
-                                            <td>Juni</td>
-                                            <td>2000000</td>
+                                            <td><?php echo $nomor ?></td>
+                                            <td><? php echo $daftar ["date"] ?></td>
+                                            <td><? php echo $daftar ["member_id"] ?></td>
+                                            <td><? php echo $daftar ["payment_periode"] ?></td>
+                                            <td><? php echo $daftar ["amount"] ?></td>
                                             <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                        <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </div>
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
                                             </td>
                                         </tr>
-
-                                        <tr>
-                                            <td>732</td>
-                                            <td>1 Juli 2017</td>
-                                            <td>Imaniar</td>
-                                            <td>Juni</td>
-                                            <td>2000000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                        <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>731</td>
-                                            <td>1 Juli 2017</td>
-                                            <td>Ibnu</td>
-                                            <td>Juni</td>
-                                            <td>2500000</td>
-                                            <td>
-                                                <div class="row">
-                                                    <div class="text-center">
-                                                        <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                        </tr>
+                                        <?php 
+                                            $nomor++;
+                                        }
+                                        ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -113,7 +62,6 @@
                     </div>
                 </div>
             </div>
-            <!-- #END# Payroll -->
         </div>
 </section>
 <!-- Modal -->
