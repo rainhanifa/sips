@@ -57,7 +57,7 @@ class Member extends CI_Controller{
 
 	public function hapus()
 	{
-		redirect(base_url('Member'));
+		redirect(base_url('member'));
 
 	}
 }

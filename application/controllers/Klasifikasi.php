@@ -33,7 +33,7 @@ class Klasifikasi extends CI_Controller{
 				$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah member!</div>');
 
 				// redirect
-				redirect(base_url("Klasifikasi"));
+				redirect(base_url("klasifikasi"));
 			}
 			else{
 				//kirim pesan error
