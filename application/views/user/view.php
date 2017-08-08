@@ -34,7 +34,7 @@
                                     <tbody>
                                     <?php
                                         $nomor = 1;
-                                        foreach($users as $user){ ?>
+                                        foreach($list as $user){ ?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $user['username'] ?></td>

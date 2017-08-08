@@ -11,7 +11,11 @@
                         </div>
                                         <!-- Nominal -->
                         <div class="body">
-                            <form class="form-horizontal" <?php echo base_url('Proyek/tambah_aksi')?>" action="POST">
+                            <?php if($this->session->flashdata("message") != ""){
+                                echo $this->session->flashdata("message");
+                            }
+                            ?>
+                            <form action="<?php echo base_url('proyek/tambah')?>" method="POST" class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama Proyek</label>
@@ -19,7 +23,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama_proyek" class="form-control" placeholder="Masukkan Nama Proyek">
+                                                <input type="text" name="name_project"  class="form-control" placeholder="Masukkan Nama Proyek">
                                             </div>
                                         </div>
                                     </div>
@@ -32,18 +36,22 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="kode_proyek" class="form-control" placeholder="Masukkan Kode Proyek">
+                                                <input type="text" name="code_project" class="form-control" placeholder="Masukkan Kode Proyek">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                         <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
-                                    <div class="row">
-                                        <a href="<?php echo base_url('proyek')?>"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button></a>
-                                        <a href="<?php echo base_url('proyek')?>"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button></a>
+                                <div class="body">
+                                    <div class="button-info">
+                                        <input type="submit" class="btn btn-primary waves-effect" value="Simpan" name="submit">
+                                        <a href="user.html">
+                                            <button type="button" class="btn btn-danger waves-effect">Batal</button>
+                                        </a> 
                                     </div>
-                                </div>
+                                </div>                                
+                               </div>
                             </form>
                         </div>
                     </div>

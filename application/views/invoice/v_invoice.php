@@ -57,6 +57,7 @@
                                     </tfoot>
 
                                     <tbody>
+                                        
                                         <tr>
                                             <td>1</td>
                                             <td>YG/05/04/1997</td>
@@ -74,25 +75,6 @@
                                                         <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div>
                                                 </div>
-                                            </td>
-                                        </tr>
-
-                                        <tr>
-                                            <td>2</td>
-                                            <td>Ad/05/04/1997</td>
-                                            <td>05/04/1997</td>
-                                            <td>Adam</td>
-                                            <td>267 - Cassow</td>
-                                            <td>Rp 2000000</td>
-                                            <td>
-                                                <center>
-                                                    <div class="row">
-                                                        <a href="<?php echo base_url('invoice')?>/ubah">
-                                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                                        </a>
-                                                        <button type="button" class="btn btn-danger " data-toggle="modal" data-target="#myModal">Hapus</button>
-                                                    </div>
-                                                </center>
                                             </td>
                                         </tr>
                                     </tbody>

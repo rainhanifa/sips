@@ -31,6 +31,16 @@
                                             
                                         </tr>
                                     </thead>
+
+                                    <tfoot>
+                                        <tr>
+                                            <th>No</th>
+                                            <th>Nama Lengkap</th>
+                                            <th>Jabatan</th>
+                                            <th>Aksi</th>
+                                            
+                                        </tr>
+                                    </tfoot>
                                     <tbody>
                                         <tr>
                                         <?php 
