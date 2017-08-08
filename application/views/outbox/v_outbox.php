@@ -31,6 +31,11 @@
                             </ul>
                         </div>
                         <div class="body">
+                        <?php if($this->session->flashdata("message") != "")
+                                {
+                                    echo $this->session->flashdata("message");
+                                }
+                            ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -62,10 +67,10 @@
                                     ?>
                                         <tr>
                                             <td><?php echo $nomor?></td>
-                                            <td><?php echo $keluar['no_surat']?></td>
-                                            <td><?php echo $keluar['tanggal']?></td>
-                                            <td><?php echo $keluar['penerima']?></td>
-                                            <td><?php echo $keluar['perihal']?></td>
+                                            <td><?php echo $keluar['no_letter']?></td>
+                                            <td><?php echo $keluar['date']?></td>
+                                            <td><?php echo $keluar['recipient_id']?></td>
+                                            <td><?php echo $keluar['subject']?></td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
