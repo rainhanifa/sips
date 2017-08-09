@@ -30,6 +30,12 @@
                         </div>
 
                         <div class="body">
+                            <?php if($this->session->flashdata("message") != "")
+                                {
+                                    echo $this->session->flashdata("message");
+                                }
+                            ?>
+                            
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -59,12 +65,16 @@
                                     <tbody>
                                         
                                         <tr>
-                                            <td>1</td>
-                                            <td>YG/05/04/1997</td>
-                                            <td>05/04/1997</td>
-                                            <td>Yogikkk</td>
-                                            <td>301 - Graphic Design</td>
-                                            <td>Rp 900000</td>
+                                        <?php
+                                            $nomor = 1;
+                                            foreach ($tagihan as $invoice) {
+                                        ?>
+                                            <td><?php echo $nomor?></td>
+                                            <td><?php echo $invoice['no_letter']?></td>
+                                            <td><?php echo $invoice['date']?></td>
+                                            <td><?php echo $invoice['recipient_id']?></td>
+                                            <td><?php echo $invoice['no_letter']?></td>
+                                            <td><?php echo $invoice['amount']?></td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
@@ -76,10 +86,14 @@
                                                     </div>
                                                 </div>
                                             </td>
+                                            <?php
+                                                $nomor ++;
+                                            }?>
                                         </tr>
                                     </tbody>
                                 </table>
                             </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -88,29 +102,3 @@
 <!-- #END# Basic Examples -->
 
     <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
-        
-        <!-- Modal content-->
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-            </div>
-
-            <div class="modal-body">
-                    <h4>Apakah anda ingin menghapus data ini?</h4>
-            </div>
-
-            <div class="modal-footer">
-                <a href="<?php echo base_url('invoice')?>">
-                    <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                </a>
-
-                <a href="<?php echo base_url('invoice')?>">
-                    <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
-                </a>
-            </div>
-        </div>
-    </div>
-</div>

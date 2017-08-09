@@ -52,7 +52,13 @@ class Proyek extends CI_Controller {
 
 	public function hapus()
 	{
-		redirect(base_url('proyek'));
+		if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('code_project'=>$id_hapus);
+			$this->db->delete('projects',$where);
+			redirect(base_url('proyek'));
+		}
 	}
 }
 ?>

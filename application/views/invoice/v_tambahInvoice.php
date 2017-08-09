@@ -9,15 +9,20 @@
                         </h2>
                     </div>
                     <div class="body">
-                        <form class="form-horizontal">
+                    <?php if($this->session->flashdata("message") != "")
+                                {
+                                    echo $this->session->flashdata("message");
+                                }
+                            ?>
+                        <form class="form-horizontal" action="<?php echo base_url('invoice/tambah')?>" method="POST">
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                    <label for="email_address_2">Tanggal </label>
+                                    <label for="">Tanggal </label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                            <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
                                         </div>
                                     </div>
                                 </div>
@@ -25,12 +30,12 @@
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                    <label for="email_address_2">Proyek</label>
+                                    <label for="">Proyek</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="proyek" class="form-control" placeholder="Masukkan Proyek">
+                                            <input type="text" name="name_project" id="proyek" class="form-control" placeholder="Masukkan Proyek">
                                         </div>
                                     </div>
                                 </div>
@@ -39,12 +44,12 @@
 
                            <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                 <label for="password_2">Nama</label>
+                                 <label for="">Nama Penerima</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="nama" class="form-control" placeholder="Masukkan Nama">
+                                            <input type="text" name="recipient_id" id="nama" class="form-control" placeholder="Masukkan Nama">
                                         </div>
                                     </div>
                                 </div>
@@ -59,7 +64,7 @@
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="text" id="institusi" class="form-control" placeholder="Nama Institusi">
+                                            <input type="text" name="institution" id="institusi" class="form-control" placeholder="Nama Institusi">
                                         </div>
                                     </div>
                                 </div>
@@ -68,19 +73,19 @@
 
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                 <label for="password_2">Nominal</label>
+                                 <label for="">Nominal</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <div class="form-line">
-                                            <input type="number" id="nominal" class="form-control" placeholder="Nominal">
+                                            <input type="number" name="amount" id="nominal" class="form-control" placeholder="Nominal">
                                         </div>
                                     </div>
                                 </div>
 
                             <center>
                                 <div class="row">
-                                    <a href="<?php echo base_url('invoice')?>"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button></a>
+                                    <input type="submit" class="btn btn-primary m-t-15 waves-effect" name="submit" value="Simpan">
                                     <a href="<?php echo base_url('invoice')?>"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button></a>
                                 </div>
                             </center>

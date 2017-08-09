@@ -19,7 +19,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="kode_proyek" class="form-control" placeholder="Masukkan Kode Proyek">
+                                                <input type="text" name="code_project" id="kode_proyek" class="form-control" placeholder="Masukkan Kode Proyek">
                                             </div>
                                         </div>
                                     </div>
@@ -32,7 +32,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama_proyek" class="form-control" placeholder="Masukkan Nama Proyek">
+                                                <input type="text" name="name_project" class="form-control" placeholder="Masukkan Nama Proyek">
                                             </div>
                                         </div>
                                     </div>
@@ -40,8 +40,10 @@
                                         <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">
-                                        <a href="<?php echo base_url('proyek')?>"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
-                                        <a href="<?php echo base_url('proyek')?>"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
+                                        <input type="submit" value="Simpan" name="submit">
+                                            <a href="<?php echo base_url('proyek')?>">
+
+                                        <button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
                                     </div>
                                 </div>
                             </form>

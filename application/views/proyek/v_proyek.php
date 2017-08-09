@@ -59,14 +59,14 @@
                                       <tbody>
                                     <?php 
                                         $nomor = 1;
-                                        foreach ($proyek as $daftar) { ?>
+                                        foreach ($proyek as $project) { ?>
                                         <tr>
                                             <td><?php echo $nomor?></td>
-                                            <td><?php echo $daftar['name_project']?></td>
-                                            <td><?php echo $daftar['code_project']?></td>
+                                            <td><?php echo $project['name_project']?></td>
+                                            <td><?php echo $project['code_project']?></td>
                                             <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$project["code_project"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                             </td>
                                         </tr>
                                         <?php
@@ -82,27 +82,37 @@
         </section>
     <!-- #END# Basic Examples -->
 
+    <!-- Hapus -->
+    <script type="text/javascript">
+      function ClickModalDelete(id){
+        $("#id_delete").val(id);
+      }
+    </script>
+
     <!-- Modal -->
   <div class="modal fade" id="myModal" role="dialog">
     <div class="modal-dialog">
                                                   
       <!-- Modal content-->
       <div class="modal-content">
-        <div class="modal-header">
-            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title">
-                  Konfirmasi Hapus
-                </h4>
-        </div>
+        <form action="<?php echo base_url('proyek/hapus')?>">
+          <div class="modal-header">
+              <button type="button" class="close" data-dismiss="modal">&times;</button>
+                  <h4 class="modal-title">
+                    Konfirmasi Hapus
+                  </h4>
+          </div>
 
-        <div class="modal-body">
-          <h4>Apakah anda ingin menghapus data ini ? </h4>
-        </div>
+          <div class="modal-body">
+            <h4>Apakah anda ingin menghapus data ini ? </h4>
+              <input type="text" name="id_hapus" id="id_delete"></input>
+          </div>
 
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
-        </div>
+          <div class="modal-footer">
+            <button type="submit" name="submit" value="submit" id="btnDelete" class="btn btn-primary">Ya</button>
+            <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+          </div>
+        </form>
       </div>    
     </div>
   </div>
