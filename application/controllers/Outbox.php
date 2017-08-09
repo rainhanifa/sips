@@ -21,9 +21,9 @@ class Outbox extends CI_Controller {
 		$pilih['class']=$this->db->get('class')->result();
 
 		if (isset($_POST['submit'])) {
-			$tanggal  	  = date('Y-m-d', strtotime($this->input->post('date')));			
-			$penerima 	  = $this->input->post('recipient_id');
-			$perihal  	  = $this->input->post('subject');
+			$tanggal  	  	= date('Y-m-d', strtotime($this->input->post('date')));			
+			$penerima 	  	= $this->input->post('recipient_id');
+			$perihal  	  	= $this->input->post('subject');
 			$klasifikasi  	  = $this->input->post('klasifikasi');
 			
 
@@ -90,7 +90,13 @@ class Outbox extends CI_Controller {
 
 	public function hapus()
 	{
-		redirect(base_url('outbox'));
+		if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('no_letter'=>$id_hapus);
+			$this->db->delete('outbox',$where);
+			redirect(base_url('outbox'));
+		}
 	}
 }
 ?>

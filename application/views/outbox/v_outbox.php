@@ -75,7 +75,7 @@
                                                 <div class="row">
                                                     <div class="text-center">
                                                         <a href="<?php echo base_url('outbox')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
-                                                        <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$keluar['no_letter']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                                     </div >
                                                 </div>
                                             </td>
@@ -94,25 +94,34 @@
     </section>
     <!-- #END# Surat Keluar -->
 
+    <script type="text/javascript">
+    function ClickModalDelete(id){
+        $("#id_delete").val(id);
+    }
+    </script>
+
     <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
         <div class="modal-dialog">
         
         <!-- Modal content-->
             <div class="modal-content">
-                <div class="modal-header">
-                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                    <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                </div>
+                <form action="<?=base_url('Outbox/hapus')?>" method = "POST">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                    </div>
 
-                <div class="modal-body">
-                    <h4>Apakah anda ingin menghapus surat ini?</h4>
-                </div>
+                    <div class="modal-body">
+                        <h4>Apakah anda ingin menghapus surat ini?</h4>
+                            <input type="text" name="id_hapus" id="id_delete"> </input>
+                    </div>
 
-                <div class="modal-footer">
-                    <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button></a>
-                    <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
-                </div>
+                    <div class="modal-footer">
+                        <button type="submit" value="submit" name="submit" id=btnDelete class="btn btn-primary"><b>Ya</b></button>
+                        <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
+                    </div>
+                </form>
             </div>
         </div>
     </div>
