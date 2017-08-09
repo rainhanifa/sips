@@ -193,7 +193,7 @@
                     </li>
                     
 
-                    <li <?php echo (($active_page == 'klasifikasi')||($active_page == 'proyek')||($active_page == 'user')||($active_page == 'member')) ? 'class="active"' : ''; ?>>
+                    <li <?php echo (($active_page == 'klasifikasi')||($active_page == 'proyek')||($active_page == 'kontak')||($active_page == 'user')||($active_page == 'member')) ? 'class="active"' : ''; ?>>
                         <a href="javascript:void(0);" class="menu-toggle">
                             <i class="material-icons">view_list</i>
                             <span>Data Master</span>
