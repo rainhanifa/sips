@@ -55,9 +55,15 @@ class Klasifikasi extends CI_Controller{
 		$this->load->view('template/footer.php');
 	}
 
-	public function hapus()
+	public function hapus(/*$id=0*/)
 	{
-		redirect(base_url('klasifikasi'));
+		if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('id_class'=>$id_hapus);
+			$this->db->delete('class',$where);
+			redirect(base_url('klasifikasi'));
+		}
 
 	}
 }
