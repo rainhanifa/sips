@@ -21,15 +21,15 @@ class Kontak extends CI_Controller {
 		// jika ada post
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
-			$name	= $this->input->post("name");
+			$name			= $this->input->post("name");
 			$institution	= $this->input->post("institution");
-			$telp= $this->input->post("telp");
-			$email		= $this->input->post("email");
+			$telp 			= $this->input->post("telp");
+			$email			= $this->input->post("email");
 
-			$contacts_data 	= array("name" => $name,
-								"institution" => $institution,
-								"telp" => $telp,
-								"email" => $email
+			$contacts_data 	= array("name" 		=> $name,
+								"institution" 	=> $institution,
+								"telp" 			=> $telp,
+								"email"			=> $email
 								);
 			//insert ke database
 			if($this->db->insert($this->table, $contacts_data)){

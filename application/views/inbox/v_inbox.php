@@ -4,6 +4,7 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <div class="card">
                         <div class="header">
+
                             <h1 style="text-align: center;">
                                 <strong>Surat masuk</strong>
                             </h1>
@@ -15,6 +16,11 @@
                         </div>
                         </div>
                         <div class="body">
+                        <?php if($this->session->flashdata("message") != "")
+                                {
+                                    echo $this->session->flashdata("message");
+                                }
+                            ?>
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -27,26 +33,17 @@
                                             <th>Aksi</th>
                                         </tr>
                                     </thead>
-                                    <tfoot>
-                                        <tr>
-                                            <th>No.</th>
-                                            <th>No.Surat</th>
-                                            <th>Tanggal Register</th>
-                                            <th>Pengirim</th>
-                                            <th>Perihal</th>
-                                            <th>Aksi</th>
-                                        </tr>
-                                    </tfoot>
+                                    
                                     <tbody>
                                     <?php 
                                         $nomor=1;
-                                        foreach ($kotak_masuk as $inbox) {?>
+                                        foreach ($list as $inbox) {?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
-                                            <td><?php echo $inbox["no_surat"] ?></td>
-                                            <td><?php echo $inbox["tgl_reg"] ?></td>
-                                            <td><?php echo $inbox["pengirim"] ?></td>
-                                            <td><?php echo $inbox["perihal"] ?></td>
+                                            <td><?php echo $inbox["no_letter"] ?></td>
+                                            <td><?php echo date('l, d-m-Y',strtotime($inbox['date_letter']))?>.</td>
+                                            <td><?php echo $inbox["sender_id"] ?></td>
+                                            <td><?php echo $inbox["subject"] ?></td>
                                             <td>
                                                 <center>
                                                     <div class="row">
