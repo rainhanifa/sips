@@ -43,8 +43,8 @@
                                             <td><?php echo $receipt['no_letter'] ?></td>
                                             <td><?php echo date('l, d-m-Y',strtotime($receipt['date']))?>.</td>
                                             <td><?php echo $receipt['subject']?></td>
-                                            <td><?php echo $receipt['amount']?></td>
                                             <td><?php echo $receipt['file']?></td>
+                                            <td><?php echo $receipt['amount']?></td>
 
                                             <td> 
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('receipt/ubah')?>"> Ubah </a>
