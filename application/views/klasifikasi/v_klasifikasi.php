@@ -38,7 +38,7 @@
                                             <td><?php echo $klasifikasi ["id_class"] ?></td>
                                             <td><?php echo $klasifikasi ["name_class"] ?></td>
                                            <td> 
-                                                <a class="btn btn-primary waves-effect"  > Ubah </a>
+                                                <a href=<?php echo base_url()."klasifikasi/ubah/".$klasifikasi['id_class']?> class="btn btn-primary waves-effect"> Ubah </a>
                                                 <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$klasifikasi["id_class"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik" >Hapus</button>
                                             </td>
                                         </tr>
