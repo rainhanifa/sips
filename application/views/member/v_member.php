@@ -31,35 +31,24 @@
                                             
                                         </tr>
                                     </thead>
-
-                                    <tfoot>
-                                        <tr>
-                                            <th>No</th>
-                                            <th>Nama Lengkap</th>
-                                            <th>Jabatan</th>
-                                            <th>Aksi</th>
-                                            
-                                        </tr>
-                                    </tfoot>
                                     <tbody>
-                                        <tr>
                                         <?php 
                                             $nomor=1;
                                             foreach ($member as $anggota) {
                                             ?>
-
+                                            <tr> 
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $anggota ["nama"] ?></td>
                                             <td><?php echo $anggota ["jabatan"] ?></td>
                                             <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('member/')?>ubah"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                <a class="btn btn-primary waves-effect"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$anggota['nama']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik" >Hapus</button>
                                             </td>
                                         </tr>
-                                        <?php 
-                                            $nomor++;
-                                        }
-                                        ?>
+                                    <?php 
+                                        $nomor++;
+                                    }
+                                    ?>
                                     </tbody>
                                 </table>
                             </div>
@@ -69,26 +58,32 @@
             </div>            
         </div>
     </section>
-    <!-- Modal -->
+
+<script type="text/javascript">
+    function ClickModalDelete(id){
+        $("#id_delete").val(id);
+    }
+</script>
+  <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
 
     <!-- Modal content-->
-    <div class="modal-content">
-      <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal">&times;</button>
-          <h4 class="modal-title">Konfirmasi Hapus</h4>
-      </div>
-
-      <div class="modal-body">
-        <p>Hapus klasifikasi ? </p>
-      </div>
-
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+        <div class="modal-content">
+            <form method="POST" action="<?=base_url('Member/hapus')?>">
+                <div class="modal-header">
+                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                    <h4 class="modal-title">Konfirmasi Hapus</h4>
+                </div>
+                <div class="modal-body">
+                    <p>Hapus Member ?</p>
+                        <input type="text" name="id_hapus" id="id_delete"> </input>
+                </div>
+                <div class="modal-footer">
+                    <button type="submit" value="submit" name="submit"  id=btnDelete class="btn btn-primary">Ya</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                </div>
+            </form>
         </div>
-
-      </div>
     </div>
-    </div>
+</div>
