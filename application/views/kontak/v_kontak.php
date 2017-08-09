@@ -43,7 +43,7 @@
                                             <td><?php echo $contacts['telp']?></td>
                                             <td><?php echo $contacts['email']?></td>
                                             <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('user/ubah')?>"> Ubah </a>
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('kontak/ubah')?>"> Ubah </a>
                                                 <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
                                             </td>
                                         </tr>
