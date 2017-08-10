@@ -13,12 +13,13 @@
 
                         <div class="body">
                             <form class="form-horizontal" action="<?php echo base_url('Member/v_ubah');?> " method="post">
+                                <input type="text" name="id_member" value="<?php echo $id_member?>">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama Lengkap</label>
                                     </div>
 
-                                    <input type="hidden" name="nama" value="<?php echo $member[0]->nama?>" >
+                                    <input type="hidden" value="<?php echo $member[0]->nama?>" name="member">
 
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
@@ -36,7 +37,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="jabatan" id="email_address_2" class="form-control" placeholder="Masukkan Jabatan" value="<?php echo $member[0]->jabatan?>">
+                                                <input type="text" name="jabatan" class="form-control" placeholder="Masukkan Jabatan" value="<?php echo $member[0]->jabatan?>">
                                             </div>
                                         </div>
                                     </div>

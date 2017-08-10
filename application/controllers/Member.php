@@ -48,11 +48,12 @@ class Member extends CI_Controller{
 		$this->load->view('template/footer.php');
 	}
 
-	public function ubah($nama_lengkap = 0){
-		if($nama_lengkap !=0)
+	public function ubah($id_member = 0){
+		if($id_member !=0)
 	{
-		$where 	= array('nama'=> $nama_lengkap);
+		$where 	= array('id_member'=> $id_member);
 		$data['member'] = $this->db->get_where('member',$where)->result();
+		$data['id_member'] = $id_member;
 		$this->load->view('template/header.php');
 		$this->load->view('member/v_ubahmember.php', $data);
 		$this->load->view('template/footer.php');
@@ -66,25 +67,28 @@ class Member extends CI_Controller{
 
 	public function v_ubah()
 	{
+			$id_member 		= $this->input->post('id_member');
 			$nama_lengkap    =   $this->input->post ('nama');
 			$jabatan         =	  $this->input->post ('jabatan');
 			
+			echo $id_member;
+
 	 		$data = array(
 	 			'nama'=>$nama_lengkap,
 	 			'jabatan'=>$jabatan
 	 			);
-	 		$this->db->where('nama',$nama_lengkap);
+	 		$this->db->where('id_member', $id_member);
 			$this->db->update('member',$data);
 			// $kondisi = array('nama' => $anggota);
 			// $data['member'] = $this->db->get_where('member',$kondisi)->result();
-			redirect (base_url('member/index'));
+			redirect (base_url('member/'));
 	}
 	public function hapus()
 	{
 		if ($this->input->post() != null) {
 			$id_hapus = $this->input->post('id_hapus');
 
-			$where = array('nama'=>$id_hapus);
+			$where = array('id_member'=>$id_hapus);
 			$this->db->delete('member',$where);
 			redirect(base_url('member'));
 		}
