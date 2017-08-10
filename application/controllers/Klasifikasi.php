@@ -79,6 +79,7 @@ class Klasifikasi extends CI_Controller{
 			// $kondisi = array('id_class' => $id_klasifikasi);
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result();
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
+			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
 
 			redirect (base_url('klasifikasi'));
 	}
