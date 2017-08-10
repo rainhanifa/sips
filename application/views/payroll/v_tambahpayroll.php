@@ -29,7 +29,7 @@
                                                 foreach ($member as $key => $value) {
                                            ?>
                                                 <option value="<?php echo $value->id_member?>"><?php
-                                                echo $value->jabatan?></option>
+                                                echo $value->nama?></option>
                                                 <?php
                                             }
                                             ?>
