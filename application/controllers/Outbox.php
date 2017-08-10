@@ -7,8 +7,10 @@ class Outbox extends CI_Controller {
 		
 	public function index()
 	{
-		$data['outbox'] = $this->db->get("outbox")->result_array();
+		// $data['outbox'] = $this->db->get("outbox")->result_array();
 
+		$data['outbox'] =	$this->db->select('outbox.id, outbox.no_letter, outbox.code_letter, outbox.date, contacts.name, outbox.subject')->from('outbox')->join('contacts', 'id_contacts = outbox.recipient_id')
+							->get()->result_array();
 
 		$this->load->view('template/header.php');
 		$this->load->view('outbox/v_outbox.php',$data);
@@ -19,10 +21,12 @@ class Outbox extends CI_Controller {
 	{
 		
 		$pilih['class']=$this->db->get('class')->result();
+		$pilih['kontak']=$this->db->get('contacts')->result();
+
 
 		if (isset($_POST['submit'])) {
 			$tanggal  	  	= date('Y-m-d', strtotime($this->input->post('date')));			
-			$penerima 	  	= $this->input->post('recipient_id');
+			$penerima 	  	= $this->input->post('penerima');
 			$perihal  	  	= $this->input->post('subject');
 			$klasifikasi  	  = $this->input->post('klasifikasi');
 			
@@ -81,12 +85,46 @@ class Outbox extends CI_Controller {
 		$this->load->view('template/footer.php');
 	}
 
-	public function ubah()
+	public function ubah($id = 0)
 	{
-		$this->load->view('template/header.php');
-		$this->load->view('outbox/v_ubahoutbox.php');
-		$this->load->view('template/footer.php');
+		if ($id != 0) 
+		{
+			$where 	= array('id'=> $id);
+			$data['outbox'] = $this->db->get_where('outbox',$where)->row();
+		
+				$this->load->view('template/header.php');
+				$this->load->view('outbox/v_ubahoutbox.php',$data);
+				$this->load->view('template/footer.php');
+		} 
+		else{
+				$this->load->view('template/header.php');
+				$this->load->view('outbox/v_ubahoutbox.php');
+				$this->load->view('template/footer.php');
+		}
 	}
+
+	public function v_ubah()
+	{
+		$id_outbox		= $this->input->post('id');
+		$klasifikasi	= $this->input->post('klasifikasi');
+		$tanggal		= $this->input->post('date');
+		$penerima		= $this->input->post('penerima');
+		$code_letter	= $this->input->post('code_letter');
+
+		$data_keluar 	= array('id' => $id_outbox ,
+								'date' => $tanggal,
+								'subject' => $perihal,
+								'recipient_id' => $penerima,
+								'code_letter' => $code_letter
+								);
+
+	 		$this->db->where('id',$id_outbox);
+			$this->db->update('invoice',$data_keluar);
+			// $kondisi = array('id_class' => $id_klasifikasi);
+			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
+			redirect (base_url('outbox/index'));
+	}
+
 
 	public function hapus()
 	{

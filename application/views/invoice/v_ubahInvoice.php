@@ -28,30 +28,32 @@
                                 </div>
 
                                 <!--ambil dari db project-->
-                            <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                    <label for="">Proyek</label>
-                                </div>
-                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                    <div class="form-group">
-                                        <select name="projects_id">
-                                                <?php
-                                                foreach ($proyek as $key => $value) {
-                                                ?>
-                                                    <option value="<?php echo $value->id_project?>"><?php echo $value->name_project?></option>
-                                                <?php
-                                                    }
-                                                ?>
-                                            </select> 
+                                <div class="row clearfix">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="">Proyek</label>
+                                    </div>
+                                    <input type="hidden" name="date" value="<?php echo $tagihan->projects_id?>">
+                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                        <div class="form-group">
+                                            <select name="projects_id">
+                                                    <?php
+                                                    foreach ($proyek as $key => $value) {
+                                                    ?>
+                                                        <option value="<?php echo $value->id_project?>"><?php echo $value->name_project?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
+                                                </select> 
+                                        </div>
                                     </div>
                                 </div>
-                            </div>
 
 
                                <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                  <label for="">Nama Penerima</label>
                                 </div>
+                                <input type="hidden" name="date" value="<?php echo $tagihan->recipient_id?>">
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <select name="penerima">
@@ -62,12 +64,11 @@
                                                 <?php
                                                     }
                                                 ?>
-                                            </select> 
+                                        </select> 
                                             
                                         </div>
                                     </div>
                                 </div>
-                            </div>
                                 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
