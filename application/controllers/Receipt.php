@@ -27,10 +27,16 @@ class Receipt extends CI_Controller {
 			$file 		= $this->input->post('file');
 			$amount		= $this->input->post('amount');
 
-			$receipt_data 	= array("date" 			=> $date,
-									"subject" 		=> $subject,
-									"file"			=> $file,
-									"amount" 		=> $amount
+			$no_letter = '';
+			$no_letter = $this->db->query("SELECT Max(RECEIPT.no_letter)AS MAX From RECEIPT ")->result_array();
+			// $no_letter = $no_letter + 1;
+			$no_letter = (int)$no_letter[0]["MAX"] +1;
+
+			$receipt_data 	= array('no_letter'     => $no_letter,
+									'date' 			=> $date,
+									'subject' 		=> $subject,
+									'file'			=> $file,
+									'amount' 		=> $amount
 									);
 			//insert ke database
 			if($this->db->insert($this->table, $receipt_data)){
@@ -59,8 +65,13 @@ class Receipt extends CI_Controller {
 	}
 
 	public function hapus()
-	{
-		redirect(base_url('receipt'));
+	{if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+			$where = array('id'=>$id_hapus);
+
+			$this->db->delete('receipt',$where);
+			redirect(base_url('receipt'));
+		}
 	}
 }
 ?>

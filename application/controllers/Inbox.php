@@ -61,7 +61,12 @@ class Inbox extends CI_Controller {
 
 	public function hapus()
 	{
-		redirect(base_url('inbox'));
-	}
+if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('id'=>$id_hapus);
+			$this->db->delete('inbox',$where);
+			redirect(base_url('inbox'));
+		}	}
 }
 ?>

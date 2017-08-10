@@ -43,8 +43,13 @@
                                             <td><?php echo $contacts['telp']?></td>
                                             <td><?php echo $contacts['email']?></td>
                                             <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('kontak/ubah')?>"> Ubah </a>
-                                                <a class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</a>
+                                              <div class="row">
+                                                        <a href="<?php echo base_url('kontak')?>/ubah">
+                                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
+                                                        </a>
+
+                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$contacts['id_contacts']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
+                                                 </div>
                                             </td>
                                         </tr>
                                     <?php 
@@ -60,25 +65,36 @@
             <!-- #END# Basic Examples -->
         </div>
     </section>
+
+      <script type="text/javascript">
+    function ClickModalDelete(id){
+        $("#id_delete").val(id);
+    }
+    </script>
+
+
      <!-- Modal -->
-                                                <div class="modal fade" id="myModal" role="dialog">
-                                                    <div class="modal-dialog">
-                                                        
-                                                    <!-- Modal content-->
-                                                    <div class="modal-content">
-                                                        <div class="modal-header">
-                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                                <h4 class="modal-title">Konfirmasi Penghapusan</h4>
-                                                        </div>
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
+        
+        <!-- Modal content-->
+            <div class="modal-content">
+                <form action="<?=base_url('kontak/hapus')?>" method = "POST">
+                    <div class="modal-header">
+                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                        <h4 class="modal-title">Konfirmasi Penghapusan</h4>
+                    </div>
 
-                                                        <div class="modal-body">
-                                                                <h4>Apakah anda ingin menghapus surat ini?</h4>
-                                                        </div>
+                    <div class="modal-body">
+                        <h4>Apakah anda ingin menghapus surat ini?</h4>
+                            <input type="text" name="id_hapus" id="id_delete"> </input>
+                    </div>
 
-                                                        <div class="modal-footer">
-                                                            <button type="button" class="btn btn-info" data-dismiss="modal"><b>Ya</b></button>
-                                                            <button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button>
-                                                        </div>
-                                                    </div>
-                                                    </div>
-                                                </div>
+                    <div class="modal-footer">
+                        <button type="submit" value="submit" name="submit" id=btnDelete class="btn btn-primary"><b>Ya</b></button>
+                        <a href="<?php echo base_url('kontak')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
