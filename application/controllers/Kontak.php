@@ -59,7 +59,12 @@ class Kontak extends CI_Controller {
 
 	public function hapus()
 	{
-		redirect(base_url('kontak'));
-	}
+	if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('id_contacts'=>$id_hapus);
+			$this->db->delete('contacts',$where);
+			redirect(base_url('kontak'));
+		}	}
 }
 ?>

@@ -43,7 +43,7 @@
 
                                             <td><?php echo $nomor ?></td>
                                             <td><? php echo $daftar ["date"] ?></td>
-                                            <td><? php echo $daftar ["member_id"] ?></td>
+                                            <td><? php echo $daftar ["id_member"] ?></td>
                                             <td><? php echo $daftar ["payment_periode"] ?></td>
                                             <td><? php echo $daftar ["amount"] ?></td>
                                             <td>

@@ -41,8 +41,8 @@
                                             <td><?php echo $anggota ["nama"] ?></td>
                                             <td><?php echo $anggota ["jabatan"] ?></td>
                                             <td> 
-                                                <a class="btn btn-primary waves-effect"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$anggota['nama']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik" >Hapus</button>
+                                                <a  href=<?php echo base_url()."member/ubah/".$anggota['nama']?> class="btn btn-primary waves-effect"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$anggota["nama"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik" >Hapus</button>
                                             </td>
                                         </tr>
                                     <?php 

@@ -27,7 +27,7 @@ class Outbox extends CI_Controller {
 			$klasifikasi  	  = $this->input->post('klasifikasi');
 			
 
-			$no_letter = '';
+			// $no_letter = '';
 			$no_letter = $this->db->query("SELECT Max(OUTBOX.no_letter)AS MAX From OUTBOX ")->result_array();
 			// $no_letter = $no_letter + 1;
 

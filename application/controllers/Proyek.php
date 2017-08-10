@@ -19,9 +19,10 @@ class Proyek extends CI_Controller {
 		if (isset($_POST['submit'])) {
 			$nama_proyek = $this->input->post('name_project');
 			$kode_proyek = $this->input->post('code_project');
-
+			$id_proyek   = $this->input->post('id_project');
 			$data_proyek = array('name_project' => $nama_proyek,
-								 'code_project' => $kode_proyek
+								 'code_project' => $kode_proyek,
+								 'id_project'	=> $id_proyek
 								 );
 
 		//insert ke database
@@ -43,11 +44,42 @@ class Proyek extends CI_Controller {
 		$this->load->view('template/footer.php');
 	}
 
-	public function edit()
+	public function ubah($id_proyek = 0)
 	{
-		$this->load->view('template/header.php');
-		$this->load->view('proyek/v_ubahProyek.php');
-		$this->load->view('template/footer.php');
+		if($id_proyek != 0)
+		{
+			$where 	= array('id_project'=> $id_proyek);
+			$data['proyek'] = $this->db->get_where('projects',$where)->result();
+			$this->load->view('template/header.php');
+			$this->load->view('proyek/v_ubahProyek.php', $data);
+			$this->load->view('template/footer.php');
+		}
+		else{
+			$this->load->view('template/header.php');
+			$this->load->view('proyek/v_ubahProyek.php');
+			$this->load->view('template/footer.php');
+		}
+	}
+
+	public function v_ubah()
+	{
+			$id_proyek     =  $this->input->post ('id_project');
+			$nama_proyek	 =	$this->input->post ('name_project');
+			$kode_proyek	= $this->input->post('code_project');
+			
+	 		$data_proyek = array(
+				 			'id_project'=>$id_proyek,
+				 			'code_project' => $kode_proyek,
+				 			'name_project'=>$nama_proyek
+
+				 		 );
+
+	 		$this->db->where('id_project',$id_proyek);
+			$this->db->update('projects',$data_proyek);
+			// $kondisi = array('id_class' => $id_klasifikasi);
+			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
+			redirect (base_url('proyek/index'));
+
 	}
 
 	public function hapus()

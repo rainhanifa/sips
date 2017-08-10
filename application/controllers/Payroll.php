@@ -18,17 +18,19 @@ class Payroll extends CI_Controller{
 
 	public function tambah()
 	{
+		$nama['member'] = $this->db->get('member')->result();
 		// jika ada post
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
 			$tanggal	= $this->input->post("date");
-			$penerima	= $this->input->post("member_id");
+			$penerima	= $this->input->post("id_member");
 			$bulan		=$this->input->post("payment_period");
 			$nominal	= $this->input->post("amount");
+			$nama	= $this->input->post("member");
 
 
 			$user_data 	= array("date" => $tanggal,
-								"member_id" => $penerima,
+								"id_member" => $penerima,
 								"payment_period" => $bulan,
 								"amount" => $nominal
 								);
@@ -49,7 +51,7 @@ class Payroll extends CI_Controller{
 
 
 		$this->load->view('template/header.php');
-		$this->load->view('payroll/v_tambahpayroll.php');
+		$this->load->view('payroll/v_tambahpayroll.php',$nama);
 		$this->load->view('template/footer.php');
 	}
 

@@ -60,6 +60,8 @@
     <!-- AdminBSB Themes. You can choose a theme from css/themes instead of get all themes -->
     <link href="<?php echo base_url('assets/')?>css/themes/all-themes.css" rel="stylesheet" />
 
+    
+
 
 <body class="theme-red">
     <!-- Page Loader -->

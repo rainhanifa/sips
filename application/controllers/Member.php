@@ -24,11 +24,11 @@ class Member extends CI_Controller{
 			$nama_lengkap	= $this->input->post("nama");
 			$jabatan	= $this->input->post("jabatan");
 
-			$user_data 	= array("nama" => $nama_lengkap,
+			$member_data 	= array("nama" => $nama_lengkap,
 								"jabatan" => $jabatan,
 								);
 			//insert ke database
-			if($this->db->insert($this->table, $user_data)){
+			if($this->db->insert($this->table, $member_data)){
 				// kirim pesan berhasil
 				$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah member!</div>');
 
@@ -48,13 +48,37 @@ class Member extends CI_Controller{
 		$this->load->view('template/footer.php');
 	}
 
-	public function ubah()
+	public function ubah($nama_lengkap = 0){
+		if($nama_lengkap !=0)
 	{
+		$where 	= array('nama'=> $nama_lengkap);
+		$data['member'] = $this->db->get_where('member',$where)->result();
+		$this->load->view('template/header.php');
+		$this->load->view('member/v_ubahmember.php', $data);
+		$this->load->view('template/footer.php');
+	}
+	else{
 		$this->load->view('template/header.php');
 		$this->load->view('member/v_ubahmember.php');
 		$this->load->view('template/footer.php');
 	}
+}
 
+	public function v_ubah()
+	{
+			$nama_lengkap    =   $this->input->post ('nama');
+			$jabatan         =	  $this->input->post ('jabatan');
+			
+	 		$data = array(
+	 			'nama'=>$nama_lengkap,
+	 			'jabatan'=>$jabatan
+	 			);
+	 		$this->db->where('nama',$nama_lengkap);
+			$this->db->update('member',$data);
+			// $kondisi = array('nama' => $anggota);
+			// $data['member'] = $this->db->get_where('member',$kondisi)->result();
+			redirect (base_url('member/index'));
+	}
 	public function hapus()
 	{
 		if ($this->input->post() != null) {
