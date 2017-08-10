@@ -50,12 +50,48 @@ class Kontak extends CI_Controller {
 		$this->load->view('template/footer.php');
 	}
 
-	public function ubah()
+	public function ubah($id_contacts = 0){
+	if($id_contacts != 0)
+		{
+			$where 	= array('id_contacts'=> $id_contacts);
+			$data['contacts'] = $this->db->get_where('contacts',$where)->result();
+			$this->load->view('template/header.php');
+			$this->load->view('kontak/v_ubahkontak.php', $data);
+			$this->load->view('template/footer.php');
+		}
+		else{
+			$this->load->view('template/header.php');
+			$this->load->view('kontak/v_ubahkontak.php');
+			$this->load->view('template/footer.php');
+		}
+	
+	}	
+	
+	public function v_ubah()
 	{
-		$this->load->view('template/header.php');
-		$this->load->view('kontak/v_ubahkontak.php');
-		$this->load->view('template/footer.php');
+
+			$name			= $this->input->post("name");
+			$institution	= $this->input->post("institution");
+			$telp 			= $this->input->post("telp");
+			$email			= $this->input->post("email");
+
+			$contacts_data 	= array("name" 		=> $name,
+								"institution" 	=> $institution,
+								"telp" 			=> $telp,
+								"email"			=> $email
+								);
+
+	 		$this->db->where('id_contacts',$id_contacts);
+			$this->db->update('name',$contacts_data);
+			$this->db->update('institution',$contacts_data);
+			$this->db->update('telp',$contacts_data);
+			$this->db->update('email',$contacts_data);
+			
+			// $kondisi = array('id_class' => $id_klasifikasi);
+			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
+			redirect (base_url('kontak'));
 	}
+
 
 	public function hapus()
 	{

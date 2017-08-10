@@ -12,15 +12,19 @@
                         </div>
 
                         <div class="body">
-                            <form class="form-horizontal">
+                            <form class="form-horizontal" action="<?php echo base_url('Member/v_ubah');?> " method="post">
+                                <input type="text" name="id_member" value="<?php echo $id_member?>">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama Lengkap</label>
                                     </div>
+
+                                    <input type="hidden" value="<?php echo $member[0]->nama?>" name="member">
+
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Lengkap">
+                                                <input type="text" name="nama" class="form-control" placeholder="Masukkan Nama Lengkap" value="<?php echo $member[0]->nama?>">
                                             </div>
                                         </div>
                                     </div>
@@ -33,7 +37,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Jabatan ">
+                                                <input type="text" name="jabatan" class="form-control" placeholder="Masukkan Jabatan" value="<?php echo $member[0]->jabatan?>">
                                             </div>
                                         </div>
                                     </div>
@@ -42,7 +46,7 @@
                                 <div class="text-center">
                                 <div class="body">
                                     <div class="button-info">
-                                        <a href="<?php echo base_url('member/')?>"><button type="button" class="btn btn-primary waves-effect">Simpan</button></a>
+                                        <input type="submit" class="btn btn-primary waves-effect" name="submit" value="Simpan">
                                         <a href="<?php echo base_url('member/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
                                 </div>    

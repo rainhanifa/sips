@@ -39,7 +39,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="name_class" class="form-control" placeholder="Masukkan Nama Klasifiksi">
+                                                <input type="text" name="name_class" class="form-control" placeholder="Masukkan Nama Klasifikasi">
                                             </div>
                                         </div>
                                     </div>

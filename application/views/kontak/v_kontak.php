@@ -44,10 +44,7 @@
                                             <td><?php echo $contacts['email']?></td>
                                             <td> 
                                               <div class="row">
-                                                        <a href="<?php echo base_url('kontak')?>/ubah">
-                                                        <button type="button" class="btn btn-primary waves-effect">Ubah</button>
-                                                        </a>
-
+                                                        <a href=<?php echo base_url()."kontak/ubah/".$contacts['id_contacts']?> class="btn btn-primary waves-effect"> Ubah </a>
                                                         <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$contacts['id_contacts']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                                  </div>
                                             </td>

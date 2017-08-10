@@ -24,11 +24,16 @@
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                                     
-                                           <select>
-                                                <option value="0">Akhmad Maulidi</option>
-                                                <option value="1">Beni</option>
-                                                <option value="2">Ibnu</option>  
+                                           <select name="id_member">
+                                           <?php 
+                                                foreach ($member as $key => $value) {
+                                           ?>
+                                                <option value="<?php echo $value->id_member?>"><?php
+                                                echo $value->nama?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                                 
                                             </select>
                                         </div>
                                     </div>

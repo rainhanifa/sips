@@ -32,7 +32,8 @@
                                     <tbody>
                                        <?php
                                         $nomor = 1;
-                                        foreach($class as $klasifikasi){ ?>
+                                        foreach($class as $klasifikasi) { 
+                                        ?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $klasifikasi ["id_class"] ?></td>
