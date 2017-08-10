@@ -44,7 +44,7 @@
                                             <td><?php echo $nomor ?></td>
                                             <td><? php echo $daftar ["date"] ?></td>
                                             <td><? php echo $daftar ["id_member"] ?></td>
-                                            <td><? php echo $daftar ["payment_periode"] ?></td>
+                                            <td><? php echo $daftar ["payment_period"] ?></td>
                                             <td><? php echo $daftar ["amount"] ?></td>
                                             <td>
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>

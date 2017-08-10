@@ -6,6 +6,8 @@ class Payroll extends CI_Controller{
 
 	public function index()
 	{
+		// $data['gaji'] = $this->db->select ('payroll.no_letter,payroll.date,member.id_member,payroll.payment_period,payroll.amount') -> FROM ('payroll') -> join ('member', 'id_member = payroll.member_id')
+		// ->get()->result_array();
 		//query bisa menggunakan 
 		$data['payroll']	= $this->db->query("SELECT * FROM payroll")->result_array();
 		//atau menggunakan builder get
@@ -23,14 +25,14 @@ class Payroll extends CI_Controller{
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
 			$tanggal	= $this->input->post("date");
-			$penerima	= $this->input->post("id_member");
+			$penerima	= $this->input->post("member");
 			$bulan		=$this->input->post("payment_period");
 			$nominal	= $this->input->post("amount");
 			$nama	= $this->input->post("member");
 
 
 			$user_data 	= array("date" => $tanggal,
-								"id_member" => $penerima,
+								"member" => $penerima,
 								"payment_period" => $bulan,
 								"amount" => $nominal
 								);
