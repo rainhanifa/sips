@@ -28,15 +28,22 @@
                                 </div>
                             </div>
 
+                            <!--ambil dari db project-->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                     <label for="">Proyek</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" name="name_project" id="proyek" class="form-control" placeholder="Masukkan Proyek">
-                                        </div>
+                                        <select name="projects_id">
+                                                <?php
+                                                foreach ($proyek as $key => $value) {
+                                                ?>
+                                                    <option value="<?php echo $value->id_project?>"><?php echo $value->name_project?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </select> 
                                     </div>
                                 </div>
                             </div>
@@ -48,8 +55,16 @@
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
-                                        <div class="form-line">
-                                            <input type="text" name="recipient_id" id="nama" class="form-control" placeholder="Masukkan Nama">
+                                        <select name="penerima">
+                                                <?php
+                                                foreach ($kontak as $key => $value) {
+                                                ?>
+                                                    <option value="<?php echo $value->id_contacts?>"><?php echo $value->name?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </select> 
+                                            
                                         </div>
                                     </div>
                                 </div>

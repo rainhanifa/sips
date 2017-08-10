@@ -1,4 +1,4 @@
-<?php
+ <?php
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Proyek extends CI_Controller {
@@ -87,7 +87,7 @@ class Proyek extends CI_Controller {
 		if ($this->input->post() != null) {
 			$id_hapus = $this->input->post('id_hapus');
 
-			$where = array('code_project'=>$id_hapus);
+			$where = array('id_project'=>$id_hapus);
 			$this->db->delete('projects',$where);
 			redirect(base_url('proyek'));
 		}

@@ -70,7 +70,7 @@
                                             <td> 
                                                 <a href=<?php echo base_url()."proyek/ubah/".$project['id_project']?> class="btn btn-primary waves-effect"> Ubah </a>
                                                 
-                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$project["code_project"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
+                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$project["id_project"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                             </td>
                                         </tr>
                                         <?php

@@ -41,10 +41,10 @@ class Outbox extends CI_Controller {
 									'05' => 'V',
 									'06' => 'VI',
 									'07' => 'VII',
-									'08' => 'VII',
+									'08' => 'VIII',
 									'09' => 'IX',
 									'10' => 'X',
-									'11' => 'xI',
+									'11' => 'XI',
 									'12' => 'XII'
 			);
 			// var_dump($bulan_romawi['01']);
