@@ -17,10 +17,13 @@
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama</label>
                                     </div>
+
+                                    <input type="hidden" value="<?php echo $contacts[0]->name?>" name="name">
+
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control">
+                                                <input type="text" id="email_address_2" class="form-control" value="<?php echo $contacts[0]->name?>">
                                             </div>
                                         </div>
                                     </div>
@@ -34,7 +37,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control">
+                                                <input type="text" id="email_address_2" class="form-control" value="<?php echo $contacts[0]->institution?>">
                                             </div>
                                         </div>
                                     </div>
@@ -47,7 +50,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" >
+                                                <input type="text" id="email_address_2" class="form-control" value="<?php echo $contacts[0]->telp?>">
                                             </div>
                                         </div>
                                     </div>
@@ -60,7 +63,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="email" id="password_2" class="form-control" >
+                                                <input type="email" id="password_2" class="form-control" value="<?php echo $contacts[0]->email?>">
                                             </div>
                                         </div>
                                     </div>
