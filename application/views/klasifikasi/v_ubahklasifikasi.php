@@ -37,7 +37,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Klasifikasi" value="<?php echo $klasifikasi[0]->name_class ?>">
+                                                <input type="text" name="name_class" class="form-control" placeholder="Masukkan Nama Klasifikasi" value="<?php echo $klasifikasi[0]->name_class ?>">
                                             </div>
                                         </div>
                                     </div>
@@ -45,7 +45,7 @@
                                 <div class="text-center">
                                 <div class="body">
                                     <div class="button-info">
-                                        <a href="<?php echo base_url('klasifikasi/')?>"><button type="submit" class="btn btn-primary waves-effect">Simpan</button></a>
+                                        <input type="submit" name="submit" value="Simpan" class="btn btn-primary waves-effect">
                                         <a href="<?php echo base_url('klasifikasi/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
                                 </div>    

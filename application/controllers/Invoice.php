@@ -19,10 +19,12 @@ class Invoice extends CI_Controller {
 			$tanggal = date('Y-m-d', strtotime($this->input->post('date')));
 			$penerima = $this->input->post('recipient_id');
 			$perihal = $this->input->post('subject');
-
-			$data_tagihan = array('date' => $tanggal,
+			$nominal = $this->input->post('amount');
+			
+			$data_tagihan = array('date'		 => $tanggal,
 								  'recipient_id' => $penerima,
-								  'subject' => $perihal);
+								  'amount'		 => $nominal
+								  );
 
 			//insert ke database
 			if($this->db->insert($this->table, $data_tagihan)){
@@ -51,7 +53,13 @@ class Invoice extends CI_Controller {
 
 	public function hapus()
 	{
-		redirect(base_url('invoice'));
+		if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('no_letter'=>$id_hapus);
+			$this->db->delete('outbox',$where);
+			redirect(base_url('invoice'));
+		}
 	}
 }
 ?>

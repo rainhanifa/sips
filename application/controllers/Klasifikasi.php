@@ -2,7 +2,7 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Klasifikasi extends CI_Controller{
-	// var $table="class";
+	 var $table="class";
 
 	public function index()
 	{
@@ -52,7 +52,7 @@ class Klasifikasi extends CI_Controller{
 		if($id_klasifikasi != 0)
 		{
 			$where 	= array('id_class'=> $id_klasifikasi);
-			$data['klasifikasi'] = $this->db->get('class',$where)->result();
+			$data['klasifikasi'] = $this->db->get_where('class',$where)->result();
 			$this->load->view('template/header.php');
 			$this->load->view('klasifikasi/v_ubahklasifikasi.php', $data);
 			$this->load->view('template/footer.php');
@@ -70,14 +70,15 @@ class Klasifikasi extends CI_Controller{
 			$nama				=	$this->input->post ('name_class');
 			
 	 		$data = array(
-	 			'id_class'=>$id_klasifikasi,
-	 			'name_class'=>$nama
-	 			);
+				 			'id_class'=>$id_klasifikasi,
+				 			'name_class'=>$nama
+				 		 );
+
 	 		$this->db->where('id_class',$id_klasifikasi);
 			$this->db->update('class',$data);
-			$kondisi = array('id_class' => $id_klasifikasi);
-			$data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result();
-			redirect (base_url('klasifikasi/index'));
+			// $kondisi = array('id_class' => $id_klasifikasi);
+			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
+			redirect (base_url('klasifikasi'));
 	}
 
 	public function hapus(/*$id=0*/)

@@ -42,6 +42,7 @@
                                               <th>No</th>
                                               <th>Nama Proyek</th>
                                               <th>Kode Proyek</th>
+                                              <th>Id Proyek</th>
                                               <th>Pilihan/Aksi</th>    
                                           </tr>
                                       </thead>
@@ -51,6 +52,7 @@
                                               <th>No</th>
                                               <th>Nama Proyek</th>
                                               <th>Kode Proyek</th>
+                                              <th>Id Proyek</th>
                                               <th>Pilihan/Aksi</th>
                                               
                                           </tr>
@@ -64,8 +66,10 @@
                                             <td><?php echo $nomor?></td>
                                             <td><?php echo $project['name_project']?></td>
                                             <td><?php echo $project['code_project']?></td>
+                                            <td><?php echo $project['id_project']?></td>
                                             <td> 
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('proyek')?>/edit"> Ubah </a>
+                                                <a href=<?php echo base_url()."proyek/ubah/".$project['id_project']?> class="btn btn-primary waves-effect"> Ubah </a>
+                                                
                                                 <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$project["code_project"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                             </td>
                                         </tr>
@@ -95,7 +99,7 @@
                                                   
       <!-- Modal content-->
       <div class="modal-content">
-        <form action="<?php echo base_url('proyek/hapus')?>">
+        <form action="<?php echo base_url('Proyek/hapus')?>" method="POST">
           <div class="modal-header">
               <button type="button" class="close" data-dismiss="modal">&times;</button>
                   <h4 class="modal-title">
