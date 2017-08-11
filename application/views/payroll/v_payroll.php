@@ -84,7 +84,7 @@
 
       <div class="modal-body">
         <p>Hapus klasifikasi ? </p>
-        <input type="text" name="id_hapus" id="id_delete"> </input>
+        <input type="hidden" name="id_hapus" id="id_delete"> </input>
       </div>
 
         <div class="modal-footer">
