@@ -14,12 +14,13 @@
                             foreach ($outbox as $keluar) {
                         ?>
                         <div class="body">
+                         <input type="hidden" name="id" value="<?php echo $keluar['id']?>">
                             <form class="form-horizontal" action="<?php echo base_url('outbox/v_ubah')?>" method="POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nomor Surat</label>
                                     </div>
-                                    <input type="hidden" name="date" value="<?php echo $keluar['code_letter'] ?>">
+                                    <input type="hidden" name="id" value="<?php echo $keluar['id'] ?>">
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
@@ -56,7 +57,7 @@
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal Surat</label>
                                     </div>
-                                    <!-- input type="hidden" name="date" value="<?php echo $keluar['date']?>"> -->
+                                    
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
@@ -70,7 +71,7 @@
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                      <label for="password_2">Penerima</label>
                                     </div>
-                                    <!--<input type="hidden" name="date" value="<?php echo $keluar['recipient_id']?>">-->
+                                    
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">

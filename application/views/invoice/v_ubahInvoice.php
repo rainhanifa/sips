@@ -15,14 +15,13 @@
                                
                         ?>
                         <div class="body">
-                        <!-- <input type="hidden" name="date" value="<?php //echo $invoice['id']?>"> -->
                             <form class="form-horizontal" action="<?php echo base_url('invoice/v_ubah')?>" method = "POST">
                                 <div class="row clearfix">
+                                <input type="hidden" name="id" value="<?php echo $invoice['id']?>">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal </label>
                                     </div>
 
-                                    
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
