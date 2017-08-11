@@ -87,18 +87,22 @@ class Outbox extends CI_Controller {
 
 	public function ubah($id = 0)
 	{
+
+		$data['class'] = $this->db->get('class')->result_array();
+		$data['kontak'] = $this->db->get('contacts')->result_array();
 		if ($id != 0) 
 		{
 			$where 	= array('id'=> $id);
-			$data['outbox'] = $this->db->get_where('outbox',$where)->row();
-		
+			$data['outbox'] = $this->db->get_where('outbox',$where)->result_array();
+
 				$this->load->view('template/header.php');
 				$this->load->view('outbox/v_ubahoutbox.php',$data);
 				$this->load->view('template/footer.php');
+
 		} 
 		else{
 				$this->load->view('template/header.php');
-				$this->load->view('outbox/v_ubahoutbox.php');
+				$this->load->view('outbox/v_ubahoutbox.php', $data);
 				$this->load->view('template/footer.php');
 		}
 	}

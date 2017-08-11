@@ -42,7 +42,6 @@
                                               <th>No</th>
                                               <th>Nama Proyek</th>
                                               <th>Kode Proyek</th>
-                                              <th>Id Proyek</th>
                                               <th>Pilihan/Aksi</th>    
                                           </tr>
                                       </thead>
@@ -52,7 +51,6 @@
                                               <th>No</th>
                                               <th>Nama Proyek</th>
                                               <th>Kode Proyek</th>
-                                              <th>Id Proyek</th>
                                               <th>Pilihan/Aksi</th>
                                               
                                           </tr>
@@ -66,7 +64,6 @@
                                             <td><?php echo $nomor?></td>
                                             <td><?php echo $project['name_project']?></td>
                                             <td><?php echo $project['code_project']?></td>
-                                            <td><?php echo $project['id_project']?></td>
                                             <td> 
                                                 <a href=<?php echo base_url()."proyek/ubah/".$project['id_project']?> class="btn btn-primary waves-effect"> Ubah </a>
                                                 
@@ -109,7 +106,7 @@
 
           <div class="modal-body">
             <h4>Apakah anda ingin menghapus data ini ? </h4>
-              <input type="text" name="id_hapus" id="id_delete"></input>
+              <input type="hidden" name="id_hapus" id="id_delete"></input>
           </div>
 
           <div class="modal-footer">

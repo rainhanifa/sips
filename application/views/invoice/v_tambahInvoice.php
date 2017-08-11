@@ -28,6 +28,18 @@
                                 </div>
                             </div>
 
+                            <div class="row clearfix">
+                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                    <label for="">No. Surat </label>
+                                </div>
+                                <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
+                                    <div class="form-group">
+                                        <div class="form-line">
+                                            <input type="number" name="no_letter"  placeholder="Masukkan No. Surat">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
                             <!--ambil dari db project-->
                             <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -67,14 +79,11 @@
                                             
                                     </div>
                                 </div>
-                                </div>
-                            
-
-                            
-
+                            </div>
+                                
                            <div class="row clearfix">
                                 <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                 <label for="password_2">Institusi</label>
+                                    <label for="password_2">Institusi</label>
                                 </div>
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">

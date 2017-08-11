@@ -7,7 +7,8 @@
                         <div class="header">
                             <div class="text-center">
                                 <h1>
-                                    <?php echo $this->router->fetch_class();?>
+                                    <!-- <?php echo $this->router->fetch_class();?> -->
+                                    Surat Keluar (Outbox)
                                 </h1>
                             </div>
 
@@ -116,7 +117,7 @@
 
                     <div class="modal-body">
                         <h4>Apakah anda ingin menghapus surat ini?</h4>
-                            <input type="text" name="id_hapus" id="id_delete"> </input>
+                            <input type="hidden" name="id_hapus" id="id_delete"> </input>
                     </div>
 
                     <div class="modal-footer">

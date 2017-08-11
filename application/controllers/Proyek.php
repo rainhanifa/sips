@@ -63,18 +63,21 @@ class Proyek extends CI_Controller {
 
 	public function v_ubah()
 	{
-			$id_proyek     =  $this->input->post ('id_project');
-			$nama_proyek	 =	$this->input->post ('name_project');
-			$kode_proyek	= $this->input->post('code_project');
-			
-	 		$data_proyek = array(
-				 			'id_project'=>$id_proyek,
-				 			'code_project' => $kode_proyek,
-				 			'name_project'=>$nama_proyek
+			$id_proyek	     = $this->input->post ('id_project');
+			$nama_proyek	 = $this->input->post ('name_project');
+			$kode_proyek	 = $this->input->post ('code_project');
 
+
+			$where = array(
+				'id_project'=>$id_proyek
+				);
+			
+	 		$data_proyek = array(				 			
+				 			'code_project' => $kode_proyek,
+				 			'name_project' => $nama_proyek
 				 		 );
 
-	 		$this->db->where('id_project',$id_proyek);
+	 		$this->db->where($where);
 			$this->db->update('projects',$data_proyek);
 			// $kondisi = array('id_class' => $id_klasifikasi);
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();

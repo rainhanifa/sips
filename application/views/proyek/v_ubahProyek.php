@@ -18,7 +18,7 @@
                                     </div>
 
                                     <!--  -->
-                                    <input type="hidden" name="code_project" value="<?php echo $proyek[0]->code_project?>">
+                                    <input type="hidden" name="id_project" value="<?php echo $proyek[0]->id_project?>">
 
 
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
@@ -43,18 +43,6 @@
                                     </div>
                                 </div>
 
-                                <div class="row clearfix">
-                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Id Proyek</label>
-                                    </div>
-                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" name="id_project" class="form-control" placeholder="Masukkan Id Proyek" value="<?php echo $proyek[0]->id_project?>">
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
                                         <!-- Tombol Simpan dan Batal -->
                                 <div class="text-center">
                                     <div class="row">

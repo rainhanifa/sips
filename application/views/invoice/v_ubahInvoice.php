@@ -9,19 +9,24 @@
                                 <b>Ubah Data Invoice</b>
                             </h2> 
                         </div>
+                        <?php
 
+                            foreach ($tagihan as $invoice) {
+                               
+                        ?>
                         <div class="body">
+                        <!-- <input type="hidden" name="date" value="<?php //echo $invoice['id']?>"> -->
                             <form class="form-horizontal" action="<?php echo base_url('invoice/v_ubah')?>" method = "POST">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Tanggal </label>
                                     </div>
 
-                                    <input type="hidden" name="date" value="<?php echo $tagihan->date?>">
+                                    
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('d-m-Y', strtotime($invoice['date']))?>">
                                             </div>
                                         </div>
                                     </div>
@@ -32,14 +37,14 @@
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="">Proyek</label>
                                     </div>
-                                    <input type="hidden" name="date" value="<?php echo $tagihan->projects_id?>">
+                                    <!-- <input type="hidden" name="date" value="<?php echo $tagihan->projects_id?>"> -->
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <select name="projects_id">
                                                     <?php
-                                                    foreach ($proyek as $key => $value) {
+                                                    foreach ($proyek as $key) {
                                                     ?>
-                                                        <option value="<?php echo $value->id_project?>"><?php echo $value->name_project?></option>
+                                                        <option <?php echo ($invoice['projects_id'] == $key['id_project']) ? "selected"  : "" ?> value="<?php echo $key['id_project']?>"><?php echo $key['name_project']?></option>
                                                     <?php
                                                         }
                                                     ?>
@@ -50,25 +55,25 @@
 
 
                                <div class="row clearfix">
-                                <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                 <label for="">Nama Penerima</label>
-                                </div>
-                                <input type="hidden" name="date" value="<?php echo $tagihan->recipient_id?>">
+                                    <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
+                                        <label for="">Nama Penerima</label>
+                                    </div>
+                                <!-- <input type="hidden" name="date" value="<?php echo $tagihan->recipient_id?>"> -->
                                 <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                     <div class="form-group">
                                         <select name="penerima">
                                                 <?php
-                                                foreach ($kontak as $key => $value) {
-                                                ?>
-                                                    <option value="<?php echo $value->id_contacts?>"><?php echo $value->name?></option>
-                                                <?php
-                                                    }
-                                                ?>
+                                                    foreach ($kontak as $key) {
+                                                    ?>
+                                                        <option <?php echo ($invoice['recipient_id'] == $key['id_contacts']) ? "selected"  : "" ?> value="<?php echo $key['id_contacts']?>"><?php echo $key['name']?></option>
+                                                    <?php
+                                                        }
+                                                    ?>
                                         </select> 
-                                            
-                                        </div>
                                     </div>
                                 </div>
+                                </div>
+                                
                                 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -77,7 +82,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="number" name="amount" id="nominal" class="form-control" placeholder="Masukkan Nominal" value="<?php echo $tagihan->amount?>">
+                                                <input type="number" name="amount" id="nominal" class="form-control" placeholder="Masukkan Nominal" value="<?php echo $invoice['amount']?>">
                                             </div>
                                         </div>
                                     </div>
@@ -93,6 +98,9 @@
                                 </div>
                             </form>
                         </div>
+                        <?php
+                            }
+                        ?>
                     </div>
                 </div>
             </div>

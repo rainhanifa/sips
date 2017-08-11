@@ -82,7 +82,7 @@
                                                             <button type="button" class="btn btn-primary waves-effect">Ubah</button>
                                                         </a>
 
-                                                        <button type="button" class="btn btn-danger " onclick="ClickModalDelete(<?=$invoice['no_letter']?>)" id="modalKlik" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                        <button type="button" class="btn btn-danger " onclick="ClickModalDelete(<?=$invoice['id']?>)" id="modalKlik" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -121,7 +121,7 @@
 
                     <div class="modal-body">
                         <h4>Apakah anda ingin menghapus surat ini?</h4>
-                            <input type="text" name="id_hapus" id="id_delete"> </input>
+                            <input type="hidden" name="id_hapus" id="id_delete"> </input>
                     </div>
 
                     <div class="modal-footer">

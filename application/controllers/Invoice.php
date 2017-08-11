@@ -4,6 +4,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 class Invoice extends CI_Controller {
 
 	var $table = "invoice";
+
 	public function index()
 	{
 
@@ -27,27 +28,29 @@ class Invoice extends CI_Controller {
 			$nominal   = $this->input->post('amount');
 			$institusi = $this->input->post('institution');
 			$proyek    = $this->input->post('projects_id');
+			$no_surat  = $this->input->post('no_letter');
 
 			
 			$data_tagihan = array('date'		 	=> $tanggal,
 								  'recipient_id'    => $penerima,
 								  'amount'		 	=> $nominal,
 								  // 'institution'	 => $institusi,
-								  'projects_id' 	 => $proyek
+								  'projects_id' 	 => $proyek,
+								  'no_letter'		=> $no_surat
 
 								  );
 
 			//insert ke database
 			if($this->db->insert($this->table, $data_tagihan)){
 			// 	// kirim pesan berhasil
-			 	$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah user!</div>');
+			 	$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah data!</div>');
 
 			 	// redirect
 				redirect(base_url("invoice"));
 			 }
 			 else{
 			 	//kirim pesan error
-			 	$this->session->set_flashdata('message','<div class="alert alert-danger">Gagal menambah user!</div>');
+			 	$this->session->set_flashdata('message','<div class="alert alert-danger">Gagal menambah data!</div>');
 			 }
 		}
 		$this->load->view('template/header.php');
@@ -59,8 +62,15 @@ class Invoice extends CI_Controller {
 	{
 		if($id != 0)
 		{	
+
 			$where 	= array('id'=> $id);
-			$data['tagihan'] = $this->db->get_where('invoice',$where)->row();
+			$data['kontak'] = $this->db->get('contacts')->result_array();
+			$data['proyek'] = $this->db->get('projects')->result_array();
+			$data['tagihan'] = $this->db->get_where('invoice',$where)->result_array();
+
+
+			// echo print_r($data['tagihan']);
+			// die();
 
 			$this->load->view('template/header.php');
 			$this->load->view('invoice/v_ubahInvoice.php', $data);
@@ -83,10 +93,10 @@ class Invoice extends CI_Controller {
 			$tanggal   		=  date('Y-m-d', strtotime($this->input->post('date')));
 			
 	 		$data_tagihan   = array('date'		 	=> $tanggal,
-								  'penerima'        => $penerima,
-								  'amount'		 	=> $nominal,
+								  	'recipient_id'  => $penerima,
+								  	'amount'		=> $nominal,
 								  // 'institution'	 => $institusi,
-								  'projects_id' 	=> $proyek
+								  	'projects_id' 	=> $proyek
 
 								  );
 
@@ -94,7 +104,7 @@ class Invoice extends CI_Controller {
 			$this->db->update('invoice',$data_tagihan);
 			// $kondisi = array('id_class' => $id_klasifikasi);
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
-			redirect (base_url('proyek/index'));
+			redirect (base_url('invoice/index'));
 
 	}
 	public function hapus()
@@ -102,7 +112,7 @@ class Invoice extends CI_Controller {
 		if ($this->input->post() != null) {
 			$id_hapus = $this->input->post('id_hapus');
 
-			$where = array('no_letter'=>$id_hapus);
+			$where = array('id'=>$id_hapus);
 			$this->db->delete('invoice',$where);
 			redirect(base_url('invoice'));
 		}
