@@ -8,7 +8,7 @@ class Invoice extends CI_Controller {
 	public function index()
 	{
 
-		$data['tagihan'] =	$this->db->select('invoice.id, invoice.no_letter, invoice.date, contacts.name, projects.name_project, invoice.amount')->from('invoice')->join('projects', 'id_project = invoice.projects_id')
+		$data['tagihan'] =	$this->db->select('invoice.id, invoice.no_letter, invoice.date, contacts.name, projects.name_project, invoice.subject, invoice.amount')->from('invoice')->join('projects', 'id_project = invoice.projects_id')
 							->join('contacts', 'id_contacts = invoice.recipient_id')
 							->get()->result_array();
 		$this->load->view('template/header.php');
@@ -36,7 +36,8 @@ class Invoice extends CI_Controller {
 								  'amount'		 	=> $nominal,
 								  // 'institution'	 => $institusi,
 								  'projects_id' 	 => $proyek,
-								  'no_letter'		=> $no_surat
+								  'no_letter'		=> $no_surat,
+								  'subject'			=> $perihal
 
 								  );
 
@@ -89,6 +90,7 @@ class Invoice extends CI_Controller {
 			$penerima		=  $this->input->post('penerima');
 			$nominal		=  $this->input->post('amount');
 			$proyek     	=  $this->input->post('projects_id');
+			$perihal		=  $this->input->post('subject');
 			// $institusi = $this->input->post('institution');
 			$tanggal   		=  date('Y-m-d', strtotime($this->input->post('date')));
 			
@@ -96,7 +98,8 @@ class Invoice extends CI_Controller {
 								  	'recipient_id'  => $penerima,
 								  	'amount'		=> $nominal,
 								  // 'institution'	 => $institusi,
-								  	'projects_id' 	=> $proyek
+								  	'projects_id' 	=> $proyek,
+								  	'subject'		=> $perihal
 
 								  );
 
