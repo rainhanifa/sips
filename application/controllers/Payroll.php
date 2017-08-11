@@ -25,14 +25,16 @@ class Payroll extends CI_Controller{
 			// ambil value dari masing-masing input
 			$tanggal	= $this->input->post("date");
 			$penerima	= $this->input->post("id_member");
-			$bulan		= $this->input->post("date");
+
+			$bulan		= $this->input->post("payment_period");
+			// $bulan      = date('F',strtotime($bulan));
+
 			$nominal	= $this->input->post("amount");
 			$nama	= $this->input->post("id_member");
 
-			$insert_tanggal = date('Y-m-d', strtotime($tanggal));
-			$user_data 	= array("date" => $tanggal,
-								"id_member" => $penerima,
-								"payment_period" => $insert_tanggal,
+			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
+			$user_data 	= array("id_member" => $penerima,
+								"payment_period" => $bulan,
 								"amount" => $nominal
 								);
 			//insert ke database
@@ -56,37 +58,56 @@ class Payroll extends CI_Controller{
 		$this->load->view('template/footer.php');
 	}
 
-// 	public function ubah($id = 0){
-// 		if($id !=0)
-// 	{
-// 		$this->load->view('template/header.php');
-// 		$this->load->view('payroll/v_ubahpayroll.php');
-// 		$this->load->view('template/footer.php');
-// 	}
-// 	else{
-// 		$this->load->view('template/header.php');
-// 		$this->load->view('payroll/v_ubahpayroll.php');
-// 		$this->load->view('template/footer.php');
-// 	}
-// }
-// public function v_ubah()
-// 	{
-// 			$id_payroll 		= $this->input->post('id');
-// 			$nama_lengkap    =   $this->input->post ('nama');
-// 			$jabatan         =	  $this->input->post ('jabatan');
-			
-// 			echo $id_member;
+	public function ubah($id = 0){
+	$data['member'] = $this->db->get('member')->result();
+	if($id !=0)
+	{
+		$where = array('id'=> $id);
+		$query = "SELECT member.nama, payroll.* FROM payroll LEFT JOIN member ON member.id_member = payroll.id_member WHERE payroll.id = $id";
+		$data['payroll'] = $this->db->query($query)->result();
 
-// 	 		$data = array(
-// 	 			'nama'=>$nama_lengkap,
-// 	 			'jabatan'=>$jabatan
-// 	 			);
-// 	 		$this->db->where('id_member', $id_member);
-// 			$this->db->update('member',$data);
-// 			// $kondisi = array('nama' => $anggota);
-// 			// $data['member'] = $this->db->get_where('member',$kondisi)->result();
-// 			redirect (base_url('member/'));
-// 	}
+		$data['id'] = $id;
+		$this->load->view('template/header.php');
+		$this->load->view('payroll/v_ubahpayroll.php', $data);
+		$this->load->view('template/footer.php');
+	}
+	else{
+		$this->load->view('template/header.php');
+		$this->load->view('payroll/v_ubahpayroll.php');
+		$this->load->view('template/footer.php');
+	}
+}
+public function v_ubah()
+	{
+			$id				 = $this->input->post('id');
+			$id_member   	 = $this->input->post ('id_member');
+			$nama        	 = $this->input->post ('nama_member');
+			$bulan        	 = $this->input->post ('payment_period');
+			$nominal         = $this->input->post ('amount');
+
+			$where = array(
+				'id'=>$id
+				);
+
+
+			echo $id;echo "<br>";
+			echo $id_member;echo "<br>";
+			echo $nama;echo "<br>";
+			echo $bulan;echo "<br>";
+			echo $nominal;echo "<br>";
+
+
+	 		$data = array(
+	 			'id_member'=>$nama,
+	 			'date'=> date('Y-m-d', strtotime($bulan)),
+	 			'amount'=>$nominal
+	 			);
+	 		$this->db->where($where);
+			$this->db->update('payroll',$data);
+			// $kondisi = array('nama' => $anggota);
+			// $data['member'] = $this->db->get_where('member',$kondisi)->result();
+			redirect (base_url('payroll/'));
+	}
 
 
 	public function hapus()

@@ -58,7 +58,7 @@
             </div>            
         </div>
     </section>
-
+    
 <script type="text/javascript">
     function ClickModalDelete(id){
         $("#id_delete").val(id);
@@ -77,7 +77,7 @@
                 </div>
                 <div class="modal-body">
                     <p>Hapus Member ?</p>
-                        <input type="text" name="id_hapus" id="id_delete"> </input>
+                        <input type="hidden" name="id_hapus" id="id_delete"> </input>
                 </div>
                 <div class="modal-footer">
                     <button type="submit" value="submit" name="submit"  id=btnDelete class="btn btn-primary">Ya</button>

@@ -13,7 +13,7 @@
 
                         <div class="body">
                             <form class="form-horizontal" action="<?php echo base_url('Member/v_ubah');?> " method="post">
-                                <input type="text" name="id_member" value="<?php echo $id_member?>">
+                                <input type="hidden" name="id_member" value="<?php echo $id_member?>">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="email_address_2">Nama Lengkap</label>

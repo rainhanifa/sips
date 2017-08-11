@@ -67,12 +67,11 @@ class Member extends CI_Controller{
 
 	public function v_ubah()
 	{
-			$id_member 		= $this->input->post('id_member');
-			$nama_lengkap    =   $this->input->post ('nama');
-			$jabatan         =	  $this->input->post ('jabatan');
-			
-			echo $id_member;
+			$id_member 		 = $this->input->post('id_member');
+			$nama_lengkap    = $this->input->post ('nama');
+			$jabatan         = $this->input->post ('jabatan');
 
+			
 	 		$data = array(
 	 			'nama'=>$nama_lengkap,
 	 			'jabatan'=>$jabatan

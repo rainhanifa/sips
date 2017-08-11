@@ -69,12 +69,16 @@ class Klasifikasi extends CI_Controller{
 			$id_klasifikasi     =   $this->input->post ('id_class');
 			$nama				=	$this->input->post ('name_class');
 			
+			$where = array(
+				'id_class'=>$id_klasifikasi
+				);
+			
 	 		$data = array(
 				 			'id_class'=>$id_klasifikasi,
 				 			'name_class'=>$nama
 				 		 );
 
-	 		$this->db->where('id_class',$id_klasifikasi);
+	 		$this->db->where($where);
 			$this->db->update('class',$data);
 			// $kondisi = array('id_class' => $id_klasifikasi);
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result();
