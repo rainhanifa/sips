@@ -26,7 +26,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal" required>
                                             </div>
                                         </div>
                                     </div>
@@ -38,9 +38,18 @@
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="nama" name="subject" class="form-control" placeholder="Masukkan Nama Penerima">
-                                            </div>
+                                        
+                                           <select name="id_contacts">
+                                           <?php 
+                                                foreach ($contacts as $key => $value) {
+                                           ?>
+                                                <option value="<?php echo $value->id_contacts?>"><?php
+                                                echo $value->name?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                                 
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
@@ -53,7 +62,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="nama" name="file" class="form-control" placeholder="Masukkan Keterangan">
+                                                <input type="text" name="subject" class="form-control" placeholder="Masukkan Keterangan" required>
                                             </div>
                                         </div>
                                     </div>
@@ -66,7 +75,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="number" id="nominal" name="amount" class="form-control" placeholder="Masukkan Nominal">
+                                                <input type="number" name="amount" class="form-control" placeholder="Masukkan Nominal" required>
                                             </div>
                                         </div>
                                     </div>

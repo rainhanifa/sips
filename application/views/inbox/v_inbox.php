@@ -42,7 +42,7 @@
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $inbox["no_letter"] ?></td>
                                             <td><?php echo date('l, d-m-Y',strtotime($inbox['date_letter']))?>.</td>
-                                            <td><?php echo $inbox["sender_id"] ?></td>
+                                            <td><?php echo $inbox["name"] ?></td>
                                             <td><?php echo $inbox["subject"] ?></td>
                                             <td>
                                                 <center>
@@ -92,7 +92,7 @@
 
                     <div class="modal-body">
                         <h4>Apakah anda ingin menghapus surat ini?</h4>
-                            <input type="text" name="id_hapus" id="id_delete"> </input>
+                            <input type="hidden" name="id_hapus" id="id_delete"> </input>
                     </div>
 
                     <div class="modal-footer">

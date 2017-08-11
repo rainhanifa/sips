@@ -13,7 +13,13 @@
                         </div>
                         <!-- Tanggal -->
                         <div class="body">
-                            <form class="form-horizontal">
+                          <?php
+                                foreach($receipt as $kontak){ 
+                                ?>
+
+                            <form class="form-horizontal" action="<?php echo base_url('receipt/ubah');?> " method="post">
+
+
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                         <label for="tanggal">Tanggal</label>
@@ -21,24 +27,34 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" class="datepicker form-control" placeholder="Masukkan Tanggal">
+                                                <input type="text" name="date"  class="form-control" value="<?php echo $kontak['date']?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
-                        <!-- Nama Penerima -->
+                         <!-- Nama Penerima -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="nama">Nama</label>
+                                        <label for="email_address_2">Nama penerima</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nama Penerima">
-                                            </div>
+                                        
+                                           <select name="id_contacts">
+                                           <?php 
+                                                foreach ($contacts as $key => $value) {
+                                           ?>
+                                                <option value="<?php echo $value->id_contacts?>"><?php
+                                                echo $value->name?></option>
+                                                <?php
+                                            }
+                                            ?>
+                                                 
+                                            </select>
                                         </div>
                                     </div>
                                 </div>
+
 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -47,7 +63,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="keterangan" class="form-control" placeholder="Masukkan Keterangan">
+                                                <input type="text" name="subject"  class="form-control" value="<?php echo $kontak[0]->subject?>">
                                             </div>
                                         </div>
                                     </div>
@@ -60,19 +76,23 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="email_address_2" class="form-control" placeholder="Masukkan Nominal">
+                                                <input type="text" name="amount"  class="form-control" value="<?php echo $kontak[0]->amount?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
                                         <!-- Tombol Simpan dan Batal -->
-                                <div class="text-center">
-                                    <div class="row">
-                                        <a href="<?php echo base_url('receipt')?>/index"><button type="button" class="btn btn-primary m-t-15 waves-effect">Simpan</button>
-                                        <a href="<?php echo base_url('receipt')?>/index"><button type="button" class="btn btn-danger m-t-15 waves-effect">Batal</button>
+                                 <div class="text-center">
+                                <div class="body">
+                                    <div class="button-info">
+                                        <input type="submit" class="btn btn-primary waves-effect" name="submit" value="Simpan">
+                                        <a href="<?php echo base_url('receipt/')?>"><button type="button" class="btn btn-danger waves-effect">Batal</button></a>
                                     </div>
-                                </div>
+                                </div>  
                             </form>
+                            <?php
+                        }
+                        ?>
                         </div>
                     </div>
                 </div>
