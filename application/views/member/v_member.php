@@ -58,7 +58,7 @@
             </div>            
         </div>
     </section>
-
+    
 <script type="text/javascript">
     function ClickModalDelete(id){
         $("#id_delete").val(id);

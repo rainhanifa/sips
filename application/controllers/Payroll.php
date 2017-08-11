@@ -82,7 +82,7 @@ public function v_ubah()
 			$id				 = $this->input->post('id');
 			$id_member   	 = $this->input->post ('id_member');
 			$nama        	 = $this->input->post ('nama_member');
-			$bulan        	 = date('Y-m-d', strtotime($this->input->post ('date')));
+			$bulan        	 = $this->input->post ('payment_period');
 			$nominal         = $this->input->post ('amount');
 
 			$where = array(
