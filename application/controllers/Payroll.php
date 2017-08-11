@@ -56,16 +56,49 @@ class Payroll extends CI_Controller{
 		$this->load->view('template/footer.php');
 	}
 
-	public function ubah()
-	{
-		$this->load->view('template/header.php');
-		$this->load->view('payroll/v_ubahpayroll.php');
-		$this->load->view('template/footer.php');
-	}
+// 	public function ubah($id = 0){
+// 		if($id !=0)
+// 	{
+// 		$this->load->view('template/header.php');
+// 		$this->load->view('payroll/v_ubahpayroll.php');
+// 		$this->load->view('template/footer.php');
+// 	}
+// 	else{
+// 		$this->load->view('template/header.php');
+// 		$this->load->view('payroll/v_ubahpayroll.php');
+// 		$this->load->view('template/footer.php');
+// 	}
+// }
+// public function v_ubah()
+// 	{
+// 			$id_payroll 		= $this->input->post('id');
+// 			$nama_lengkap    =   $this->input->post ('nama');
+// 			$jabatan         =	  $this->input->post ('jabatan');
+			
+// 			echo $id_member;
+
+// 	 		$data = array(
+// 	 			'nama'=>$nama_lengkap,
+// 	 			'jabatan'=>$jabatan
+// 	 			);
+// 	 		$this->db->where('id_member', $id_member);
+// 			$this->db->update('member',$data);
+// 			// $kondisi = array('nama' => $anggota);
+// 			// $data['member'] = $this->db->get_where('member',$kondisi)->result();
+// 			redirect (base_url('member/'));
+// 	}
+
 
 	public function hapus()
 	{
+		if ($this->input->post() != null) {
+			$id_hapus = $this->input->post('id_hapus');
+
+			$where = array('id'=>$id_hapus);
+			$this->db->delete('payroll',$where);
+
 		redirect(base_url('payroll'));
+		}
 
 	}
 }

@@ -47,8 +47,8 @@
                                             <td><?php echo date('F', strtotime($daftar["payment_period"])) ?></td>
                                             <td><?php echo $daftar["amount"] ?></td>
                                             <td>
-                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah"> Ubah </a>
-                                                <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#myModal">Hapus</button>
+                                                <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah/<?php echo $daftar['id']?>"> Ubah </a>
+                                                <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$daftar["id"]?>)" data-toggle="modal" data-target="#myModal" id="modalKlik" >Hapus</button>
                                             </td>
                                         </tr>
                                         <?php 
@@ -64,12 +64,19 @@
             </div>
         </div>
 </section>
+
+<script type="text/javascript">
+    function ClickModalDelete(id){
+        $("#id_delete").val(id);
+    }
+</script>
 <!-- Modal -->
     <div class="modal fade" id="myModal" role="dialog">
       <div class="modal-dialog">
 
     <!-- Modal content-->
     <div class="modal-content">
+    <form method="POST" action="<?=base_url('Payroll/hapus')?>">
       <div class="modal-header">
           <button type="button" class="close" data-dismiss="modal">&times;</button>
           <h4 class="modal-title">Konfirmasi Hapus</h4>
@@ -77,13 +84,14 @@
 
       <div class="modal-body">
         <p>Hapus klasifikasi ? </p>
+        <input type="text" name="id_hapus" id="id_delete"> </input>
       </div>
 
         <div class="modal-footer">
-          <button type="button" class="btn btn-primary" data-dismiss="modal">Ya</button></a>
-          <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+         <button type="submit" value="submit" name="submit"  id=btnDelete class="btn btn-primary">Ya</button>
+                    <button type="button" class="btn btn-danger" data-dismiss="modal">Batal</button>
+                </div>
+            </form>
         </div>
-
-      </div>
     </div>
-    </div>
+</div>
