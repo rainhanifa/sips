@@ -26,16 +26,15 @@ class Payroll extends CI_Controller{
 			$tanggal	= $this->input->post("date");
 			$penerima	= $this->input->post("id_member");
 
-			$bulan		= $this->input->post("date");
-			$bulan      = date('Y-m-d',strtotime($bulan));
+			$bulan		= $this->input->post("payment_period");
+			// $bulan      = date('F',strtotime($bulan));
 
 			$nominal	= $this->input->post("amount");
 			$nama	= $this->input->post("id_member");
 
-			$insert_tanggal = date('Y-m-d', strtotime($tanggal));
-			$user_data 	= array("date" => $insert_tanggal	,
-								"id_member" => $penerima,
-								"payment_period" => $insert_tanggal,
+			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
+			$user_data 	= array("id_member" => $penerima,
+								"payment_period" => $bulan,
 								"amount" => $nominal
 								);
 			//insert ke database

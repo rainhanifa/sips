@@ -26,7 +26,7 @@
                                     <thead>
                                         <tr>
                                             <th>No. Payroll</th>
-                                            <th>Tanggal</th>
+                                            <!-- <th>Tanggal</th> -->
                                             <th>Penerima</th>
                                             <th>Bulan</th>
                                             <th>Nominal</th>
@@ -42,9 +42,9 @@
                                             ?>
 
                                             <td><?php echo $nomor ?></td>
-                                            <td><?php echo date('d-m-Y', strtotime($daftar["date"])) ?></td>
+                                            <!-- <td><?php echo date('d-m-Y', strtotime($daftar["date"])) ?></td> -->
                                             <td><?php echo $daftar["nama"] ?></td>
-                                            <td><?php echo date('F', strtotime($daftar["payment_period"])) ?></td>
+                                            <td><?php echo $daftar["payment_period"]?></td>
                                             <td><?php echo $daftar["amount"] ?></td>
                                             <td>
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah/<?php echo $daftar['id']?>"> Ubah </a>
@@ -84,7 +84,7 @@
 
       <div class="modal-body">
         <p>Hapus klasifikasi ? </p>
-        <input type="hidden" name="id_hapus" id="id_delete"> </input>
+        <input type="text   " name="id_hapus" id="id_delete"> </input>
       </div>
 
         <div class="modal-footer">
