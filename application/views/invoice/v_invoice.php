@@ -35,7 +35,7 @@
                                     echo $this->session->flashdata("message");
                                 }
                             ?>
-                            
+                            <form action="<?php echo base_url('invoice/tambah')?>" method="POST" class="form-horizontal">
                             <div class="table-responsive">
                                 <table class="table table-bordered table-striped table-hover js-basic-example dataTable">
                                     <thead>
@@ -64,25 +64,25 @@
 
                                     <tbody>
                                         
-                                        <tr>
                                         <?php
                                             $nomor = 1;
                                             foreach ($tagihan as $invoice) {
                                         ?>
+                                        <tr>
                                             <td><?php echo $nomor?></td>
                                             <td><?php echo $invoice['no_letter']?></td>
-                                            <td><?php echo $invoice['date']?></td>
-                                            <td><?php echo $invoice['recipient_id']?></td>
-                                            <td><?php echo $invoice['no_letter']?></td>
+                                            <td><?php echo date('d-m-Y', strtotime($invoice['date']))?></td>
+                                            <td><?php echo $invoice['name']?></td>
+                                            <td><?php echo $invoice['name_project']?></td>
                                             <td><?php echo $invoice['amount']?></td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
-                                                        <a href="<?php echo base_url('invoice')?>/ubah">
+                                                        <a href="<?php echo base_url('invoice')?>/ubah/<?php echo $invoice['id']?>">
                                                             <button type="button" class="btn btn-primary waves-effect">Ubah</button>
                                                         </a>
 
-                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$invoice['no_letter']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
+                                                        <button type="button" class="btn btn-danger " onclick="ClickModalDelete(<?=$invoice['no_letter']?>)" id="modalKlik" data-toggle="modal" data-target="#myModal">Hapus</button>
                                                     </div>
                                                 </div>
                                             </td>
@@ -100,14 +100,16 @@
             </div>
 </section>
 <!-- #END# Basic Examples -->
-<script type="text/javascript">
+ <script type="text/javascript">
     function ClickModalDelete(id){
         $("#id_delete").val(id);
     }
     </script>
+
     <!-- Modal -->
-<div class="modal fade" id="myModal" role="dialog">
-    <div class="modal-dialog">
+ <!-- Modal -->
+    <div class="modal fade" id="myModal" role="dialog">
+        <div class="modal-dialog">
         
         <!-- Modal content-->
             <div class="modal-content">
@@ -124,9 +126,9 @@
 
                     <div class="modal-footer">
                         <button type="submit" value="submit" name="submit" id=btnDelete class="btn btn-primary"><b>Ya</b></button>
-                        <a href="<?php echo base_url('outbox')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
+                        <a href="<?php echo base_url('invoice')?>"><button type="button" class="btn btn-danger" data-dismiss="modal"><b>Batal</b></button></a>
                     </div>
                 </form>
             </div>
+        </div>
     </div>
-</div>

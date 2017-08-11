@@ -57,10 +57,17 @@
                                         <label for="email_address_2">Penerima</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
-                                        <div class="form-group">
-                                            <div class="form-line">
-                                                <input type="text" name="recipient_id" id="penerima" class="form-control" placeholder="Masukkan Nama Penerima">
-                                            </div>
+                                    <div class="form-group">
+                                        <select name="penerima">
+                                                <?php
+                                                foreach ($kontak as $key => $value) {
+                                                ?>
+                                                    <option value="<?php echo $value->id_contacts?>"><?php echo $value->name?></option>
+                                                <?php
+                                                    }
+                                                ?>
+                                            </select> 
+                                            
                                         </div>
                                     </div>
                                 </div>

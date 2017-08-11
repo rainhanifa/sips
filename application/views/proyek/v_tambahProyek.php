@@ -61,7 +61,7 @@
                                 <div class="body">
                                     <div class="button-info">
                                         <input type="submit" class="btn btn-primary waves-effect" value="Simpan" name="submit">
-                                        <a href="user.html">
+                                        <a href="<?php echo base_url('proyek')?>">
                                             <button type="button" class="btn btn-danger waves-effect">Batal</button>
                                         </a> 
                                     </div>

@@ -69,12 +69,14 @@
                                             <td><?php echo $nomor?></td>
                                             <td><?php echo $keluar['no_letter'].$keluar['code_letter']?></td>
                                             <td><?php echo $keluar['date']?></td>
-                                            <td><?php echo $keluar['recipient_id']?></td>
+                                            <td><?php echo $keluar['name']?></td>
                                             <td><?php echo $keluar['subject']?></td>
                                             <td>
                                                 <div class="row">
                                                     <div class="text-center">
-                                                        <a href="<?php echo base_url('outbox')?>/ubah"><button type="button" class="btn btn-primary">Ubah</button></a>
+                                                        <a href="<?php echo base_url('outbox')?>/ubah/<?php echo $keluar['id']?>">
+                                                            <button type="button" class="btn btn-primary waves-effect">Ubah</button>
+                                                        </a>
                                                         <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$keluar['no_letter']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                                     </div >
                                                 </div>
