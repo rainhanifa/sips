@@ -37,11 +37,15 @@
                                     <input type="hidden" name="date" value="">
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
+                                        <?php 
+                                                    $kode_surat = explode('/',$keluar['code_letter']);
+                                                    $klasifikasi = $kode_surat[1];
+                                                    ?>
                                                 <select name="klasifikasi">
                                                     <?php
                                                     foreach ($class as $key) {
                                                     ?>
-                                                            <option value="<?php echo $key['id_class']?>">
+                                                            <option <?php echo ($klasifikasi == $key['name_class']) ? "selected"  : "" ?> value="<?php echo $key['id_class']?>" >
                                                                 <?php echo $key['name_class']?>
                                                             </option>
                                                     <?php

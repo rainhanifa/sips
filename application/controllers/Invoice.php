@@ -37,7 +37,7 @@ class Invoice extends CI_Controller {
 								  // 'institution'	 => $institusi,
 								  'projects_id' 	 => $proyek,
 								  'no_letter'		=> $no_surat,
-								  'subject'			=> $perihal
+								  // 'subject'			=> $perihal
 
 								  );
 

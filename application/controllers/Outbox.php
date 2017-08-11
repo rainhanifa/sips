@@ -114,16 +114,36 @@ class Outbox extends CI_Controller {
 		$klasifikasi	= $this->input->post('klasifikasi');
 		$tanggal		= date('Y-m-d', strtotime($this->input->post('date')));
 		$penerima		= $this->input->post('penerima');
-		$code_letter	= $this->input->post('code_letter');
-		$perihal		= $this->input->post('subject');
+		
+
+			$bulan_romawi = array( 
+									'01' => 'I',
+									'02' => 'II',
+									'03' => 'III',
+									'04' => 'IV',
+									'05' => 'V',
+									'06' => 'VI',
+									'07' => 'VII',
+									'08' => 'VIII',
+									'09' => 'IX',
+									'10' => 'X',
+									'11' => 'XI',
+									'12' => 'XII'
+			);
+			// var_dump($bulan_romawi['01']);
+
+			$nama_kelas = $this->db->query("SELECT name_class FROM class WHERE id_class =".$klasifikasi)->result_array();
+			// var_dump($nama_kelas);
+			// var_dump($nama_kelas[0]['name_class']);
+			$code_letter = "/".$nama_kelas[0]['name_class']."/IS/".$bulan_romawi[date('m')]."/".date("Y");
 
 		$where = array(
 					'id' => $id_outbox
 					);
 
-		$data_keluar 	= array('id' => $id_outbox ,
+		$data_keluar 	= array('code_letter' => $code_letter,
 								'date' => $tanggal,
-								'subject' => $perihal,
+								// 'subject' => $perihal,
 								'recipient_id' => $penerima
 								// 'code_letter' => $code_letter
 								);
@@ -131,6 +151,8 @@ class Outbox extends CI_Controller {
 
 	 		$this->db->where($where);
 			$this->db->update('outbox',$data_keluar);
+
+			//var_dump($this->db->last_query());exit;
 			// $kondisi = array('id_class' => $id_klasifikasi);
 			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
 			redirect (base_url('outbox/index'));
