@@ -26,7 +26,7 @@ class Payroll extends CI_Controller{
 			$tanggal	= $this->input->post("date");
 			$penerima	= $this->input->post("id_member");
 
-			$bulan		= $this->input->post("payment_period");
+			$bulan		= date('l, d-m-Y');
 			// $bulan      = date('F',strtotime($bulan));
 
 			$nominal	= $this->input->post("amount");
