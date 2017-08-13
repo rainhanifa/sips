@@ -41,12 +41,21 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('d-m-Y', strtotime($masuk['date_letter']))?>">
+                                                <input type="text" name="date_letter" class="datepicker form-control" value="<?php echo date('Y-m-d', strtotime($masuk['date_letter']))?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
 
+                                <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
                                      <label for="password_2">Penerima</label>
@@ -76,7 +85,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" id="password_2" class="form-control" placeholder="Masukkan Perihal Surat" value="<?php echo $masuk['subject']?>">
+                                                <input type="text" name="subject" id="password_2" class="form-control" placeholder="Masukkan Perihal Surat" value="<?php echo $masuk['subject']?>">
                                             </div>
                                         </div>
                                     </div>

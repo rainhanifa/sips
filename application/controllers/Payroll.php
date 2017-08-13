@@ -6,23 +6,46 @@ class Payroll extends CI_Controller{
 
 	public function index()
 	{
-		// $data['gaji'] = $this->db->select ('payroll.no_letter,payroll.date,member.id_member,payroll.payment_period,payroll.amount') -> FROM ('payroll') -> join ('member', 'id_member = payroll.member_id')
-		// ->get()->result_array();
-		//query bisa menggunakan 
-		$query	= "SELECT payroll.*, member.nama FROM payroll LEFT JOIN member ON payroll.id_member = member.id_member";		//atau menggunakan builder get
-		$data['payroll']	= $this->db->query($query)->result_array();
+		$data['gaji'] = $this->db->select('payroll.id, member.nama, payroll.payment_period, payroll.amount')
+						->from('payroll')
+						->join('member','id_member = payroll.member_id')
+						->get()->result_array();
 
 		$this->load->view('template/header.php');
 		$this->load->view('payroll/v_payroll.php',$data);
 		$this->load->view('template/footer.php');
+
+		// $this->db->select ('payroll.no_letter,payroll.date,member.id_member,payroll.payment_period,payroll.amount') -> FROM ('payroll') -> join ('member', 'id_member = payroll.member_id')
+		// ->get()->result_array();
+
+
+		//query bisa menggunakan 
+		// $query	= "SELECT payroll.*, member.nama FROM payroll LEFT JOIN member ON payroll.member_id = member.id_member";		//atau menggunakan builder get
+		// $data['payroll']	= $this->db->query($query)->result_array();
+
+		
 	}
 
 	public function tambah()
 	{
-		$nama['member'] = $this->db->get('member')->result();
+		$nama['member'] = $this->db->get('member')->result_array();
 		// jika ada post
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
+			$bulan_tahun	= date('m-Y', strtotime($this->input->post('date')));
+			$penerima	= $this->input->post('penerima');
+			$nominal	= $this->input->post('amount');
+			// $bulan		= $this->input->post("payment_period");
+			// $nama		= $this->input->post("id_member");
+			// $bulan      = date('F',strtotime($bulan));
+			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
+			// $this->input->post("date");
+
+			//isi db payroll
+			$data_payroll 	= array('member_id'  	 => $penerima,
+									'payment_period' => $bulan_tahun,
+									'amount' 		 => $nominal
+
 			$bulan_tahun	= $this->input->post("payment_period");//date('m, Y-m-d', strtotime($this->input->post('payment_period')));
 			$penerima		= $this->input->post("id_member");
 			$nominal		= $this->input->post("amount");
@@ -36,16 +59,16 @@ class Payroll extends CI_Controller{
 			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
 			$user_data 	= array("id_member" => $penerima,
 								"payment_period" => $bulan_tahun,
-								"amount" => $nominal,
-								'date'=> date('Y-m-d', strtotime($bulan_tahun))
+								"amount" => $nominal
 								);
+
 			//insert ke database
-			if($this->db->insert($this->table, $user_data)){
+			if($this->db->insert($this->table, $data_payroll)){
 				// kirim pesan berhasil
 				$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah member!</div>');
 
 				// redirect
-				redirect(base_url("payroll"));
+				redirect(base_url("payroll/index"));
 			}
 			else{
 				//kirim pesan error
@@ -73,7 +96,7 @@ class Payroll extends CI_Controller{
 		$this->load->view('payroll/v_ubahpayroll.php', $data);
 		$this->load->view('template/footer.php');
 	}
-	else{ 
+	else{
 		$this->load->view('template/header.php');
 		$this->load->view('payroll/v_ubahpayroll.php');
 		$this->load->view('template/footer.php');

@@ -79,11 +79,9 @@ class Receipt extends CI_Controller {
 
 		{
 			$where 	= array('id'=> $id);
-			// $query = "SELECT receipt.nama, payroll.* FROM payroll LEFT JOIN member ON member.id_member = payroll.id_member WHERE payroll.id = $id";
 			$data['receipt'] = $this->db->get_where('receipt',$where)->result_array();
 			$data['kontak'] = $this->db->get('contacts')->result_array();
-			// $data['recipient_id'] = $recipient_id;
-
+			
 			$this->load->view('template/header.php');
 			$this->load->view('receipt/v_ubahreceipt.php', $data);
 			$this->load->view('template/footer.php');
@@ -114,21 +112,20 @@ class Receipt extends CI_Controller {
 					'id' => $id
 					);
 
-			// echo $id."<br />";
-			// echo $date."<br />";
-			// echo $subject."<br />";
-			// echo $amount."<br />";
-			// echo $penerima."<br />";
-			// die();
+			echo $id."<br />";
+			echo $date."<br />";
+			echo $subject."<br />";
+			echo $amount."<br />";
+			echo $penerima."<br />";
+			die();
 
-			$receipt_data 	= array(
+			$receipt_data 	= array('no_letter'     => $no_letter,
 									'date' 			=> $date,
-									// 'id'			=> $id,
+									'id'			=> $id,
 									'subject' 		=> $subject,
 									'amount' 		=> $amount,
 									'recipient_id'	=> $penerima
 									);
-			// 'no_letter'     => $no_letter,
 			
 			$this->db->where($where);
 			$this->db->update('receipt',$receipt_data);

@@ -40,6 +40,8 @@ class Outbox extends CI_Controller {
 
 			$nomor = (int)$no_letter[0]["MAX"] +1;
 
+
+			$nomor_bulan  = substr($tanggal,5,2);
 			$bulan_romawi = array( 
 									'01' => 'I',
 									'02' => 'II',
@@ -59,7 +61,7 @@ class Outbox extends CI_Controller {
 			$nama_kelas = $this->db->query("SELECT name_class FROM class WHERE id_class =".$klasifikasi)->result_array();
 			// var_dump($nama_kelas);
 			// var_dump($nama_kelas[0]['name_class']);
-			$code_letter = "/".$nama_kelas[0]['name_class']."/IS/".$bulan_romawi[date('m')]."/".date("Y");
+			$code_letter = "/".$nama_kelas[0]['name_class']."/IS/".$bulan_romawi[$nomor_bulan]."/".date("Y");
 			// var_dump($code_letter);
 			$surat_keluar = array(
 									'date' 		   => $tanggal,
@@ -118,28 +120,29 @@ class Outbox extends CI_Controller {
 		$klasifikasi	= $this->input->post('klasifikasi');
 		$tanggal		= date('Y-m-d', strtotime($this->input->post('date')));
 		$penerima		= $this->input->post('penerima');
-		
 
-			$bulan_romawi = array( 
-									'01' => 'I',
-									'02' => 'II',
-									'03' => 'III',
-									'04' => 'IV',
-									'05' => 'V',
-									'06' => 'VI',
-									'07' => 'VII',
-									'08' => 'VIII',
-									'09' => 'IX',
-									'10' => 'X',
-									'11' => 'XI',
-									'12' => 'XII'
-			);
+		$nomor_bulan	= substr($tanggal,5,2);
+
+		$bulan_romawi = array( 
+								'01' => 'I',
+								'02' => 'II',
+								'03' => 'III',
+								'04' => 'IV',
+								'05' => 'V',
+								'06' => 'VI',
+								'07' => 'VII',
+								'08' => 'VIII',
+								'09' => 'IX',
+								'10' => 'X',
+								'11' => 'XI',
+								'12' => 'XII'
+							);
 			// var_dump($bulan_romawi['01']);
 
 			$nama_kelas = $this->db->query("SELECT name_class FROM class WHERE id_class =".$klasifikasi)->result_array();
 			// var_dump($nama_kelas);
 			// var_dump($nama_kelas[0]['name_class']);
-			$code_letter = "/".$nama_kelas[0]['name_class']."/IS/".$bulan_romawi[date('m')]."/".date("Y");
+			$code_letter = "/".$nama_kelas[0]['name_class']."/IS/".$bulan_romawi[$nomor_bulan]."/".date("Y");
 
 		$where = array(
 					'id' => $id_outbox
@@ -148,8 +151,8 @@ class Outbox extends CI_Controller {
 		$data_keluar 	= array('code_letter' => $code_letter,
 								'date' => $tanggal,
 								// 'subject' => $perihal,
-								'recipient_id' => $penerima
-								// 'code_letter' => $code_letter
+								'recipient_id' => $penerima,
+								'code_letter' => $code_letter
 								);
 
 

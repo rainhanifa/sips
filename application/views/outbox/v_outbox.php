@@ -78,7 +78,7 @@
                                                         <a href="<?php echo base_url('outbox')?>/ubah/<?php echo $keluar['id']?>">
                                                             <button type="button" class="btn btn-primary waves-effect">Ubah</button>
                                                         </a>
-                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$keluar['no_letter']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
+                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$keluar['id']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                                     </div >
                                                 </div>
                                             </td>

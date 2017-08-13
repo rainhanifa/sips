@@ -7,7 +7,7 @@ class inbox extends CI_Controller {
 		
 	public function index()
 	{
-		$data['masuk'] =	$this->db->select('inbox.id, inbox.no_letter, inbox.date_letter, contacts.name, inbox.subject')->from('inbox')->join('contacts', 'id_contacts = inbox.sender_id')
+		$data['inbox'] =	$this->db->select('inbox.id, inbox.no_letter, inbox.date_letter, contacts.name, inbox.subject')->from('inbox')->join('contacts', 'id_contacts = inbox.sender_id')
 							->get()->result_array();
 
 		$this->load->view('template/header.php');
@@ -24,7 +24,7 @@ class inbox extends CI_Controller {
 			$tanggal  	  	= $this->input->post('date_letter');
 			$penerima 	  	= $this->input->post('penerima');
 			$perihal  	  	= $this->input->post('subject');
-			$klasifikasi  	  = $this->input->post('klasifikasi');
+			$klasifikasi  	= $this->input->post('klasifikasi');
 			$nomor			= $this->input->post('no_letter');
 			// var_dump($tanggal);
 			// exit();
@@ -61,10 +61,10 @@ class inbox extends CI_Controller {
 			$surat_masuk = array(
 									'date_letter'  => $tanggal,
 									'no_letter'    => $nomor,
-									// 'code_letter'  => $code_letter,
 									'sender_id'    => $penerima,
-									// 'name_class' => $klasifikasi,
 									'subject' 	   => $perihal
+									// 'code_letter'  => $code_letter,
+									// 'name_class' => $klasifikasi,
 								  );
 			
 		//insert ke database
@@ -112,8 +112,10 @@ class inbox extends CI_Controller {
 	public function v_ubah()
 	{
 		$id_inbox		= $this->input->post('id');
-		$tanggal		= $this->input->post('date');
+		$tanggal		= $this->input->post('date_letter');
 		$penerima		= $this->input->post('penerima');
+		$no_letter		= $this->input->post('no_letter');
+		$perihal		= $this->input->post('subject');
 		// $klasifikasi	= $this->input->post('klasifikasi');
 		
 
@@ -142,11 +144,12 @@ class inbox extends CI_Controller {
 					'id' => $id_inbox
 					);
 
-		$data_masuk	= array('no_letter' => $no_letter,
-								'date' => $tanggal,
-								// 'subject' => $perihal,
-								'sender_id' => $penerima
-								// 'code_letter' => $code_letter
+		$data_masuk	= array('no_letter'   => $no_letter,
+							'date_letter' => $tanggal,
+							'sender_id'   => $penerima,
+							'subject' 	  => $perihal,
+							// 'code_letter' => $code_letter
+							
 								);
 
 

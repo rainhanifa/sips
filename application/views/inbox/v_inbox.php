@@ -41,13 +41,13 @@
                                         <tr>
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $masuk["no_letter"] ?></td>
-                                            <td><?php echo $masuk["date_letter"]?>.</td>
+                                            <td><?php echo date('Y-m-d', strtotime($masuk['date_letter']))?>.</td>
                                             <td><?php echo $masuk["name"] ?></td>
                                             <td><?php echo $masuk["subject"] ?></td>
                                             <td>
                                                 <center>
                                                     <div class="row">
-                                                        <a href="<?php echo base_url('inbox')?>/ubah">
+                                                        <a href="<?php echo base_url('inbox').'/ubah/'.$masuk['id']?>">
                                                         <button type="button" class="btn btn-primary waves-effect">Ubah</button>
                                                         </a>
 
