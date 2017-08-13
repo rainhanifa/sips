@@ -36,7 +36,8 @@ class Payroll extends CI_Controller{
 			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
 			$user_data 	= array("id_member" => $penerima,
 								"payment_period" => $bulan_tahun,
-								"amount" => $nominal
+								"amount" => $nominal,
+								'date'=> date('Y-m-d', strtotime($bulan_tahun))
 								);
 			//insert ke database
 			if($this->db->insert($this->table, $user_data)){
@@ -72,7 +73,7 @@ class Payroll extends CI_Controller{
 		$this->load->view('payroll/v_ubahpayroll.php', $data);
 		$this->load->view('template/footer.php');
 	}
-	else{
+	else{ 
 		$this->load->view('template/header.php');
 		$this->load->view('payroll/v_ubahpayroll.php');
 		$this->load->view('template/footer.php');
