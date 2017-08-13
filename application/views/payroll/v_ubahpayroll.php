@@ -53,8 +53,8 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                               <!--  <input type="text" name="payment_period"  placeholder="Pilih Bulan" value="<?php echo date('d-m-Y', strtotime($payroll[0]->payment_period))?>"> -->
-                                                <select name="payment_period">
+                                                <input type="date" name="payment_period" id="datepicker" placeholder="Pilih Bulan">
+                                               <!--  <select name="payment_period">
                                                     <option value="1">Januari</option>
                                                     <option value="2">Februari</option>
                                                     <option value="3">Maret</option>
@@ -67,7 +67,7 @@
                                                     <option value="10">Oktober</option>
                                                     <option value="11">November</option>
                                                     <option value="12">Desember</option> 
-                                                 </select>
+                                                 </select> -->
                                             </div>
                                         </div>
                                     </div>

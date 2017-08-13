@@ -23,19 +23,21 @@ class Payroll extends CI_Controller{
 		// jika ada post
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
-			$tanggal	= $this->input->post("date");
-			$penerima	= $this->input->post("id_member");
-
-			$bulan		= $this->input->post("payment_period");
+			$bulan_tahun	= $this->input->post("payment_period");//date('m, Y-m-d', strtotime($this->input->post('payment_period')));
+			$penerima		= $this->input->post("id_member");
+			$nominal		= $this->input->post("amount");
+			// $nama			= $this->input->post("id_member");
+			// $bulan		= date('l, d-m-Y');
 			// $bulan      = date('F',strtotime($bulan));
 
-			$nominal	= $this->input->post("amount");
-			$nama	= $this->input->post("id_member");
+			// echo $bulan_tahun;
+			// die();
 
 			// $insert_tanggal = date('Y-m-d', strtotime($tanggal));
 			$user_data 	= array("id_member" => $penerima,
-								"payment_period" => $bulan,
-								"amount" => $nominal
+								"payment_period" => $bulan_tahun,
+								"amount" => $nominal,
+								'date'=> date('Y-m-d', strtotime($bulan_tahun))
 								);
 			//insert ke database
 			if($this->db->insert($this->table, $user_data)){
@@ -71,7 +73,7 @@ class Payroll extends CI_Controller{
 		$this->load->view('payroll/v_ubahpayroll.php', $data);
 		$this->load->view('template/footer.php');
 	}
-	else{
+	else{ 
 		$this->load->view('template/header.php');
 		$this->load->view('payroll/v_ubahpayroll.php');
 		$this->load->view('template/footer.php');
@@ -79,11 +81,11 @@ class Payroll extends CI_Controller{
 }
 public function v_ubah()
 	{
-			$id				 = $this->input->post('id');
-			$id_member   	 = $this->input->post ('id_member');
-			$nama        	 = $this->input->post ('nama_member');
-			$bulan        	 = $this->input->post ('payment_period');
-			$nominal         = $this->input->post ('amount');
+			$id				 = $this->input->post("id");
+			$id_member   	 = $this->input->post("id_member");
+			$nama        	 = $this->input->post("nama_member");
+			$bulan_tahun     = $this->input->post("payment_period");
+			$nominal         = $this->input->post("amount");
 
 			$where = array(
 				'id'=>$id
@@ -93,13 +95,13 @@ public function v_ubah()
 			echo $id;echo "<br>";
 			echo $id_member;echo "<br>";
 			echo $nama;echo "<br>";
-			echo $bulan;echo "<br>";
+			echo $bulan_tahun;echo "<br>";
 			echo $nominal;echo "<br>";
 
 
 	 		$data = array(
 	 			'id_member'=>$nama,
-	 			'date'=> date('Y-m-d', strtotime($bulan)),
+	 			'date'=> date('Y-m-d', strtotime($bulan_tahun)),
 	 			'amount'=>$nominal
 	 			);
 	 		$this->db->where($where);

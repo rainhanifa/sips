@@ -1,4 +1,5 @@
  <section class="content">
+
         <div class="container-fluid">
 <!-- Horizontal Layout -->
             <div class="row clearfix">

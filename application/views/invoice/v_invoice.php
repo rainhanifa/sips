@@ -71,7 +71,7 @@
                                         <tr>
                                             <td><?php echo $nomor?></td>
                                             <td><?php echo $invoice['no_letter']?></td>
-                                            <td><?php echo date('d-m-Y', strtotime($invoice['date']))?></td>
+                                            <td><?php echo $invoice['date']?></td>
                                             <td><?php echo $invoice['name']?></td>
                                             <td><?php echo $invoice['name_project']?></td>
                                             <td><?php echo $invoice['amount']?></td>

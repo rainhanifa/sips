@@ -7,16 +7,20 @@ class Receipt extends CI_Controller {
 	public function index()
 	{
 //query bisa menggunakan 
-		$data['list']	= $this->db->query("SELECT id,
-			no_letter,
-			date,
-			contacts.name as name,
-			subject,
-			amount,
-			file
-		 FROM receipt 
-		 join contacts on receipt.recipient_id = contacts.id_contacts
-		 ")->result_array();
+		$data['kwitansi']	= $this->db->select('receipt.id, receipt.no_letter, receipt.date, receipt.subject, receipt.amount, contacts.name')
+							->from('receipt')
+							->join('contacts', 'id_contacts = receipt.recipient_id')
+							->get()->result_array();
+		 // $this->db->query("SELECT id,
+			// no_letter,
+			// date,
+			// contacts.name as name,
+			// subject,
+			// amount,
+			// file
+		 // FROM receipt 
+		 // join contacts on receipt.recipient_id = contacts.id_contacts
+		 // ")->result_array();
 		
 
 
@@ -32,15 +36,15 @@ class Receipt extends CI_Controller {
 		// jika ada post
 		if(isset($_POST['submit'])){
 			// ambil value dari masing-masing input
-			$date			= date('Y-m-d H:i:s', strtotime($this->input->post('date')));
+			$date			= $this->input->post('date');
 			$subject		= $this->input->post('subject');
 			$no_letter	 	= $this->input->post('no_letter');
 			$amount			= $this->input->post('amount');
-			$penerima		= $this->input->post('id_contacts');
+			$penerima		= $this->input->post('penerima');
 
 			$no_letter = '';
-			$no_letter = $this->db->query("SELECT Max(RECEIPT.no_letter)AS MAX From RECEIPT ")->array()();
-			$no_letter = $no_letter + 1;
+			$no_letter = $this->db->query("SELECT Max(RECEIPT.no_letter)AS MAX From RECEIPT ")->result_array();
+			$no_letter = $no_letter++;
 			$no_letter = (int)$no_letter[0]["MAX"] +1;
 
 			$receipt_data 	= array('no_letter'     => $no_letter,
@@ -55,7 +59,7 @@ class Receipt extends CI_Controller {
 				$this->session->set_flashdata('message','<div class="alert alert-success">Berhasil menambah receipt!</div>');
 
 				// redirect
-				redirect(base_url("receipt"));
+				redirect(base_url("receipt/index"));
 			}
 			else{
 				//kirim pesan error
@@ -69,14 +73,15 @@ class Receipt extends CI_Controller {
 	}
 
 	public function ubah($id = 0){	
-			$data['receipt'] = $this->db->get('receipt')->result();
+			// $data['receipt'] = $this->db->get('receipt')->result();
 
 		if($id != 0)
 
 		{
 			$where 	= array('id'=> $id);
-			$query = "SELECT receipt.nama, payroll.* FROM payroll LEFT JOIN member ON member.id_member = payroll.id_member WHERE payroll.id = $id";
+			// $query = "SELECT receipt.nama, payroll.* FROM payroll LEFT JOIN member ON member.id_member = payroll.id_member WHERE payroll.id = $id";
 			$data['receipt'] = $this->db->get_where('receipt',$where)->result_array();
+			$data['kontak'] = $this->db->get('contacts')->result_array();
 			// $data['recipient_id'] = $recipient_id;
 
 			$this->load->view('template/header.php');
@@ -85,7 +90,7 @@ class Receipt extends CI_Controller {
 		}
 		else{
 			$this->load->view('template/header.php');
-			$this->load->view('receipt/v_ubahreceipt.php', $data);
+			$this->load->view('receipt/v_ubahreceipt.php');
 			$this->load->view('template/footer.php');
 		}
 	
@@ -93,27 +98,41 @@ class Receipt extends CI_Controller {
 	
 	public function v_ubah()
 	{
-			$date			= date('Y-m-d H:i:s', strtotime($this->input->post('date')));
+			$id 			= $this->input->post('id');
+			$date			= $this->input->post('date');
 			$subject		= $this->input->post('subject');
-			$id 	= $this->input->post('id');
 			$amount			= $this->input->post('amount');
-			$id			= $this->input->post('id');
-
-			$no_letter = '';
-			$no_letter = $this->db->query("SELECT Max(RECEIPT.no_letter)AS MAX From RECEIPT ")->result_array();
-			// $no_letter = $no_letter + 1;
-			$no_letter = (int)$no_letter[0]["MAX"] +1;
-
-			$receipt_data 	= array('no_letter'     => $no_letter,
-									'date' 			=> $date,
-									'id'			=> $id,
-									'subject' 		=> $subject,
-									'amount' 		=> $amount
-									);
+			$penerima		= $this->input->post('penerima');
 			
-			// $kondisi = array('id_class' => $id_klasifikasi);
-			// $data['klasifikasi'] = $this->db->get_where('class',$kondisi)->result_array();
-			redirect (base_url('receipt'));
+
+		/*	$no_letter = '';
+			$no_letter = $this->db->query("SELECT Max(RECEIPT.no_letter)AS MAX From RECEIPT ")->result_array();
+			$no_letter = $no_letter++;
+			$no_letter = (int)$no_letter[0]["MAX"] +1; */
+
+			$where = array(
+					'id' => $id
+					);
+
+			// echo $id."<br />";
+			// echo $date."<br />";
+			// echo $subject."<br />";
+			// echo $amount."<br />";
+			// echo $penerima."<br />";
+			// die();
+
+			$receipt_data 	= array(
+									'date' 			=> $date,
+									// 'id'			=> $id,
+									'subject' 		=> $subject,
+									'amount' 		=> $amount,
+									'recipient_id'	=> $penerima
+									);
+			// 'no_letter'     => $no_letter,
+			
+			$this->db->where($where);
+			$this->db->update('receipt',$receipt_data);
+			redirect (base_url('receipt/'));
 	}
 
 	public function hapus()

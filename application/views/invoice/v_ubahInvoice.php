@@ -25,11 +25,20 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('d-m-Y', strtotime($invoice['date']))?>">
+                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('Y-m-d', strtotime($invoice['date']))?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                 <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
 
                                 <!--ambil dari db project-->
                                 <div class="row clearfix">

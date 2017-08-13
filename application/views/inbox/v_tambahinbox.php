@@ -43,6 +43,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -51,16 +60,14 @@
                                    <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                         
-                                           <select name="id_contacts">
-                                           <?php 
-                                                foreach ($contacts as $key => $value) {
-                                           ?>
-                                                <option value="<?php echo $value->id_contacts?>"><?php
-                                                echo $value->name?></option>
+                                           <select name="penerima">
                                                 <?php
-                                            }
-                                            ?>
-                                                 
+                                                foreach ($kontak as $key => $value) {
+                                                ?>
+                                                    <option value="<?php echo $value->id_contacts?>"><?php echo $value->name?></option>
+                                                <?php
+                                                    }
+                                                ?>
                                             </select>
                                         </div>
                                     </div>

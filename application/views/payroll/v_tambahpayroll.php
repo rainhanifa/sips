@@ -46,26 +46,35 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <!-- <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal">
-                                                 -->
-                                                 <select name="payment_period" required>
-                                                    <option value="1">Januari</option>
-                                                    <option value="2">Februari</option>
-                                                    <option value="3">Maret</option>
-                                                    <option value="4">April</option>
-                                                    <option value="5">Mei</option>
-                                                    <option value="6">Juni</option>
-                                                    <option value="7">Juli</option>
-                                                    <option value="8">Agustus</option>
-                                                    <option value="9">September</option>
-                                                    <option value="10">Oktober</option>
-                                                    <option value="11">November</option>
-                                                    <option value="12">Desember</option> 
-                                                 </select>
+                                                <input type="date" name="payment_period" id="datepicker" placeholder="Pilih Bulan">
+                                                
+                                                 <!-- <select name="payment_period">
+                                                    <option value="Januari">Januari</option>
+                                                    <option value="Februari">Februari</option>
+                                                    <option value="Maret">Maret</option>
+                                                    <option value="April">April</option>
+                                                    <option value="Mei">Mei</option>
+                                                    <option value="Juni">Juni</option>
+                                                    <option value="Juli">Juli</option>
+                                                    <option value="Agustus">Agustus</option>
+                                                    <option value="September">September</option>
+                                                    <option value="Oktober">Oktober</option>
+                                                    <option value="November">November</option>
+                                                    <option value="Desember">Desember</option> 
+                                                 </select> -->
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                 <!--<script type="text/javascript">
+                                    //Datetimepicker Plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format : 'YYYY/MM/DD',
+                                        clearButton : true;
+                                        weekStart: 1,
+                                        time: false
+                                    })
+                                </script>-->
                                         <!-- Nominal -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
