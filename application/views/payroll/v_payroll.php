@@ -42,9 +42,9 @@
                                             ?>
 
                                             <td><?php echo $nomor ?></td>
-                                           <!--  <td><?php echo date('d-m-Y', strtotime($daftar["date"])) ?></td> -->
+                                           <!--  <td><?php //echo date('d-m-Y', strtotime($daftar["date"])) ?></td> -->
                                             <td><?php echo $daftar["nama"] ?></td>
-                                            <td><?php echo date('F', strtotime($daftar["payment_period"])) ?></td>
+                                            <td><?php echo date('m, Y-m-d', strtotime($daftar["date"])) ?></td>
                                             <td><?php echo $daftar["amount"] ?></td>
                                             <td>
                                                 <a class="btn btn-primary waves-effect" href="<?php echo base_url('payroll/')?>ubah/<?php echo $daftar['id']?>"> Ubah </a>
