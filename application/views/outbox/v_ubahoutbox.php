@@ -65,11 +65,20 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('d-m-Y', strtotime($keluar['date']))?>">
+                                                <input type="text" name="date" class="datepicker form-control" value="<?php echo date('Y-m-d', strtotime($keluar['date']))?>">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

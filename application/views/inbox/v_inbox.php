@@ -37,13 +37,13 @@
                                     <tbody>
                                     <?php 
                                         $nomor=1;
-                                        foreach ($list as $inbox) {?>
+                                        foreach ($inbox as $masuk) {?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
-                                            <td><?php echo $inbox["no_letter"] ?></td>
-                                            <td><?php echo date('l, d-m-Y',strtotime($inbox['date_letter']))?>.</td>
-                                            <td><?php echo $inbox["name"] ?></td>
-                                            <td><?php echo $inbox["subject"] ?></td>
+                                            <td><?php echo $masuk["no_letter"] ?></td>
+                                            <td><?php echo $masuk["date_letter"]?>.</td>
+                                            <td><?php echo $masuk["name"] ?></td>
+                                            <td><?php echo $masuk["subject"] ?></td>
                                             <td>
                                                 <center>
                                                     <div class="row">
@@ -51,7 +51,7 @@
                                                         <button type="button" class="btn btn-primary waves-effect">Ubah</button>
                                                         </a>
 
-                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$inbox['id']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
+                                                        <button type="button" class="btn btn-danger" onclick="ClickModalDelete(<?=$masuk['id']?>)" data-toggle="modal" data-target="#myModal" id="modalKlik">Hapus</button>
                                                             </div>
 
                                                                    

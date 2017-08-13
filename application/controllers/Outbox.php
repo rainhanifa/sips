@@ -25,11 +25,14 @@ class Outbox extends CI_Controller {
 
 
 		if (isset($_POST['submit'])) {
-			$tanggal  	  	= date('Y-m-d', strtotime($this->input->post('date')));			
+			$tanggal  	  	= date('Y-m-d', strtotime($this->input->post('date')));
 			$penerima 	  	= $this->input->post('penerima');
 			$perihal  	  	= $this->input->post('subject');
 			$klasifikasi  	  = $this->input->post('klasifikasi');
-			
+			// var_dump($tanggal);
+			// exit();
+
+			// date('Y-m-d', strtotime($this->input->post('date')));
 
 			// $no_letter = '';
 			$no_letter = $this->db->query("SELECT Max(OUTBOX.no_letter)AS MAX From OUTBOX ")->result_array();
@@ -110,6 +113,7 @@ class Outbox extends CI_Controller {
 
 	public function v_ubah()
 	{
+		
 		$id_outbox		= $this->input->post('id');
 		$klasifikasi	= $this->input->post('klasifikasi');
 		$tanggal		= date('Y-m-d', strtotime($this->input->post('date')));
@@ -164,7 +168,7 @@ class Outbox extends CI_Controller {
 		if ($this->input->post() != null) {
 			$id_hapus = $this->input->post('id_hapus');
 
-			$where = array('no_letter'=>$id_hapus);
+			$where = array('id'=>$id_hapus);
 			$this->db->delete('outbox',$where);
 			redirect(base_url('outbox'));
 		}

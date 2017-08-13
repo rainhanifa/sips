@@ -37,11 +37,11 @@
                                     <tbody>
                                         <?php
                                         $nomor = 1;
-                                        foreach($list as $receipt){ ?>
+                                        foreach($kwitansi as $receipt){ ?>
                                         <tr>
                                             <td><?php echo $nomor ?></td>
                                             <td><?php echo $receipt['no_letter']?></td>
-                                            <td><?php echo date('l, d-m-Y',strtotime($receipt['date']))?>.</td>
+                                            <td><?php echo $receipt['date']?>.</td>
                                             <td><?php echo $receipt['name']?></td>
                                             <td><?php echo $receipt['subject']?></td>
                                             <td><?php echo $receipt['amount']?></td>

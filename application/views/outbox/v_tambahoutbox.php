@@ -51,6 +51,15 @@
                                         </div>
                                     </div>
                                 </div>
+                                <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
 
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">

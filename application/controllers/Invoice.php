@@ -8,7 +8,9 @@ class Invoice extends CI_Controller {
 	public function index()
 	{
 
-		$data['tagihan'] =	$this->db->select('invoice.id, invoice.no_letter, invoice.date, contacts.name, projects.name_project, invoice.subject, invoice.amount')->from('invoice')->join('projects', 'id_project = invoice.projects_id')
+		$data['tagihan'] =	$this->db->select('invoice.id, invoice.no_letter, invoice.date, contacts.name, projects.name_project, invoice.subject, invoice.amount')
+							->from('invoice')
+							->join('projects', 'id_project = invoice.projects_id')
 							->join('contacts', 'id_contacts = invoice.recipient_id')
 							->get()->result_array();
 		$this->load->view('template/header.php');
@@ -22,14 +24,14 @@ class Invoice extends CI_Controller {
 		$opsi['kontak']=$this->db->get('contacts')->result();
 
 		if (isset($_POST['submit'])) {
-			$tanggal   = date('Y-m-d', strtotime($this->input->post('date')));
+			$tanggal   = $this->input->post('date');
 			$penerima  = $this->input->post('penerima');
 			$perihal   = $this->input->post('subject');
 			$nominal   = $this->input->post('amount');
 			$institusi = $this->input->post('institution');
 			$proyek    = $this->input->post('projects_id');
 			$no_surat  = $this->input->post('no_letter');
-
+			// date('Y-m-d', strtotime($this->input->post('date')));
 			
 			$data_tagihan = array('date'		 	=> $tanggal,
 								  'recipient_id'    => $penerima,

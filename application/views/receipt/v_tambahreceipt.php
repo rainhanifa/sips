@@ -21,16 +21,25 @@
                             <form method="post" action="<?php echo base_url("receipt/tambah")?>" class="form-horizontal">
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
-                                        <label for="email_address_2">Tanggal</label>
+                                        <label for="email_address_2">Tanggal Surat</label>
                                     </div>
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="date" class="datepicker form-control" placeholder="Masukkan Tanggal" required>
+                                                <input type="text" name = "date" class="datepicker form-control" placeholder="Masukkan Tanggal">
                                             </div>
                                         </div>
                                     </div>
                                 </div>
+                                <script type="text/javascript">
+                                    //Datetimepicker plugin
+                                    $('.datepicker').bootstrapMaterialDatePicker({
+                                        format: 'YYYY/MM/DD',
+                                        clearButton: true,
+                                        weekStart: 1,
+                                        time: false
+                                    });
+                                </script>
                                         <!-- Nama Penerima -->
                                 <div class="row clearfix">
                                     <div class="col-lg-2 col-md-2 col-sm-4 col-xs-5 form-control-label">
@@ -39,7 +48,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                         
-                                           <select name="id_contacts">
+                                           <select name="penerima">
                                            <?php 
                                                 foreach ($contacts as $key => $value) {
                                            ?>
@@ -62,7 +71,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="text" name="subject" class="form-control" placeholder="Masukkan Keterangan" required>
+                                                <input type="text" name="subject" class="form-control" placeholder="Masukkan Keterangan">
                                             </div>
                                         </div>
                                     </div>
@@ -75,7 +84,7 @@
                                     <div class="col-lg-10 col-md-10 col-sm-8 col-xs-7">
                                         <div class="form-group">
                                             <div class="form-line">
-                                                <input type="number" name="amount" class="form-control" placeholder="Masukkan Nominal" required>
+                                                <input type="number" name="amount" class="form-control" placeholder="Masukkan Nominal" >
                                             </div>
                                         </div>
                                     </div>
